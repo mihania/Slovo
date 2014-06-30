@@ -7,17 +7,19 @@
 //
 
 #import "Vocabulary.h"
+#import "IndexEntry.h"
+#import <libkern/OSByteOrder.h>
 
 @implementation Vocabulary
 NSString *name = @"rom_rus";
 bool loaded = NO;
-NSMutableArray *myArray;
+NSMutableArray *indexEntries;
 int wordsCount = 185704;
 char firstByte = 'a';
 
 -(void) Load {
     if (loaded == NO) {
-        myArray = [[NSMutableArray alloc] initWithCapacity:wordsCount];
+        indexEntries = [[NSMutableArray alloc] initWithCapacity:wordsCount];
         [self LoadFile];
     }
 }
@@ -26,8 +28,8 @@ char firstByte = 'a';
     NSURL *path = [[NSBundle mainBundle] URLForResource:name withExtension:@"idx"];
     NSString *stringPath = [path absoluteString]; //this is correct
     
-    //you can again use it in NSURL eg if you have async loading images and your mechanism
-    //uses only url like mine (but sometimes i need local files to load)
+    // you can again use it in NSURL eg if you have async loading images and your mechanism
+    // uses only url like mine (but sometimes i need local files to load)
     NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:stringPath]];
     
     char *buffer = (char *)[fileData bytes];
@@ -41,6 +43,14 @@ char firstByte = 'a';
         }
         else {
             // NSString
+            int wordLength = index - previous;
+            IndexEntry *indexEntry = [IndexEntry alloc];
+            indexEntry.word_str = [[NSString alloc] initWithBytes:buffer + previous length:wordLength encoding:NSUTF8StringEncoding];
+            indexEntry.word_data_offset = OSReadBigInt32(buffer, index + 1);
+            indexEntry.word_data_size = OSReadBigInt32(buffer, index + 1 + 4);
+            [indexEntries addObject:indexEntry];
+            index = index + 4 + 4 + 1;
+            previous = index;
         }
     }
 }
