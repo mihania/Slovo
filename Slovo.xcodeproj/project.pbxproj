@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE2EE8B3193C01C0009E0291 /* Vocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2EE8B2193C01C0009E0291 /* Vocabulary.m */; };
+		FE2EE8B6193C01D0009E0291 /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2EE8B5193C01D0009E0291 /* Manager.m */; };
+		FE2EE8B8193C1AE7009E0291 /* rom_rus.ifo in Resources */ = {isa = PBXBuildFile; fileRef = FE2EE8B7193C1AE7009E0291 /* rom_rus.ifo */; };
+		FE8171E2193A872B008134B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8171E1193A872B008134B2 /* Foundation.framework */; };
+		FE8171E4193A872B008134B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8171E3193A872B008134B2 /* CoreGraphics.framework */; };
+		FE8171E6193A872B008134B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8171E5193A872B008134B2 /* UIKit.framework */; };
+		FE8171EC193A872B008134B2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE8171EA193A872B008134B2 /* InfoPlist.strings */; };
+		FE8171EE193A872B008134B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8171ED193A872B008134B2 /* main.m */; };
+		FE8171F2193A872B008134B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8171F1193A872B008134B2 /* AppDelegate.m */; };
+		FE8171F5193A872B008134B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE8171F3193A872B008134B2 /* Main.storyboard */; };
+		FE8171F8193A872B008134B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8171F7193A872B008134B2 /* ViewController.m */; };
+		FE8171FA193A872B008134B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE8171F9193A872B008134B2 /* Images.xcassets */; };
+		FE817201193A872B008134B2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE817200193A872B008134B2 /* XCTest.framework */; };
+		FE817202193A872B008134B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8171E1193A872B008134B2 /* Foundation.framework */; };
+		FE817203193A872B008134B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8171E5193A872B008134B2 /* UIKit.framework */; };
+		FE81720B193A872B008134B2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE817209193A872B008134B2 /* InfoPlist.strings */; };
+		FE81720D193A872B008134B2 /* SlovoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81720C193A872B008134B2 /* SlovoTests.m */; };
+		FEE92E35193C4AD900767E2F /* rom_rus.idx in Resources */ = {isa = PBXBuildFile; fileRef = FE2EE8BB193C1AF6009E0291 /* rom_rus.idx */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE817204193A872B008134B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE8171D6193A872B008134B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE8171DD193A872B008134B2;
+			remoteInfo = Slovo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FE2EE8B1193C01C0009E0291 /* Vocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vocabulary.h; sourceTree = "<group>"; };
+		FE2EE8B2193C01C0009E0291 /* Vocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vocabulary.m; sourceTree = "<group>"; };
+		FE2EE8B4193C01D0009E0291 /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		FE2EE8B5193C01D0009E0291 /* Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
+		FE2EE8B7193C1AE7009E0291 /* rom_rus.ifo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rom_rus.ifo; sourceTree = "<group>"; };
+		FE2EE8BB193C1AF6009E0291 /* rom_rus.idx */ = {isa = PBXFileReference; lastKnownFileType = file; path = rom_rus.idx; sourceTree = "<group>"; };
+		FE8171DE193A872B008134B2 /* Slovo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slovo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8171E1193A872B008134B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE8171E3193A872B008134B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FE8171E5193A872B008134B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE8171E9193A872B008134B2 /* Slovo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Slovo-Info.plist"; sourceTree = "<group>"; };
+		FE8171EB193A872B008134B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE8171ED193A872B008134B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE8171EF193A872B008134B2 /* Slovo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Slovo-Prefix.pch"; sourceTree = "<group>"; };
+		FE8171F0193A872B008134B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE8171F1193A872B008134B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE8171F4193A872B008134B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE8171F6193A872B008134B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FE8171F7193A872B008134B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE8171F9193A872B008134B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FE8171FF193A872B008134B2 /* SlovoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlovoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE817200193A872B008134B2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FE817208193A872B008134B2 /* SlovoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlovoTests-Info.plist"; sourceTree = "<group>"; };
+		FE81720A193A872B008134B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE81720C193A872B008134B2 /* SlovoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlovoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE8171DB193A872B008134B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8171E4193A872B008134B2 /* CoreGraphics.framework in Frameworks */,
+				FE8171E6193A872B008134B2 /* UIKit.framework in Frameworks */,
+				FE8171E2193A872B008134B2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8171FC193A872B008134B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE817201193A872B008134B2 /* XCTest.framework in Frameworks */,
+				FE817203193A872B008134B2 /* UIKit.framework in Frameworks */,
+				FE817202193A872B008134B2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE2EE8B0193C019E009E0291 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FE2EE8B1193C01C0009E0291 /* Vocabulary.h */,
+				FE2EE8B2193C01C0009E0291 /* Vocabulary.m */,
+				FE2EE8B4193C01D0009E0291 /* Manager.h */,
+				FE2EE8B5193C01D0009E0291 /* Manager.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		FE8171D5193A872B008134B2 = {
+			isa = PBXGroup;
+			children = (
+				FE8171E7193A872B008134B2 /* Slovo */,
+				FE817206193A872B008134B2 /* SlovoTests */,
+				FE8171E0193A872B008134B2 /* Frameworks */,
+				FE8171DF193A872B008134B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE8171DF193A872B008134B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE8171DE193A872B008134B2 /* Slovo.app */,
+				FE8171FF193A872B008134B2 /* SlovoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE8171E0193A872B008134B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE8171E1193A872B008134B2 /* Foundation.framework */,
+				FE8171E3193A872B008134B2 /* CoreGraphics.framework */,
+				FE8171E5193A872B008134B2 /* UIKit.framework */,
+				FE817200193A872B008134B2 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE8171E7193A872B008134B2 /* Slovo */ = {
+			isa = PBXGroup;
+			children = (
+				FE2EE8B0193C019E009E0291 /* Core */,
+				FE8171F3193A872B008134B2 /* Main.storyboard */,
+				FE8171F6193A872B008134B2 /* ViewController.h */,
+				FE8171F7193A872B008134B2 /* ViewController.m */,
+				FE8171F9193A872B008134B2 /* Images.xcassets */,
+				FE8171E8193A872B008134B2 /* Supporting Files */,
+			);
+			path = Slovo;
+			sourceTree = "<group>";
+		};
+		FE8171E8193A872B008134B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE2EE8BB193C1AF6009E0291 /* rom_rus.idx */,
+				FE2EE8B7193C1AE7009E0291 /* rom_rus.ifo */,
+				FE8171F0193A872B008134B2 /* AppDelegate.h */,
+				FE8171F1193A872B008134B2 /* AppDelegate.m */,
+				FE8171E9193A872B008134B2 /* Slovo-Info.plist */,
+				FE8171EA193A872B008134B2 /* InfoPlist.strings */,
+				FE8171ED193A872B008134B2 /* main.m */,
+				FE8171EF193A872B008134B2 /* Slovo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE817206193A872B008134B2 /* SlovoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE81720C193A872B008134B2 /* SlovoTests.m */,
+				FE817207193A872B008134B2 /* Supporting Files */,
+			);
+			path = SlovoTests;
+			sourceTree = "<group>";
+		};
+		FE817207193A872B008134B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE817208193A872B008134B2 /* SlovoTests-Info.plist */,
+				FE817209193A872B008134B2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE8171DD193A872B008134B2 /* Slovo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE817210193A872B008134B2 /* Build configuration list for PBXNativeTarget "Slovo" */;
+			buildPhases = (
+				FE8171DA193A872B008134B2 /* Sources */,
+				FE8171DB193A872B008134B2 /* Frameworks */,
+				FE8171DC193A872B008134B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Slovo;
+			productName = Slovo;
+			productReference = FE8171DE193A872B008134B2 /* Slovo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE8171FE193A872B008134B2 /* SlovoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE817213193A872B008134B2 /* Build configuration list for PBXNativeTarget "SlovoTests" */;
+			buildPhases = (
+				FE8171FB193A872B008134B2 /* Sources */,
+				FE8171FC193A872B008134B2 /* Frameworks */,
+				FE8171FD193A872B008134B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE817205193A872B008134B2 /* PBXTargetDependency */,
+			);
+			name = SlovoTests;
+			productName = SlovoTests;
+			productReference = FE8171FF193A872B008134B2 /* SlovoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE8171D6193A872B008134B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Amsada;
+				TargetAttributes = {
+					FE8171FE193A872B008134B2 = {
+						TestTargetID = FE8171DD193A872B008134B2;
+					};
+				};
+			};
+			buildConfigurationList = FE8171D9193A872B008134B2 /* Build configuration list for PBXProject "Slovo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE8171D5193A872B008134B2;
+			productRefGroup = FE8171DF193A872B008134B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE8171DD193A872B008134B2 /* Slovo */,
+				FE8171FE193A872B008134B2 /* SlovoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE8171DC193A872B008134B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE92E35193C4AD900767E2F /* rom_rus.idx in Resources */,
+				FE8171FA193A872B008134B2 /* Images.xcassets in Resources */,
+				FE8171EC193A872B008134B2 /* InfoPlist.strings in Resources */,
+				FE2EE8B8193C1AE7009E0291 /* rom_rus.ifo in Resources */,
+				FE8171F5193A872B008134B2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8171FD193A872B008134B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE81720B193A872B008134B2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE8171DA193A872B008134B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8171F8193A872B008134B2 /* ViewController.m in Sources */,
+				FE8171F2193A872B008134B2 /* AppDelegate.m in Sources */,
+				FE8171EE193A872B008134B2 /* main.m in Sources */,
+				FE2EE8B6193C01D0009E0291 /* Manager.m in Sources */,
+				FE2EE8B3193C01C0009E0291 /* Vocabulary.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8171FB193A872B008134B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE81720D193A872B008134B2 /* SlovoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE817205193A872B008134B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE8171DD193A872B008134B2 /* Slovo */;
+			targetProxy = FE817204193A872B008134B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE8171EA193A872B008134B2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE8171EB193A872B008134B2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE8171F3193A872B008134B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE8171F4193A872B008134B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE817209193A872B008134B2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE81720A193A872B008134B2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE81720E193A872B008134B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE81720F193A872B008134B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE817211193A872B008134B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Slovo/Slovo-Prefix.pch";
+				INFOPLIST_FILE = "Slovo/Slovo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FE817212193A872B008134B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Slovo/Slovo-Prefix.pch";
+				INFOPLIST_FILE = "Slovo/Slovo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FE817214193A872B008134B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Slovo.app/Slovo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Slovo/Slovo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SlovoTests/SlovoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FE817215193A872B008134B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Slovo.app/Slovo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Slovo/Slovo-Prefix.pch";
+				INFOPLIST_FILE = "SlovoTests/SlovoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE8171D9193A872B008134B2 /* Build configuration list for PBXProject "Slovo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE81720E193A872B008134B2 /* Debug */,
+				FE81720F193A872B008134B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE817210193A872B008134B2 /* Build configuration list for PBXNativeTarget "Slovo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE817211193A872B008134B2 /* Debug */,
+				FE817212193A872B008134B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE817213193A872B008134B2 /* Build configuration list for PBXNativeTarget "SlovoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE817214193A872B008134B2 /* Debug */,
+				FE817215193A872B008134B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE8171D6193A872B008134B2 /* Project object */;
+}
