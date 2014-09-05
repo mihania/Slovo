@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Directions>
+    <Direction Id="0" DataFileName="Data/English.dir" SourceLanguageCode="en-US">
+      <Names>
+        <Resource LanguageCode="en" Value="English direction" />
+        <Resource LanguageCode="ru" Value="Англ. направление" />
+      </Names>
+      <Vocabularies>
+        <Vocabulary Id="0" Name="Mueller" IsEnabled="true" IndexInDirectionFile="0">
+          <PivotHeaders>
+            <Resource LanguageCode="en" Value="Mueller" />
+            <Resource LanguageCode="ru" Value="Мюллер" />
+          </PivotHeaders>
+        </Vocabulary>
+        <Vocabulary Id="2" Name="WordNet3_0" IsEnabled="true" IndexInDirectionFile="1">
+          <PivotHeaders>
+            <Resource LanguageCode="en" Value="WordNet" />
+            <Resource LanguageCode="ru" Value="WordNet" />
+          </PivotHeaders>
+        </Vocabulary>
+      </Vocabularies>
+    </Direction>
+    <Direction Id="1" DataFileName="Data/Russian.dir" SourceLanguageCode="ru-RU">
+      <Names>
+        <Resource LanguageCode="en" Value="Russian direction" />
+        <Resource LanguageCode="ru" Value="Рус. направление" />
+      </Names>
+      <Vocabularies>
+        <Vocabulary Id="1" Name="RuEn" IsEnabled="true" IndexInDirectionFile="0">
+          <PivotHeaders>
+            <Resource LanguageCode="en" Value="Ru-En" />
+            <Resource LanguageCode="ru" Value="Рус-Англ" />
+          </PivotHeaders>
+        </Vocabulary>
+        <Vocabulary Id="3" Name="Ojegov" IsEnabled="true" IndexInDirectionFile="1">
+          <PivotHeaders>
+            <Resource LanguageCode="en" Value="Ojegov" />
+            <Resource LanguageCode="ru" Value="Ожегов" />
+          </PivotHeaders>
+        </Vocabulary>
+      </Vocabularies>
+    </Direction>
+  </Directions>
+</Configuration>

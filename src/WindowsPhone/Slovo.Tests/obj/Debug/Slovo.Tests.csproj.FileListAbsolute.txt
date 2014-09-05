@@ -1,0 +1,7 @@
+D:\Projects\mihailsm\Slovo8\src\Slovo.Tests\obj\Debug\Slovo.Tests.csprojResolveAssemblyReference.cache
+D:\Projects\mihailsm\Slovo8\src\Slovo.Tests\bin\Debug\Slovo.Tests.dll
+D:\Projects\mihailsm\Slovo8\src\Slovo.Tests\bin\Debug\Slovo.Tests.pdb
+D:\Projects\mihailsm\Slovo8\src\Slovo.Tests\bin\Debug\Slovo.Core.dll
+D:\Projects\mihailsm\Slovo8\src\Slovo.Tests\bin\Debug\Slovo.Core.pdb
+D:\Projects\mihailsm\Slovo8\src\Slovo.Tests\obj\Debug\Slovo.Tests.dll
+D:\Projects\mihailsm\Slovo8\src\Slovo.Tests\obj\Debug\Slovo.Tests.pdb

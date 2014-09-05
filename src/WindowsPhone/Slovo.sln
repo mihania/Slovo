@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovo.UI", "Slovo.UI\Slovo.UI.csproj", "{526FD11B-1349-4A25-8473-9F33AFFA67FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{23C251EE-A625-45D2-9A02-6EF66DC5D346}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Slovo.vsmdi = Slovo.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovo.Generator", "Slovo.Generator\Slovo.Generator.csproj", "{4C1EC13A-3171-4F9B-898E-1499020ED0F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{1F68F8D4-42A2-4A15-BE1A-F602FE7D9E8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{DE2BADC4-D984-4734-9A07-FDD0C4AA3240}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\Microsoft.Phone.Controls.Toolkit.dll = Dependencies\Microsoft.Phone.Controls.Toolkit.dll
+		Dependencies\Telerik.Windows.Controls.Primitives.dll = Dependencies\Telerik.Windows.Controls.Primitives.dll
+		Dependencies\Telerik.Windows.Core.dll = Dependencies\Telerik.Windows.Core.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovo.Tests", "Slovo.Tests\Slovo.Tests.csproj", "{24F5A7BE-215C-44AF-86FD-C118195F56C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovo.Core", "Slovo.Core\Slovo.Core.csproj", "{B4B56C03-B4C0-4261-8ED3-B350E9636780}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mihailsm.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Slovo.Tests\\Slovo.Tests.csproj
+		SccProjectTopLevelParentUniqueName1 = Slovo.sln
+		SccProjectName1 = Slovo.Tests
+		SccLocalPath1 = Slovo.Tests
+		SccProjectUniqueName2 = Slovo.Core\\Slovo.Core.csproj
+		SccProjectName2 = Slovo.Core
+		SccLocalPath2 = Slovo.Core
+		SccProjectUniqueName3 = Slovo.Generator\\Slovo.Generator.csproj
+		SccProjectName3 = Slovo.Generator
+		SccLocalPath3 = Slovo.Generator
+		SccProjectUniqueName4 = Slovo.UI\\Slovo.UI.csproj
+		SccProjectName4 = Slovo.UI
+		SccLocalPath4 = Slovo.UI
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Debug|ARM.ActiveCfg = Debug|ARM
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Debug|ARM.Build.0 = Debug|ARM
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Debug|ARM.Deploy.0 = Debug|ARM
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Debug|x86.ActiveCfg = Debug|x86
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Debug|x86.Build.0 = Debug|x86
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Debug|x86.Deploy.0 = Debug|x86
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Release|ARM.ActiveCfg = Release|ARM
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Release|ARM.Build.0 = Release|ARM
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Release|ARM.Deploy.0 = Release|ARM
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Release|x86.ActiveCfg = Release|x86
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Release|x86.Build.0 = Release|x86
+		{526FD11B-1349-4A25-8473-9F33AFFA67FD}.Release|x86.Deploy.0 = Release|x86
+		{4C1EC13A-3171-4F9B-898E-1499020ED0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1EC13A-3171-4F9B-898E-1499020ED0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1EC13A-3171-4F9B-898E-1499020ED0F6}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4C1EC13A-3171-4F9B-898E-1499020ED0F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4C1EC13A-3171-4F9B-898E-1499020ED0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1EC13A-3171-4F9B-898E-1499020ED0F6}.Release|ARM.ActiveCfg = Release|Any CPU
+		{4C1EC13A-3171-4F9B-898E-1499020ED0F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{24F5A7BE-215C-44AF-86FD-C118195F56C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F5A7BE-215C-44AF-86FD-C118195F56C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F5A7BE-215C-44AF-86FD-C118195F56C4}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{24F5A7BE-215C-44AF-86FD-C118195F56C4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{24F5A7BE-215C-44AF-86FD-C118195F56C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F5A7BE-215C-44AF-86FD-C118195F56C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F5A7BE-215C-44AF-86FD-C118195F56C4}.Release|ARM.ActiveCfg = Release|Any CPU
+		{24F5A7BE-215C-44AF-86FD-C118195F56C4}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24F5A7BE-215C-44AF-86FD-C118195F56C4} = {1F68F8D4-42A2-4A15-BE1A-F602FE7D9E8F}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Slovo.vsmdi
+	EndGlobalSection
+EndGlobal

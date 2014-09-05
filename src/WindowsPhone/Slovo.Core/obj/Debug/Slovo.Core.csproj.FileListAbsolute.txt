@@ -1,0 +1,9 @@
+D:\Projects\mihailsm\Slovo8\src\WP7\Slovo\Slovo.Core\bin\Debug\Slovo.Core.dll
+D:\Projects\mihailsm\Slovo8\src\WP7\Slovo\Slovo.Core\bin\Debug\Slovo.Core.pdb
+D:\Projects\mihailsm\Slovo8\src\WP7\Slovo\Slovo.Core\obj\Debug\Slovo.Core.dll
+D:\Projects\mihailsm\Slovo8\src\WP7\Slovo\Slovo.Core\obj\Debug\Slovo.Core.pdb
+D:\Projects\mihailsm\Slovo8\src\Slovo.Core\obj\Debug\Slovo.Core.dll
+D:\Projects\mihailsm\Slovo8\src\Slovo.Core\obj\Debug\Slovo.Core.pdb
+D:\Projects\mihailsm\Slovo8\src\Slovo.Core\obj\Debug\Slovo.Core.csprojResolveAssemblyReference.cache
+D:\Projects\mihailsm\Slovo8\src\Slovo.Core\bin\Debug\Slovo.Core.dll
+D:\Projects\mihailsm\Slovo8\src\Slovo.Core\bin\Debug\Slovo.Core.pdb
