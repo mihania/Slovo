@@ -75,9 +75,7 @@ namespace NokiaFeedbackDemo.Helpers
                 if (!this._reviewed)
                 {
                     this._launchCount++;
-
-                    bool networkAvailable = Slovo.Settings.IsNetworkAvailable;
-                    if (!networkAvailable && (this._launchCount == FIRST_COUNT || this._launchCount == SECOND_COUNT))
+                    if (!Slovo.Settings.IsNetworkAvailable && (this._launchCount == FIRST_COUNT || this._launchCount == SECOND_COUNT))
                     {
                         // if network is not available, than we don't want to move in active state and wait until network will be available next time
                         this._launchCount--;

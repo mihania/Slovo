@@ -24,12 +24,9 @@
         public DirectionArticle()
         {
             this.InitializeComponent();
-            if (Settings.IsNetworkAvailable)
-            {
-                ((ApplicationBarIconButton)this.ApplicationBar.Buttons[BackButtonIndex]).Text = CommonResources.Back;
-                ((ApplicationBarIconButton)this.ApplicationBar.Buttons[ListenButtonIndex]).Text = CommonResources.Listen;
-                ((ApplicationBarIconButton)this.ApplicationBar.Buttons[NextButtonIndex]).Text = CommonResources.Next;
-            }
+            ((ApplicationBarIconButton)this.ApplicationBar.Buttons[BackButtonIndex]).Text = CommonResources.Back;
+            ((ApplicationBarIconButton)this.ApplicationBar.Buttons[ListenButtonIndex]).Text = CommonResources.Listen;
+            ((ApplicationBarIconButton)this.ApplicationBar.Buttons[NextButtonIndex]).Text = CommonResources.Next;
 
             PivotArticle.LoadingPivotItem += new EventHandler<PivotItemEventArgs>(PivotArticle_LoadingPivotItem);
             this.Loaded += new RoutedEventHandler(DirectionArticle_Loaded);
@@ -48,23 +45,20 @@
 
         private void ShowApplicationBar(bool historyWatch)
         {
-            if (historyWatch || Settings.IsNetworkAvailable)
+            this.ApplicationBar.IsVisible = true;
+            if (!historyWatch)
             {
-                this.ApplicationBar.IsVisible = true;
-                if (!historyWatch)
+                if (ApplicationBar.Buttons.Count > 1)
                 {
-                    if (ApplicationBar.Buttons.Count > 1)
-                    {
-                        ApplicationBar.Buttons.RemoveAt(0);
-                        ApplicationBar.Buttons.RemoveAt(1);
-                    }
+                    ApplicationBar.Buttons.RemoveAt(0);
+                    ApplicationBar.Buttons.RemoveAt(1);
+                }
 
-                    ((ApplicationBarIconButton)this.ApplicationBar.Buttons[0]).IsEnabled = Settings.IsNetworkAvailable;
-                }
-                else
-                {
-                    ((ApplicationBarIconButton)this.ApplicationBar.Buttons[ListenButtonIndex]).IsEnabled = Settings.IsNetworkAvailable;
-                }
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons[0]).IsEnabled = true;
+            }
+            else
+            {
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons[ListenButtonIndex]).IsEnabled = true;
             }
         }
 
