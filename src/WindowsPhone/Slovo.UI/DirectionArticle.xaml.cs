@@ -132,7 +132,7 @@
                 e.Item.Content = article;
                 e.Item.DataContext = null; // mark article as loaded
 
-                ManagerInstance.TelemetryClient.TrackPageView(new PageViewTelemetry("Slovo.DirectionArticle.Pivot." + vocabulary.Name));
+                ManagerInstance.TelemetryClient.TrackPageView(new PageViewTelemetry("DirectionArticle.Pivot.Load." + vocabulary.Name));
             }
         }
 
@@ -211,6 +211,9 @@
         private void SpeakButton_Click(object sender, EventArgs e)
         {
             this.SpeakOnline();
+            var telemetry = new EventTelemetry("DirectionArticle.SpeakButton.Clicked");
+            telemetry.Properties["DirectionName"] = this.Direction.Name;
+            ManagerInstance.TelemetryClient.TrackEvent(telemetry);
         }
 
         private void SpeakOnline()

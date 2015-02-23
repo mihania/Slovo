@@ -333,7 +333,7 @@
                 }
                 else
                 {
-                    EventTelemetry telemetry = new EventTelemetry("WordNotFound");
+                    EventTelemetry telemetry = new EventTelemetry("Main.WordNotFound");
                     telemetry.Properties["word"] = this.tbSearch.Text;
                     ManagerInstance.TelemetryClient.TrackEvent(telemetry);
                 }
