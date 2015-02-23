@@ -14,6 +14,7 @@
     using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Navigation;
+    using Microsoft.ApplicationInsights.DataContracts;
 
     public partial class Main : PhoneApplicationPage
     {
@@ -267,6 +268,7 @@
         {
             ManagerInstance.CurrentDirection = this.ManagerInstance.Configuration.Directions[this.currentDirectionId];
             ManagerInstance.CurrentDirection.Deserialize(LoadingState.Loaded);
+            ManagerInstance.CurrentDirection.SupportPronounciation = Slovo.UI.Core.Pronounciation.OfflinePronounciation.SupportPronounciation(ManagerInstance.CurrentDirection.SourceLanguageCode);
         }
 
         private void SelectItem(string searchText)
@@ -322,11 +324,19 @@
         /// </summary>
         private void OnEnter()
         {
-            if (ManagerInstance.CurrentLoadingState == LoadingState.Loaded
-                && ManagerInstance.CurrentDirection.IsWordFound)
+            if (ManagerInstance.CurrentLoadingState == LoadingState.Loaded)
             {
-                this.SetSelectedIndex(ManagerInstance.CurrentDirection.Cursor);
-                this.OpenWord(ManagerInstance.CurrentDirection.Cursor);
+                if (ManagerInstance.CurrentDirection.IsWordFound)
+                {
+                    this.SetSelectedIndex(ManagerInstance.CurrentDirection.Cursor);
+                    this.OpenWord(ManagerInstance.CurrentDirection.Cursor);
+                }
+                else
+                {
+                    EventTelemetry telemetry = new EventTelemetry("WordNotFound");
+                    telemetry.Properties["word"] = this.tbSearch.Text;
+                    ManagerInstance.TelemetryClient.TrackEvent(telemetry);
+                }
             }
         }
 

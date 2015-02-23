@@ -12,6 +12,7 @@
     using System.Collections.ObjectModel;
     using System.Text;
     using System.Windows;
+    using Microsoft.ApplicationInsights.DataContracts;
 
     public partial class DirectionArticle : PhoneApplicationPage
     {
@@ -24,6 +25,7 @@
         public DirectionArticle()
         {
             this.InitializeComponent();
+
             ((ApplicationBarIconButton)this.ApplicationBar.Buttons[BackButtonIndex]).Text = CommonResources.Back;
             ((ApplicationBarIconButton)this.ApplicationBar.Buttons[ListenButtonIndex]).Text = CommonResources.Listen;
             ((ApplicationBarIconButton)this.ApplicationBar.Buttons[NextButtonIndex]).Text = CommonResources.Next;
@@ -46,6 +48,7 @@
         private void ShowApplicationBar(bool historyWatch)
         {
             this.ApplicationBar.IsVisible = true;
+            int listenButtonIndex = 0;
             if (!historyWatch)
             {
                 if (ApplicationBar.Buttons.Count > 1)
@@ -53,13 +56,24 @@
                     ApplicationBar.Buttons.RemoveAt(0);
                     ApplicationBar.Buttons.RemoveAt(1);
                 }
-
-                ((ApplicationBarIconButton)this.ApplicationBar.Buttons[0]).IsEnabled = true;
             }
             else
             {
-                ((ApplicationBarIconButton)this.ApplicationBar.Buttons[ListenButtonIndex]).IsEnabled = true;
+                listenButtonIndex = ListenButtonIndex;
             }
+
+            if (this.ApplicationBar.Buttons.Count == 1 && !Direction.SupportPronounciation)
+            {
+                // no need to show the speaker button as it is the only one on application bar and speaker does not work.
+                ApplicationBar.Buttons.RemoveAt(0);
+                ApplicationBar.IsVisible = false;
+            }
+            else
+            {
+                ApplicationBar.IsVisible = true;
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons[listenButtonIndex]).IsEnabled = Direction.SupportPronounciation;
+            }
+            
         }
 
         public static string GetPageUrl(int directionId, int directionArticleId)
@@ -117,6 +131,8 @@
                 article.Definition = coreArticle.Definition;
                 e.Item.Content = article;
                 e.Item.DataContext = null; // mark article as loaded
+
+                ManagerInstance.TelemetryClient.TrackPageView(new PageViewTelemetry("Slovo.DirectionArticle.Pivot." + vocabulary.Name));
             }
         }
 

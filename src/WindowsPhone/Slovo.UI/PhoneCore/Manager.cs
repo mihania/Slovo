@@ -5,6 +5,7 @@
     using Slovo.Core.Vocabularies;
     using System;
     using System.Collections.Generic;
+    using Microsoft.ApplicationInsights;
 
     internal class Manager<T, E> 
         where T : IStreamGetter, new()
@@ -14,10 +15,11 @@
         private readonly T streamGetter = new T();
         
         private History history = new History();
-        
+
         private Manager()
         {
             this.Configuration = Configuration<T, E>.LoadConfiguration();
+            this.TelemetryClient = new TelemetryClient();
         }
 
         internal static Manager<T, E> Instance
@@ -58,6 +60,8 @@
                 return result;
             }
         }
+
+        internal TelemetryClient TelemetryClient { get; private set; }
 
         internal Vocabulary<T> GetVocabulary(int voc)
         {

@@ -104,6 +104,8 @@
             }
         }
 
+        public bool SupportPronounciation { get; set; }
+
         /// <summary>
         /// Serialize to disk
         /// </summary>
