@@ -1,4 +1,6 @@
-﻿namespace Slovo
+﻿using Microsoft.ApplicationInsights;
+
+namespace Slovo
 {
     using System.Windows;
     using System.Windows.Navigation;
@@ -11,10 +13,17 @@
     public partial class App : Application
     {
         /// <summary>
+        /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
+        /// </summary>
+        public static TelemetryClient TelemetryClient;
+
+        /// <summary>
         /// Constructor for the Application object.
         /// </summary>
         public App()
         {
+            TelemetryClient = new TelemetryClient();
+
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
 
