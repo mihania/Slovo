@@ -156,7 +156,7 @@ namespace Slovo.Generator.Vocabulary
                         )
                         
                     {
-                        Console.WriteLine("Removing xml symbol {0} in {1}", result[i], word);
+                        // Console.WriteLine("Removing xml symbol {0} in {1}", result[i], word);
                         result = result.Remove(i, 1);
                     }
                 }

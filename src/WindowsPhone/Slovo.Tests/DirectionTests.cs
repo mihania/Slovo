@@ -10,7 +10,7 @@
     using System.IO;
 
     /// <summary>
-    /// Summary description for UnitTest1
+    /// Summary description for ArticleTest
     /// </summary>
     [TestClass]
     public class DirectionTests

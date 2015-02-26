@@ -90,11 +90,8 @@
     <Compile Include="Vocabulary\WordNet3_0Formatter.cs" />
     <Compile Include="Vocabulary\MullerFormatter.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Pronounciation\SoundInfo.cs" />
-    <Compile Include="Pronounciation\Sounds.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vocabulary\RuEngFormatter.cs" />
-    <Compile Include="Pronounciation\SoundGenerator.cs" />
     <Compile Include="Service References\ServiceReferences\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,11 +154,6 @@
     <Content Include="InputData\RuEn.txt" />
     <Content Include="InputData\wn_database.lst" />
     <Content Include="InputData\wn_lemmaIndexes.lst" />
-    <Content Include="OutputData\allocution.wav" />
-    <Content Include="OutputData\Mueller_0_1599.wav" />
-    <Content Include="OutputData\Mueller_0_1599.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Service References\ServiceReferences\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

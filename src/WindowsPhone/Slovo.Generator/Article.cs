@@ -1,10 +1,14 @@
-﻿namespace Slovo.Generator
+﻿using System.Diagnostics;
+using Slovo.Core;
+
+namespace Slovo.Generator
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
 
+    [DebuggerDisplay("{Word}")]
     public class Article : IComparable<Article> 
     {
         public Article(string word, string translation)
@@ -24,7 +28,7 @@
                 return 1;
             }
 
-            return String.Compare(this.Word, obj.Word, false); 
+            return Common.StringCompare(this.Word, obj.Word); 
         }
     }
 }

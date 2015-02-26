@@ -1,4 +1,6 @@
-﻿#if EnableWp7
+﻿using Slovo.Core;
+
+#if EnableWp7
 #else
 namespace Slovo.UI.Core.Pronounciation
 {
@@ -48,7 +50,7 @@ namespace Slovo.UI.Core.Pronounciation
             VoiceInformation currentVoice = null;
             for (int i = 0; i < allVoices.Count; i++)
             {
-                if (string.Compare(allVoices[i].Language, languageCode, StringComparison.OrdinalIgnoreCase) == 0)
+                if (Common.StringCompare(allVoices[i].Language, languageCode) == 0)
                 {
                     currentVoice = allVoices[i];
                     break;

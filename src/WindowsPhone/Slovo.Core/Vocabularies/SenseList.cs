@@ -101,7 +101,7 @@
             }
             else
             {
-                this.Cursor = this.List.BinarySearch(text, System.StringComparer.OrdinalIgnoreCase);
+                this.Cursor = this.List.BinarySearch(text, Common.StringComparer);
                 if (this.Cursor < 0)
                 {
                     this.IsWordFound = false;

@@ -61,11 +61,16 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DirectionTests.cs" />
+    <Compile Include="ArticleTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Slovo.Core\Slovo.Core.csproj">
       <Project>{b4b56c03-b4c0-4261-8ed3-b350e9636780}</Project>
       <Name>Slovo.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slovo.Generator\Slovo.Generator.csproj">
+      <Project>{4c1ec13a-3171-4f9b-898e-1499020ed0f6}</Project>
+      <Name>Slovo.Generator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

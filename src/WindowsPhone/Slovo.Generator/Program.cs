@@ -1,23 +1,12 @@
-﻿using System.IO;
-
+﻿
 namespace Slovo.Generator
 {
-    using System;
-    using System.Collections.Generic;
-    using Slovo.Generator.Pronounciation;
-    using Slovo.Core;
-    using Slovo.Generator.Formatters;
-    using Slovo.Generator.Direction;
-    using Slovo.Core.Directions;
-    using Slovo.Generator.Vocabulary;
     using Slovo.Core.Config;
+    using Slovo.Core.Vocabularies;
+    using Slovo.Generator.Direction;
+    using Slovo.Generator.Vocabulary;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using Slovo.Core.Directions;
-    using System.Collections.Generic;
-    using Slovo.Core.Vocabularies;
 
     class Program
     {
@@ -33,8 +22,7 @@ namespace Slovo.Generator
             Console.WriteLine(DateTime.Now + ": Generator started successfully");
             
             WriteVocabularies();
-            
-            // WriteDirections();
+            WriteDirections();
 
 
             Console.WriteLine(DateTime.Now + ": Generator finished successfully. Press Enter to exit");
@@ -44,9 +32,9 @@ namespace Slovo.Generator
         private static void WriteVocabularies()
         {
             new OjegovFormatter(pathToOjegov).WriteOutput();
-            // new MullerFormatter(pathToMuller).WriteOutput();
-            // new RuEngFormatter(pathToRuEn).WriteOutput();
-            // new Formatters.WordNet3_0Formatter().WriteOutput();
+            new MullerFormatter(pathToMuller).WriteOutput();
+            new RuEngFormatter(pathToRuEn).WriteOutput();
+            new Formatters.WordNet3_0Formatter().WriteOutput();
         }
 
         private static void WriteDirections()

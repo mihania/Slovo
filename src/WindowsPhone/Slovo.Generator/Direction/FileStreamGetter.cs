@@ -33,7 +33,7 @@ namespace Slovo.Generator.Direction
         protected virtual string MapFileName(string fileName)
         {
             string path = Directory.GetCurrentDirectory();
-            string fileSystemName = Path.Combine(path, @"..\..\..\..\WP7\Slovo\Slovo\", fileName);
+            string fileSystemName = Path.Combine(path, @"..\..\..\..\WindowsPhone\Slovo.UI\", fileName);
             return fileSystemName;
         }
     }

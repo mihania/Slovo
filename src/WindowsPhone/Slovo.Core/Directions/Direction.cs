@@ -250,7 +250,7 @@
                 {
                     if (positions[i] < vocArray[i].Count)
                     {
-                        if (minIndex == -1 || String.Compare(vocArray[i][positions[i]], vocArray[minIndex][positions[minIndex]]) < 0)
+                        if (minIndex == -1 || Common.StringCompare(vocArray[i][positions[i]], vocArray[minIndex][positions[minIndex]]) < 0)
                         {
                             minIndex = i;
                         }
