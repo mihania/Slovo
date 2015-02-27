@@ -62,5 +62,20 @@
                 return s.Replace("\"", WordNet30Formatter.QuoteReplacement);
             }
         }
+
+        [TestClass]
+        public class SynsetTest
+        {
+            [TestMethod]
+            public void TestTake()
+            {
+                string line =
+                    "02267989 40 v 03 take 6 occupy 8 use_up 2 004 $ 01157517 v 0000 @ 01158572 v 0000 + 15141486 n 0201 ~ 02268246 v 0000 02 + 08 00 + 11 00 | require (time or space); \"It took three hours to get to work this morning\"; \"This event occupied a very short time";
+                WordNet30Formatter.Synset s = WordNet30Formatter.Synset.Parse("take", line);
+                Assert.AreEqual(2, s.Synonims.Count, "Synonims count is incorect");
+                Assert.AreEqual("occupy", s.Synonims[0], "occupy");
+                Assert.AreEqual("use up", s.Synonims[1], "use up");
+            }
+        }
     }
 }

@@ -75,8 +75,7 @@
 
                             fileStreamDict[pos].Sr.BaseStream.Seek(long.Parse(spl[x + i]), SeekOrigin.Begin);
                             fileStreamDict[pos].Sr.DiscardBufferedData();
-                            string[] lineArray = fileStreamDict[pos].Sr.ReadLine().Split(new char[] {'|'}, 2);
-                            Synset synset = Synset.Parse(lineArray[1]);
+                            Synset synset = Synset.Parse(pair.Key, fileStreamDict[pos].Sr.ReadLine());
                             shortDefinition = synset.Gloss;
 
                             if (i > 1)
@@ -85,6 +84,22 @@
                             }
 
                             sb.Append(i).Append(". ").Append(synset.Gloss);
+                            if (synset.Synonims.Count > 0)
+                            {
+                                sb.Append(Common.NewLineDelimiter + " <Span FontSize=\"24\">(");
+                                for (int k = 0; k < synset.Synonims.Count; k++)
+                                {
+                                    sb.Append(synset.Synonims[k]);
+                                    if (k != synset.Synonims.Count - 1)
+                                    {
+                                        sb.Append(", ");    
+                                    }
+                                }
+
+                                sb.Append(")</Span>");    
+
+                            }
+
                             if (!string.IsNullOrEmpty(synset.Sentences))
                             {
                                 sb.Append(Common.NewLineDelimiter + " ");
@@ -108,14 +123,23 @@
 
             public string Sentences { get; set; }
 
+            public List<string> Synonims { get; private set; }
+
             protected void Encode()
             {
                 this.Gloss = EncodeXml(Gloss);
                 this.Sentences = EncodeXml(this.Sentences);
             }
 
-            public static Synset Parse(string s)
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="dataFileLine">Data file line as described at https://wordnet.princeton.edu/man/wndb.5WN.html (section Data File Format)</param>
+            /// <returns></returns>
+            public static Synset Parse(string def, string dataFileLine)
             {
+                string[] lineArray = dataFileLine.Split(new char[] {'|'}, 2);
+                string s = lineArray[1];
                 var result = new Synset();
                 int posDef = s.IndexOf('"');
                 if (posDef < 0)
@@ -138,7 +162,26 @@
                     result.Sentences = ItalianQuotes(result.Sentences);
                 }
 
+                result.FillSynonims(def, lineArray[0]);
                 return result;
+            }
+
+            private void FillSynonims(string def, string m)
+            {
+                string[] a = m.Split(' ');
+                int synCount = Convert.ToInt32(a[3], 16) - 1;
+                this.Synonims = new List<string>();
+                int start = 6;
+                for (int i = 0; i < synCount; i++)
+                {
+                    var cand = a[start].Replace('_', ' ');
+                    if (cand != def)
+                    {
+                        Synonims.Add(cand);
+                    }
+
+                    start += 2;
+                }
             }
         }
 
