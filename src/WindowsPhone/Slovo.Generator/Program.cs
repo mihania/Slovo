@@ -31,10 +31,10 @@ namespace Slovo.Generator
 
         private static void WriteVocabularies()
         {
-            new OjegovFormatter(pathToOjegov).WriteOutput();
-            new MullerFormatter(pathToMuller).WriteOutput();
-            new RuEngFormatter(pathToRuEn).WriteOutput();
-            new Formatters.WordNet3_0Formatter().WriteOutput();
+            // new OjegovFormatter(pathToOjegov).WriteOutput();
+            // new MullerFormatter(pathToMuller).WriteOutput();
+            // new RuEngFormatter(pathToRuEn).WriteOutput();
+            new Formatters.WordNet30Formatter().WriteOutput();
         }
 
         private static void WriteDirections()

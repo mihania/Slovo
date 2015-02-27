@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Text.RegularExpressions;
-using Slovo.Core;
-
-namespace Slovo.Generator.Formatters
+﻿namespace Slovo.Generator.Formatters
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Text;
+    using System.IO;
+    using Slovo.Core;
 
-    internal class WordNet3_0Formatter : Formatter, IDisposable
+    internal class WordNet30Formatter : Formatter, IDisposable
     {
         internal const string indexAllFileName = @"..\..\InputData\wn\index.all";
         private const string dataAdjFileName = @"..\..\InputData\wn\data.adj";
         private const string dataAdvFileName = @"..\..\InputData\wn\data.adv";
         private const string dataNounFileName = @"..\..\InputData\wn\data.noun";
         private const string dataVerbFileName = @"..\..\InputData\wn\data.verb";
+        public const string QuoteReplacement = "&quot;";
+        public const string StartItalicQuote = "• <Span Foreground=\"Gray\">";
+        public const string EndItalicQuote =  "</Span>";
 
         private Dictionary<string, SeekReadStream> fileStreamDict = new Dictionary<string, SeekReadStream>() {
             {"a", new SeekReadStream(dataAdjFileName)},
@@ -25,14 +27,14 @@ namespace Slovo.Generator.Formatters
         };
 
 
-        internal WordNet3_0Formatter() : base("wordnet3_0")
+        internal WordNet30Formatter() : base("wordnet3_0")
         {
         }
 
         protected override void Load()
         {
-            Dictionary<string, Def> dict = new Dictionary<string, Def>();
-            using (StreamReader stream = new StreamReader(indexAllFileName))
+            var dict = new Dictionary<string, Def>();
+            using (var stream = new StreamReader(indexAllFileName))
             {
                 string str;
                 while ((str = stream.ReadLine()) != null)
@@ -50,55 +52,137 @@ namespace Slovo.Generator.Formatters
                     dict[word].LemmaList.Add(def);
                 }
 
-                foreach (KeyValuePair<string, Def> pair in dict)
+                foreach (var pair in dict)
                 {
-                    StringBuilder sb = new StringBuilder();
+                    var sb = new StringBuilder();
                     string shortDefinition = null;
-                    int lemmaCount = 0;
-                    foreach (string lemma in pair.Value.LemmaList)
+                    for (var j = 0; j <  pair.Value.LemmaList.Count; j++)
                     {
-                        lemmaCount++;
+                        string lemma = pair.Value.LemmaList[j];
                         string[] spl = lemma.Split(new char[] { ' ' });
                         string pos = spl[0]; // 0
                         int synset_cnt = int.Parse(spl[1]); // 1
                         int p_cnt = int.Parse(spl[2]); // 2
                         int x = 2 + p_cnt + 1 + 1; // 2 - current, p_cnt skip, 1 - sense_cnt, 1 - tagsense_cnt
+                        if (j > 0)
+                        {
+                            sb.Append(Common.NewLineDelimiter);    
+                        }
                         this.AppendDecoratedPos(sb, pos);
                         sb.Append(Common.NewLineDelimiter);
-                        for (int i = 1; i <= synset_cnt; i++)
+                        for (var i = 1; i <= synset_cnt; i++)
                         {
-                            sb.Append(i).Append(".").Append(Common.NewLineDelimiter);
+
                             fileStreamDict[pos].Sr.BaseStream.Seek(long.Parse(spl[x + i]), SeekOrigin.Begin);
                             fileStreamDict[pos].Sr.DiscardBufferedData();
                             string[] lineArray = fileStreamDict[pos].Sr.ReadLine().Split(new char[] {'|'}, 2);
-                            string plainDefinition = EncodeXml(lineArray[1]);
-                            string def = DecorateString(plainDefinition);
-                            shortDefinition = GetShortDefinition(pair.Key, plainDefinition);
-                            sb.Append(def).Append(Common.NewLineDelimiter);
+                            Synset synset = Synset.Parse(lineArray[1]);
+                            shortDefinition = synset.Gloss;
+
+                            if (i > 1)
+                            {
+                                sb.Append(Common.NewLineDelimiter);
+                            }
+
+                            sb.Append(i).Append(". ").Append(synset.Gloss);
+                            if (!string.IsNullOrEmpty(synset.Sentences))
+                            {
+                                sb.Append(Common.NewLineDelimiter + " ");
+                                sb.Append(synset.Sentences);
+                            }
+
+                            sb.Append(Common.NewLineDelimiter);
                         }
                     }
 
                     pair.Value.Value = sb.ToString();
-                    var article = new Article(pair.Key, pair.Value.Value);
-                    article.ShortDefinition = shortDefinition;
+                    var article = new Article(pair.Key, pair.Value.Value) {ShortDefinition = shortDefinition};
                     articles.Add(article);
                 }
             }
         }
 
-        private string EncodeXml(string xml)
+        public class Synset
         {
-            string result;
-            if (string.IsNullOrEmpty(xml))
+            public string Gloss { get; set; }
+
+            public string Sentences { get; set; }
+
+            protected void Encode()
             {
-                result = xml;
+                this.Gloss = EncodeXml(Gloss);
+                this.Sentences = EncodeXml(this.Sentences);
             }
-            else
+
+            public static Synset Parse(string s)
             {
-                result = xml.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;").Replace("'", "&apos;");    
+                var result = new Synset();
+                int posDef = s.IndexOf('"');
+                if (posDef < 0)
+                {
+                    // there are no sentences
+                    result.Gloss = s;
+                    result.Encode();
+                }
+                else
+                {
+                    result.Gloss = s.Substring(0, posDef);
+                    result.Gloss = result.Gloss.TrimEnd(';', ' ');
+                    
+                    if (posDef < s.Length)
+                    {
+                        result.Sentences = s.Substring(posDef);
+                    }
+
+                    result.Encode();
+                    result.Sentences = ItalianQuotes(result.Sentences);
+                }
+
+                return result;
             }
-            
-            return result;
+        }
+
+        public static string ItalianQuotes(string s)
+        {
+            string original = s;
+            int i = 0;
+            int count = 0;
+            while (i < s.Length)
+            {
+                int pos = s.IndexOf(QuoteReplacement, i, StringComparison.OrdinalIgnoreCase);
+                if (pos >= 0)
+                {
+                    s = s.Remove(pos, QuoteReplacement.Length);
+                    string tag = count % 2 == 0 ? StartItalicQuote : EndItalicQuote;
+                    s = s.Insert(pos, tag);
+                    i = pos + tag.Length;
+                    count++;
+
+                    if (count % 2 == 0)
+                    {
+                        if (i < s.Length && s[i] == ';' && count % 2 == 0)
+                        {
+                            // end of example, let's make new line
+                            s = s.Remove(i, 1);
+                            string newLine = Common.NewLineDelimiter.ToString(CultureInfo.InvariantCulture);
+                            s = s.Insert(i, newLine);
+                            i += newLine.Length;
+                        }
+                    }
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            // checking that count is even, otherwise we created invalid xml.
+            return count % 2 == 0 ?  s : original;
+        }
+
+        protected static string EncodeXml(string xml)
+        {
+            return string.IsNullOrEmpty(xml) ? xml : xml.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", QuoteReplacement).Replace("'", "&apos;");
         }
 
         public void Dispose()
@@ -112,11 +196,6 @@ namespace Slovo.Generator.Formatters
         protected override bool IsCurrentLanguage(char ch)
         {
             return Common.IsEnglishLetter(ch);
-        }
-
-        private string DecorateString(string input)
-        {
-            return Regex.Replace(input, @"(\"")(.*)(\"")", "<Span Foreground=\"Gray\">$2</Span>");
         }
 
         private void AppendDecoratedPos(StringBuilder result, string pos)
@@ -146,7 +225,7 @@ namespace Slovo.Generator.Formatters
                 throw new ArgumentOutOfRangeException(pos);
             }
 
-            result.Append(engEnd).ToString();
+            result.Append(engEnd);
         }
 
         protected override string GetShortDefinitionRegex()
