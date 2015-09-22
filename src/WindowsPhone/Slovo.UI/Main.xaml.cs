@@ -55,6 +55,7 @@
             HistoryLabel.Text = CommonResources.History;
             SearchLabel.Text = CommonResources.Search;
             VocabulariesLabel.Text = CommonResources.Vocabularies;
+            HockeyApp.CrashHandler.Instance.HandleCrashes();
         }
 
         private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance { get { return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance; } }

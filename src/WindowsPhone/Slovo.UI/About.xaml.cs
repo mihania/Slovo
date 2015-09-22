@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
-using System.Reflection;
-using Slovo.Resources;
-using Slovo.Core;
-
-namespace Slovo.UI
+﻿namespace Slovo.UI
 {
+    using HockeyApp;
+    using Microsoft.Phone.Controls;
+    using Slovo.Resources;
+    using System;
+    using System.Windows;
+
     public partial class About : PhoneApplicationPage
     {
         public About()
@@ -39,6 +29,11 @@ namespace Slovo.UI
             {
                 new Microsoft.Phone.Tasks.MarketplaceDetailTask().Show();
             });
+        }
+
+        private void FeedbackButton_Click(object sender, EventArgs e)
+        {
+            HockeyClient.Current.ShowFeedback();
         }
     }
 }
