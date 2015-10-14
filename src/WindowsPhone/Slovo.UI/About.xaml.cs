@@ -30,6 +30,7 @@ namespace Slovo.UI
 
         public static string GetPageUrl() 
         {
+            // Sets the page url.
             return "/About.xaml";
         }
 
