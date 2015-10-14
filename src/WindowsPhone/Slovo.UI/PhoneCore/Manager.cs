@@ -5,7 +5,7 @@
     using Slovo.Core.Vocabularies;
     using System;
     using System.Collections.Generic;
-    using Microsoft.ApplicationInsights;
+    using Microsoft.HockeyApp;
 
     internal class Manager<T, E> 
         where T : IStreamGetter, new()

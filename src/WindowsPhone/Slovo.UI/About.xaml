@@ -33,7 +33,7 @@
     </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="true" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/Dark/like.png" Text="Feedback" Click="FeedbackButton_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/Dark/feature.email.png" Text="Private Feedback" Click="FeedbackButton_Click" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
