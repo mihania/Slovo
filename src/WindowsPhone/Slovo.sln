@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovo.UI", "Slovo.UI\Slovo.UI.csproj", "{526FD11B-1349-4A25-8473-9F33AFFA67FD}"
 EndProject
@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{DE2BADC4-D984-4734-9A07-FDD0C4AA3240}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\bin\Release\NuGet\HockeySDK.Core.2.2.7.nupkg = ..\..\..\bin\Release\NuGet\HockeySDK.Core.2.2.7.nupkg
+		..\..\..\bin\Release\NuGet\HockeySDK.Core.2.2.7.symbols.nupkg = ..\..\..\bin\Release\NuGet\HockeySDK.Core.2.2.7.symbols.nupkg
+		..\..\..\bin\Release\NuGet\HockeySDK.WP.2.2.7.nupkg = ..\..\..\bin\Release\NuGet\HockeySDK.WP.2.2.7.nupkg
+		..\..\..\bin\Release\NuGet\HockeySDK.WP.2.2.7.symbols.nupkg = ..\..\..\bin\Release\NuGet\HockeySDK.WP.2.2.7.symbols.nupkg
 		Dependencies\Microsoft.Phone.Controls.Toolkit.dll = Dependencies\Microsoft.Phone.Controls.Toolkit.dll
 		Dependencies\Telerik.Windows.Controls.Primitives.dll = Dependencies\Telerik.Windows.Controls.Primitives.dll
 		Dependencies\Telerik.Windows.Core.dll = Dependencies\Telerik.Windows.Core.dll
@@ -27,25 +31,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovo.Core", "Slovo.Core\Slovo.Core.csproj", "{B4B56C03-B4C0-4261-8ED3-B350E9636780}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://mihailsm.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Slovo.Tests\\Slovo.Tests.csproj
-		SccProjectTopLevelParentUniqueName1 = Slovo.sln
-		SccProjectName1 = Slovo.Tests
-		SccLocalPath1 = Slovo.Tests
-		SccProjectUniqueName2 = Slovo.Core\\Slovo.Core.csproj
-		SccProjectName2 = Slovo.Core
-		SccLocalPath2 = Slovo.Core
-		SccProjectUniqueName3 = Slovo.Generator\\Slovo.Generator.csproj
-		SccProjectName3 = Slovo.Generator
-		SccLocalPath3 = Slovo.Generator
-		SccProjectUniqueName4 = Slovo.UI\\Slovo.UI.csproj
-		SccProjectName4 = Slovo.UI
-		SccLocalPath4 = Slovo.UI
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM

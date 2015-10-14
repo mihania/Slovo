@@ -1,4 +1,4 @@
-﻿using Microsoft.ApplicationInsights;
+﻿using Microsoft.HockeyApp;
 
 namespace Slovo
 {
@@ -22,6 +22,7 @@ namespace Slovo
         /// </summary>
         public App()
         {
+            HockeyApp.CrashHandler.Instance.Configure(this, "093403c29cbe4b87b647d6a2f3651285", RootFrame);
             TelemetryClient = new TelemetryClient();
 
             // Global handler for uncaught exceptions. 
@@ -52,7 +53,6 @@ namespace Slovo
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
-
         }
 
         /// <summary>

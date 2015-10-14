@@ -12,7 +12,7 @@
     using System.Collections.ObjectModel;
     using System.Text;
     using System.Windows;
-    using Microsoft.ApplicationInsights.DataContracts;
+    using Microsoft.HockeyApp.DataContracts;
 
     public partial class DirectionArticle : PhoneApplicationPage
     {
@@ -219,12 +219,11 @@
         private void SpeakOnline()
         {
             OfflinePronounciation.SpeakAsync(tbWord.Text, this.Direction.SourceLanguageCode);
-            //if (!speakStarted)
-            //{
-            //    speakStarted = true;
-            //    OnlinePronounciation.SpeakAsync(tbWord.Text, this.Direction.SourceLanguageCode);
-                
-            //}
+            if (!speakStarted)
+            {
+                speakStarted = true;
+                OfflinePronounciation.SpeakAsync(tbWord.Text, this.Direction.SourceLanguageCode);
+            }
         }
 
         //private void OnlinePronounciation_SpeakCompleted(object sender, EventArgs e)

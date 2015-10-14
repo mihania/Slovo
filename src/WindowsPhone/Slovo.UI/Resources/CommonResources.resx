@@ -168,4 +168,7 @@ Ojegov dictionary - 38000 entries.</value>
   <data name="Next" xml:space="preserve">
     <value>Next</value>
   </data>
+  <data name="PrivateFeedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
 </root>

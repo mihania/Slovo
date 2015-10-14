@@ -22,13 +22,18 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"></StackPanel>
-        <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="0,636,0,0" Name="tbCopyright" Text="" VerticalAlignment="Top" Width="480" TextAlignment="Center" />
-        <TextBlock Grid.Row="1" Height="106" HorizontalAlignment="Left" Margin="124,34,0,0" 
-                   Name="tbDescription" 
-                   Text="" VerticalAlignment="Top" Width="330" FontSize="20" TextWrapping="Wrap" />
-        <Image Name="image1" Stretch="Fill" Margin="15,35,362,577" Width="100" Height="100" Grid.Row="1" Source="/Slovo;component/Images/Background.png" />
+        <Image Name="image1" Stretch="Uniform" Margin="15,35,362,577" Width="100" Height="100" Grid.Row="1" Source="/Slovo;component/Images/Background.png" />
         <TextBlock Height="51" HorizontalAlignment="Left" Margin="145,-6,0,0" Name="tbProgramName" Text="" Width="181" FontSize="40" TextAlignment="Center" />
+        <TextBlock Grid.Row="1" Height="150" HorizontalAlignment="Left" Margin="124,34,0,0" 
+                   Name="tbDescription" 
+                   Text="" VerticalAlignment="Top" Width="330" FontSize="24" TextWrapping="Wrap" />
         <TextBlock Grid.Row="1" Height="174" HorizontalAlignment="Left" Margin="15,181,0,0" Name="tbVocabulariesCapacity" Text="" VerticalAlignment="Top" Width="439" TextWrapping="Wrap" />
-        <TextBlock Grid.Row="1" Height="197" HorizontalAlignment="Left" Margin="15,358,0,0" Name="tbLicense" Text="" VerticalAlignment="Top" Width="439" TextWrapping="Wrap" />
+        <TextBlock Grid.Row="1" Height="197" HorizontalAlignment="Left" Margin="15,308,0,0" Name="tbLicense" Text="" VerticalAlignment="Top" Width="439" TextWrapping="Wrap" />
+        <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="0,500,0,0" Name="tbCopyright" Text="" VerticalAlignment="Top" Width="480" TextAlignment="Center" />
     </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="true" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/Dark/feature.email.png" Text="Private Feedback" Click="FeedbackButton_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
