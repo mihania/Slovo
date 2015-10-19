@@ -22,6 +22,7 @@ namespace Slovo
         /// </summary>
         public App()
         {
+            // add telemetry client.
             TelemetryClient = new TelemetryClient();
 
             // Global handler for uncaught exceptions. 
