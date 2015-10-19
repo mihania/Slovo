@@ -31,4 +31,9 @@
         <TextBlock Grid.Row="1" Height="174" HorizontalAlignment="Left" Margin="15,181,0,0" Name="tbVocabulariesCapacity" Text="" VerticalAlignment="Top" Width="439" TextWrapping="Wrap" />
         <TextBlock Grid.Row="1" Height="197" HorizontalAlignment="Left" Margin="15,358,0,0" Name="tbLicense" Text="" VerticalAlignment="Top" Width="439" TextWrapping="Wrap" />
     </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="true" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/Dark/feature.email.png" Text="Private Feedback" Click="FeedbackButton_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

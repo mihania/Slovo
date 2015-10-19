@@ -14,7 +14,8 @@
     using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Navigation;
-    using Microsoft.ApplicationInsights.DataContracts;
+    using Microsoft.HockeyApp.DataContracts;
+    using Microsoft.HockeyApp;
 
     public partial class Main : PhoneApplicationPage
     {
@@ -55,6 +56,8 @@
             HistoryLabel.Text = CommonResources.History;
             SearchLabel.Text = CommonResources.Search;
             VocabulariesLabel.Text = CommonResources.Vocabularies;
+
+            CrashHandler.Instance.HandleCrashes(false);
         }
 
         private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance { get { return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance; } }

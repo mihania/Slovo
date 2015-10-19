@@ -168,4 +168,7 @@ Cловарь Ожегова - 38 тыс. слов.
   <data name="Next" xml:space="preserve">
     <value>Вперед</value>
   </data>
+  <data name="PrivateFeedback" xml:space="preserve">
+    <value>Отзыв</value>
+  </data>
 </root>

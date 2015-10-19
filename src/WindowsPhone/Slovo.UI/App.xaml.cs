@@ -1,4 +1,4 @@
-﻿using Microsoft.ApplicationInsights;
+﻿using Microsoft.HockeyApp;
 
 namespace Slovo
 {
@@ -22,6 +22,8 @@ namespace Slovo
         /// </summary>
         public App()
         {
+            CrashHandler.Instance.Configure(this, "093403c29cbe4b87b647d6a2f3651285", RootFrame);
+
             // add telemetry client.
             TelemetryClient = new TelemetryClient();
 

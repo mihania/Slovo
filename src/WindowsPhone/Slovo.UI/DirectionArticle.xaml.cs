@@ -12,7 +12,7 @@
     using System.Collections.ObjectModel;
     using System.Text;
     using System.Windows;
-    using Microsoft.ApplicationInsights.DataContracts;
+    using Microsoft.HockeyApp.DataContracts;
 
     public partial class DirectionArticle : PhoneApplicationPage
     {
