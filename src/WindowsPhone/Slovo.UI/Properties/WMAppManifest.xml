@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en" />
   <Languages xmlns="">
     <Language code="en" />
@@ -21,20 +21,14 @@
           <SmallImageURI IsResource="false" IsRelative="true">Images\Background.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsResource="false" IsRelative="true">Images\Background.png</BackgroundImageURI>
-          <Title>
-          </Title>
-          <BackContent>
-          </BackContent>
-          <BackBackgroundImageURI>
-          </BackBackgroundImageURI>
-          <BackTitle>
-          </BackTitle>
+          <Title></Title>
+          <BackContent></BackContent>
+          <BackBackgroundImageURI></BackBackgroundImageURI>
+          <BackTitle></BackTitle>
           <LargeBackgroundImageURI IsRelative="true" IsResource="false">Images\WideTile.png</LargeBackgroundImageURI>
           <LargeBackContent />
-          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
-          </LargeBackBackgroundImageURI>
-          <DeviceLockImageURI>
-          </DeviceLockImageURI>
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false"></LargeBackBackgroundImageURI>
+          <DeviceLockImageURI></DeviceLockImageURI>
           <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>

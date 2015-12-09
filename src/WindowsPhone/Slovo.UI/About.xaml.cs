@@ -1,6 +1,6 @@
 ﻿namespace Slovo.UI
 {
-    using Microsoft.HockeyApp;
+    using Microsoft.ApplicationInsights;
     using Microsoft.Phone.Controls;
     using Slovo.Resources;
     using System;
@@ -41,7 +41,7 @@
         private void FeedbackButton_Click(object sender, EventArgs e)
         {
             ManagerInstance.TelemetryClient.TrackEvent("About.FeedbackButton_Click");
-            HockeyClient.Current.ShowFeedback();
+            // Microsoft.HockeyApp.HockeyClient.Current.ShowFeedback();
         }
     }
 }

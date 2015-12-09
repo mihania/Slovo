@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Slovo.Core;
 using Slovo.Core.Vocabularies;
-using Microsoft.HockeyApp.DataContracts;
+using Microsoft.ApplicationInsights.DataContracts;
 
 namespace NokiaFeedbackDemo.Controls
 {

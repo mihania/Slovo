@@ -14,8 +14,8 @@
     using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Navigation;
-    using Microsoft.HockeyApp.DataContracts;
-    using Microsoft.HockeyApp;
+    using Microsoft.ApplicationInsights.DataContracts;
+    using Microsoft.ApplicationInsights;
 
     public partial class Main : PhoneApplicationPage
     {
@@ -40,6 +40,7 @@
         public Main()
         {
             InitializeComponent();
+            Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync("093403c29cbe4b87b647d6a2f3651285", WindowsCollectors.Metadata | WindowsCollectors.Session | WindowsCollectors.PageView | WindowsCollectors.UnhandledException);
             
             // ToDo: Remove: verify RU culture
             // System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
@@ -57,7 +58,7 @@
             SearchLabel.Text = CommonResources.Search;
             VocabulariesLabel.Text = CommonResources.Vocabularies;
 
-            CrashHandler.Instance.HandleCrashes(false);
+            // CrashHandler.Instance.HandleCrashes(false);
         }
 
         private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance { get { return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance; } }

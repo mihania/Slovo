@@ -13,7 +13,7 @@
     <RootNamespace>Slovo</RootNamespace>
     <AssemblyName>Slovo</AssemblyName>
     <TargetFrameworkVersion Condition=" '$(EnableWp7)' == 'true' ">v4.0</TargetFrameworkVersion>
-    <TargetFrameworkVersion Condition=" '$(EnableWp7)' == 'false' ">v8.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition=" '$(EnableWp7)' == 'false' ">v8.1</TargetFrameworkVersion>
     <SilverlightVersion Condition=" '$(EnableWp7)' == 'true' ">$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightVersion Condition=" '$(EnableWp7)' == 'false' ">
     </SilverlightVersion>
@@ -24,7 +24,7 @@
     <SupportedCultures>ru-RU</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>Slovo_$(Configuration)_$(Platform)_EnableWp7_$(EnableWp7).xap</XapFilename>
+    <XapFilename>Slovo.UI_$(Configuration)_$(Platform).xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>Slovo.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
@@ -36,10 +36,12 @@
     <SupportedCultures>en;ru</SupportedCultures>
     <Utf8Output>true</Utf8Output>
     <ExpressionBlendVersion>4.0.30816.0</ExpressionBlendVersion>
-    <MinimumVisualStudioVersion Condition=" '$(EnableWp7)' == 'false' ">11.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion Condition=" '$(EnableWp7)' == 'false' ">12.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/0462dd18-0167-451d-8d02-208e35dff783/resourcegroups/Group/providers/microsoft.insights/components/Slovo</ApplicationInsightsResourceId>
+    <TargetFrameworkProfile />
+    <DefaultLanguage>en-US</DefaultLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -126,58 +128,33 @@
 -->
   </PropertyGroup>
   <ItemGroup Condition=" '$(EnableWp7)' == 'true' ">
-    <Reference Include="Microsoft.Phone" />
-    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Phone.Interop" />
-    <Reference Include="Microsoft.Xna.Framework" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Windows" />
-    <Reference Include="system" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.Xml" />
     <Reference Include="Telerik.Windows.Controls.Primitives, Version=2013.1.219.2040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(EnableWp7)' == 'false' ">
-    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
-  </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.HockeyApp, Version=3.0.0.27265, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HockeySDK.WP.3.0.0-build27265\lib\wp8\Microsoft.HockeyApp.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.1.0\lib\wp8\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.HockeyApp.Extensibility, Version=3.0.0.27265, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HockeySDK.WP.3.0.0-build27265\lib\wp8\Microsoft.HockeyApp.Extensibility.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Windows">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsApps.1.1.0\lib\wp8\Microsoft.ApplicationInsights.Extensibility.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.HockeyApp.Kit, Version=3.0.0.27265, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HockeySDK.WP.3.0.0-build27265\lib\wp8\Microsoft.HockeyApp.Kit.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.ApplicationInsights.PersistenceChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PersistenceChannel.1.1.0\lib\wp8\Microsoft.ApplicationInsights.PersistenceChannel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.HockeyApp.PersistenceChannel, Version=3.0.0.27265, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HockeySDK.WP.3.0.0-build27265\lib\wp8\Microsoft.HockeyApp.PersistenceChannel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.HockeyAppPCL, Version=3.0.0.27265, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HockeySDK.Core.3.0.0-build27265\lib\portable-net45+win8+wp8+wpa81+win81\Microsoft.HockeyAppPCL.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\Dependencies\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\wp8\Microsoft.Threading.Tasks.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\wp8\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
-      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -209,7 +186,6 @@
     <Compile Include="Controls\ScrollableTextBlock.cs" />
     <Compile Include="PhoneCore\History.cs" />
     <Compile Include="PhoneCore\Manager.cs" />
-    <Compile Include="PhoneCore\Pronounciation\OfflinePronounciation_EnableWp7.cs" />
     <Compile Include="PhoneCore\Tile.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="Main.xaml.cs">
@@ -234,11 +210,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CommonResources.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\ServiceReferences\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="SettingsControl.xaml.cs">
@@ -289,6 +260,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\BadgeLogo.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\SquareTile150x150.png" />
+    <Content Include="Assets\SquareTile71x71.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\WideLogo.png" />
     <Content Include="Data\Configuration.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -304,24 +282,16 @@
     <!--
     <None Include="ApplicationInsights.config" />
 -->
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReferences\configuration91.svcinfo" />
-    <None Include="Service References\ServiceReferences\configuration.svcinfo" />
-    <None Include="Service References\ServiceReferences\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Data\wordnet3_0.def" />
     <Content Include="Data\wordnet3_0.lst" />
-    <Content Include="HockeyAppContent\Attach.png" />
-    <Content Include="HockeyAppContent\Cancel.png" />
-    <Content Include="HockeyAppContent\Photo.png" />
-    <Content Include="HockeyAppContent\Reply.png" />
-    <Content Include="HockeyAppContent\Send.png" />
     <Content Include="Images\Dark\appbar.back.rest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -335,26 +305,6 @@
     </Content>
     <Content Include="Images\WideTile.png" />
     <Content Include="ServiceReferences.ClientConfig" />
-    <None Include="Service References\ServiceReferences\Slovo.ServiceReferences.GetTranslationsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferences\Slovo.ServiceReferences.TranslateArrayResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferences\soap.wsdl" />
-    <None Include="Service References\ServiceReferences\soap.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferences\soap1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferences\soap2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferences\soap3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferences\SoapService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ApplicationIcon.png">
@@ -397,19 +347,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReferences\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Slovo.Core\Slovo.Core.csproj">
       <Project>{B4B56C03-B4C0-4261-8ED3-B350E9636780}</Project>
       <Name>Slovo.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Condition=" '$(EnableWp7)' == 'true' " Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
-  <Import Condition=" '$(EnableWp7)' == 'true' " Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <Import Condition=" '$(EnableWp7)' == 'true' " Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Condition=" '$(EnableWp7)' == 'true' " Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <Import Condition=" '$(EnableWp7)' == 'false' " Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Condition=" '$(EnableWp7)' == 'false' " Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
