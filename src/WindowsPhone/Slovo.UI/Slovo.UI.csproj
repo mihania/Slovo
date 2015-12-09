@@ -194,7 +194,6 @@
     <Compile Include="Article.xaml.cs">
       <DependentUpon>Article.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PhoneCore\Tile__EnableWp7.cs" />
     <Compile Include="PhoneStreamGetter.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>

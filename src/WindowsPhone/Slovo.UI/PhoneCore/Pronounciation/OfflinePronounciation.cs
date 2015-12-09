@@ -1,7 +1,5 @@
 ﻿using Slovo.Core;
 
-#if EnableWp7
-#else
 namespace Slovo.UI.Core.Pronounciation
 {
     using System;
@@ -61,4 +59,3 @@ namespace Slovo.UI.Core.Pronounciation
         }
     }
 }
-#endif
