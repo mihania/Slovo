@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovo.Tests", "Slovo.Tests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovo.Core", "Slovo.Core\Slovo.Core.csproj", "{B4B56C03-B4C0-4261-8ED3-B350E9636780}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slovo.UI_UWP", "Slovo.UI_UWP\Slovo.UI_UWP.csproj", "{E6E18548-8244-4ACF-80B6-8E9AED820F1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,26 @@ Global
 		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Release|x64.ActiveCfg = Release|Any CPU
 		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Release|x64.Build.0 = Release|Any CPU
 		{B4B56C03-B4C0-4261-8ED3-B350E9636780}.Release|x86.ActiveCfg = Release|Any CPU
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|ARM.Build.0 = Debug|ARM
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|ARM.Deploy.0 = Debug|ARM
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|x64.ActiveCfg = Debug|x64
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|x64.Build.0 = Debug|x64
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|x64.Deploy.0 = Debug|x64
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|x86.ActiveCfg = Debug|x86
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|x86.Build.0 = Debug|x86
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Debug|x86.Deploy.0 = Debug|x86
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|Any CPU.ActiveCfg = Release|x86
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|ARM.ActiveCfg = Release|ARM
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|ARM.Build.0 = Release|ARM
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|ARM.Deploy.0 = Release|ARM
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|x64.ActiveCfg = Release|x64
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|x64.Build.0 = Release|x64
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|x64.Deploy.0 = Release|x64
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|x86.ActiveCfg = Release|x86
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|x86.Build.0 = Release|x86
+		{E6E18548-8244-4ACF-80B6-8E9AED820F1E}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

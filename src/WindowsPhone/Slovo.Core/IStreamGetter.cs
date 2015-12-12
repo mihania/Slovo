@@ -1,9 +1,7 @@
-﻿
-namespace Slovo.Core
+﻿namespace Slovo.Core
 {
-    using System;
     using System.IO;
-    using System.Windows;
+    using System.Threading.Tasks;
 
     public interface IStreamGetter
     {
