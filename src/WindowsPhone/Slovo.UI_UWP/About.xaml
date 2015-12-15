@@ -1,0 +1,31 @@
+<Page x:Class="Slovo.UI.About" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480">
+  <!--LayoutRoot is the root grid where all page content is placed-->
+  <Grid x:Name="LayoutRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <!--TitlePanel contains the name of the application and page title-->
+    <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"></StackPanel>
+    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="0,636,0,0" Name="tbCopyright" Text="" VerticalAlignment="Top" Width="480" TextAlignment="Center" />
+    <TextBlock Grid.Row="1" Height="106" HorizontalAlignment="Left" Margin="124,34,0,0" Name="tbDescription" Text="" VerticalAlignment="Top" Width="330" FontSize="20" TextWrapping="Wrap" />
+    <Image Name="image1" Stretch="Fill" Margin="15,35,362,577" Width="100" Height="100" Grid.Row="1" Source="/Slovo;component/Images/Background.png" x:FieldModifier="internal" />
+    <TextBlock Height="51" HorizontalAlignment="Left" Margin="145,-6,0,0" Name="tbProgramName" Text="" Width="181" FontSize="40" TextAlignment="Center" />
+    <TextBlock Grid.Row="1" Height="174" HorizontalAlignment="Left" Margin="15,181,0,0" Name="tbVocabulariesCapacity" Text="" VerticalAlignment="Top" Width="439" TextWrapping="Wrap" />
+    <TextBlock Grid.Row="1" Height="197" HorizontalAlignment="Left" Margin="15,358,0,0" Name="tbLicense" Text="" VerticalAlignment="Top" Width="439" TextWrapping="Wrap" />
+  </Grid>
+  <Page.BottomAppBar>
+    <CommandBar>
+      <AppBarButton Label="Private Feedback" Click="FeedbackButton_Click">
+        <AppBarButton.Icon>
+          <BitmapIcon UriSource="/Images/Dark/feature.email.png" />
+        </AppBarButton.Icon>
+      </AppBarButton>
+      <!--IsMenuEnabled="True"-->
+    </CommandBar>
+  </Page.BottomAppBar>
+  <!--FontSize="{StaticResource PhoneFontSizeNormal}"-->
+  <!--SupportedOrientations="Portrait"-->
+  <!--Orientation="Portrait"-->
+  <!--shell:SystemTray.IsVisible="True"-->
+</Page>

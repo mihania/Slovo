@@ -1,0 +1,346 @@
+Loading projects
+Finishing loading projects
+Starting task: ConversionSetupTask
+[ConversionSetupTask] Info: 
+Conversion tool version: 1.0.320.1388
+Starting task: CallGraphGenerationTask
+Starting task: CallGraphGenerationTask
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\AppResources.Designer.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.Designer.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.ru.Designer.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[CallGraphGenerationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+[CallGraphGenerationTask] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: "Flow cut" decoration
+Starting task: "Flow cut" decoration
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\AppResources.Designer.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.Designer.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.ru.Designer.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+["Flow cut" decoration] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+["Flow cut" decoration] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: AsyncAwaitChangerTask
+Starting task: PageIdentificationTask
+Starting task: NavigationMigrationTask
+Starting task: NavigationMigrationTask
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\AppResources.Designer.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.Designer.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.ru.Designer.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[NavigationMigrationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+[NavigationMigrationTask] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: RemoveUsingStatementsTask
+Starting task: RemoveUsingStatementsTask
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\AppResources.Designer.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.Designer.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.ru.Designer.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[RemoveUsingStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+[RemoveUsingStatementsTask] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: GroupInitializationStatementsTask
+Starting task: GroupInitializationStatementsTask
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\AppResources.Designer.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.Designer.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.ru.Designer.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[GroupInitializationStatementsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+[GroupInitializationStatementsTask] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: CompletedActionPatternTask
+Starting task: CompletedActionPatternTask
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\AppResources.Designer.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.Designer.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.ru.Designer.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[CompletedActionPatternTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+[CompletedActionPatternTask] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: DynamicEventHandlerDecoratorTask
+Starting task: DynamicEventHandlerDecoratorTask
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\AppResources.Designer.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.Designer.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.ru.Designer.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[DynamicEventHandlerDecoratorTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+[DynamicEventHandlerDecoratorTask] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: PhoneMappingsTask
+Starting task: PhoneMappingsTask
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[PhoneMappingsTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+[PhoneMappingsTask] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: XamlMapperTask
+[XamlMapperTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml
+[XamlMapperTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml
+[XamlMapperTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml
+[XamlMapperTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml
+[XamlMapperTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml
+[XamlMapperTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml
+[XamlMapperTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml
+[XamlMapperTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml
+[XamlMapperTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Themes\generic.xaml
+Starting task: NamespaceReferenceTransformationTask
+Starting task: NamespaceReferenceTransformationTask
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\AppResources.Designer.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.Designer.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.ru.Designer.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[NamespaceReferenceTransformationTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+[NamespaceReferenceTransformationTask] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: AppXamlCorrectionTask
+Starting task: AppXamlCorrectionTask
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\AppResources.Designer.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.Designer.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Resources\CommonResources.ru.Designer.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[AppXamlCorrectionTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+[AppXamlCorrectionTask] Processing C:\Users\mihailsm\AppData\Local\Temp\WindowsPhone,Version=v8.1.AssemblyAttributes.cs
+Starting task: UniversalManifestGenerationTask
+Starting task: AddSplashScreenImageWhenMissingTask
+Starting task: ResourceFilesRelocatorTask
+Starting task: MigratorPrettyPrintingTask
+Starting task: MigratorPrettyPrintingTask
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\AssemblyCommonInfo.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ClearableTextBox.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\StorageHelper.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Tile.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\LocalizedStrings.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Settings.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\SettingsControl.xaml.cs
+[MigratorPrettyPrintingTask] Processing D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs
+Starting task: UAPSolutionGenerationTask
+Starting task: CleanupTask
+Starting task: ConversionReportGeneratorTask

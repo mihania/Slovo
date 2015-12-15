@@ -1,0 +1,44 @@
+<UserControl x:Class="Slovo.SettingsControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:rlb="using:Slovo.Controls" mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="480">
+  <Grid x:Name="LayoutRoot">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="36" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <StackPanel x:Name="SearhRow" Grid.Row="0" Margin="0, 18, 0,0">
+      <ProgressBar x:Name="PerformanceProgressBar" />
+    </StackPanel>
+    <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,0,0">
+      <ListBox Name="DirectionList" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <StackPanel>
+              <TextBlock Text="{Binding Path=Name}" FontSize="40" />
+              <rlb:ReorderListBox x:Name="listBox" Grid.Row="2" Margin="12,0,0,12" IsReorderEnabled="true" ItemsSource="{Binding Path=Vocabularies}" ScrollViewer.VerticalScrollBarVisibility="Disabled" x:FieldModifier="internal">
+                <rlb:ReorderListBox.ItemTemplate>
+                  <DataTemplate>
+                    <CheckBox Content="{Binding Path=PivotHeader}" IsChecked="{Binding Path=IsEnabled, Mode=TwoWay}" Margin="12,4,12,4" FontSize="30" />
+                  </DataTemplate>
+                </rlb:ReorderListBox.ItemTemplate>
+                <rlb:ReorderListBox.ItemContainerStyle>
+                  <Style TargetType="rlb:ReorderListBoxItem">
+                    <Setter Property="DragHandleTemplate">
+                      <Setter.Value>
+                        <DataTemplate>
+                          <Canvas Width="52" Height="48" Background="Transparent">
+                            <Polygon Fill="Gray" Points="16,20 4,20 22,4 22,44 16,44" />
+                            <Polygon Fill="Gray" Points="32,28 44,28 26,44 26,4 32,4" />
+                          </Canvas>
+                        </DataTemplate>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </rlb:ReorderListBox.ItemContainerStyle>
+              </rlb:ReorderListBox>
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+    </Grid>
+  </Grid>
+  <!--FontSize="{StaticResource PhoneFontSizeNormal}"-->
+</UserControl>

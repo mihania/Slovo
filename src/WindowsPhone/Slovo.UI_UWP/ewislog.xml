@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EwiData>
+  <UpgradeLog ProjectName="Slovo.UI.csproj">
+    <Settings />
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Version' library class. Its 'Major' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Version' library class. Its 'Minor' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'Microsoft.ApplicationInsights.TelemetryClient' library class. Its 'TrackEvent' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\App.xaml.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="1">Microsoft.Phone.Shell.LaunchingEventArgs was not upgraded</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="1">System.Windows.Navigation.NavigationContext.QueryString was not upgraded</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\FeedbackOverlay.xaml.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="12">The tool does not have information on the 'Microsoft.ApplicationInsights.TelemetryClient' library class. Its 'TrackEvent' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBox.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="4">The tool does not have information on the 'System.Windows.Controls.UIElementCollection' library class. Its 'IndexOf' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Windows.Controls.UIElementCollection' library class. Its 'Count' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ReorderListBoxItem.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Windows.VisualTransition' library class. Its 'Storyboard' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Pronounciation\OfflinePronounciation.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Collections.Generic.IReadOnlyList' library class. Its 'Count' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="5">System.Windows.Navigation.NavigationContext.QueryString was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Collections.Generic.KeyValuePair' library class. Its 'Key' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Collections.Generic.KeyValuePair' library class. Its 'Value' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Collections.Generic.Dictionary' library class. Its 'Count' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="4">The tool does not have information on the 'Microsoft.Phone.Controls.PivotItemEventArgs' library class. Its 'Item' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'Microsoft.ApplicationInsights.TelemetryClient' library class. Its 'TrackPageView' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Collections.Generic.Dictionary' library class. Its 'TryGetValue' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Guid' library class. Its 'ToString' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'Microsoft.ApplicationInsights.DataContracts.EventTelemetry' library class. Its 'Properties' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'Microsoft.ApplicationInsights.TelemetryClient' library class. Its 'TrackEvent' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Helpers\FeedbackHelper.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="4">The tool does not have information on the 'System.Exception' library class. Its 'ToString' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\HistoryControl.xaml.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="1">System.Windows.Controls.Frame.Navigate was not upgraded</Issue>
+        <Issue Type="Runtime" Number="2101" Quantity="1">This element requires a special manual conversion . Reference URL: 'https://msdn.microsoft.com/en-us/library/windows/apps/hh702394.aspx'</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Controls\ScrollableTextBlock.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Windows.Controls.UIElementCollection' library class. Its 'Clear' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="4">The tool does not have information on the 'System.Windows.Controls.RichTextBox' library class. Its 'Xaml' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="4">The tool does not have information on the 'System.Windows.Controls.UIElementCollection' library class. Its 'Add' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Windows.Controls.RichTextBox' library class. Its 'TextWrapping' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Windows.Controls.RichTextBox' library class. Its 'FontSize' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Windows.Controls.RichTextBox' library class. Its 'FontFamily' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Windows.Controls.RichTextBox' library class. Its 'FontWeight' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Windows.Controls.RichTextBox' library class. Its 'Foreground' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Windows.Controls.RichTextBox' library class. Its 'Margin' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Nullable' library class. Its 'HasValue' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Nullable' library class. Its 'Value' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\History.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="1">System.IO.IsolatedStorage.IsolatedStorageSettings.Save was not upgraded</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneCore\Manager.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Int32' library class. Its 'ToString' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Collections.Generic.Dictionary' library class. Its 'ContainsKey' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="10">The tool does not have information on the 'Microsoft.Phone.Controls.PivotItemEventArgs' library class. Its 'Item' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'Microsoft.ApplicationInsights.DataContracts.EventTelemetry' library class. Its 'Properties' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'Microsoft.ApplicationInsights.TelemetryClient' library class. Its 'TrackEvent' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\PhoneStreamGetter.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Version' library class. Its 'Major' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Version' library class. Its 'Minor' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\VirtualWordList.cs" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1113" Quantity="1">The tool does not have information on the 'System.Collections.Generic.IList' library class. Its 'Count' member was referenced.</Issue>
+        <Issue Type="Runtime" Number="1113" Quantity="2">The tool does not have information on the 'System.Int32' library class. Its 'ToString' member was referenced.</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\About.xaml" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="2">PhoneApplicationPage.SupportedOrientations was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1101" Quantity="1">PhoneApplicationPage.Orientation was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1101" Quantity="1">PhoneApplicationPage.IsVisible was not upgraded</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Buy.xaml" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="2">PhoneApplicationPage.SupportedOrientations was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1101" Quantity="1">PhoneApplicationPage.Orientation was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1101" Quantity="1">PhoneApplicationPage.IsVisible was not upgraded</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\DirectionArticle.xaml" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="2">PhoneApplicationPage.SupportedOrientations was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1101" Quantity="1">PhoneApplicationPage.Orientation was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1101" Quantity="1">PhoneApplicationPage.IsVisible was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1111" Quantity="1">The tool does not have information on the 'PivotHeadersControl' XAML element with namespace 'clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls'</Issue>
+        <Issue Type="Runtime" Number="1111" Quantity="1">The tool does not have information on the 'Grid' XAML element with namespace 'clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls'</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Main.xaml" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="2">PhoneApplicationPage.SupportedOrientations was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1101" Quantity="1">PhoneApplicationPage.Orientation was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1101" Quantity="1">PhoneApplicationPage.IsVisible was not upgraded</Issue>
+        <Issue Type="Runtime" Number="1111" Quantity="1">The tool does not have information on the 'PivotHeadersControl' XAML element with namespace 'clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls'</Issue>
+        <Issue Type="Runtime" Number="1111" Quantity="1">The tool does not have information on the 'Grid' XAML element with namespace 'clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls'</Issue>
+      </Section>
+    </File>
+    <File OldPath="D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI\Article.xaml" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1101" Quantity="1">PhoneApplicationPage.IsVisible was not upgraded</Issue>
+      </Section>
+    </File>
+    <File OldPath="Slovo.UI.csproj" NewPath="">
+      <Section Name="Mappings">
+        <Issue Type="Runtime" Number="1221" Quantity="1">Removed reference : 'Microsoft.ApplicationInsights' because no mappings were found for it</Issue>
+        <Issue Type="Runtime" Number="1221" Quantity="1">Removed reference : 'Microsoft.ApplicationInsights.Extensibility.Windows' because no mappings were found for it</Issue>
+        <Issue Type="Runtime" Number="1221" Quantity="1">Removed reference : 'Microsoft.ApplicationInsights.PersistenceChannel' because no mappings were found for it</Issue>
+        <Issue Type="Runtime" Number="1221" Quantity="1">Removed reference : 'Microsoft.Phone.Controls.Toolkit' because no mappings were found for it</Issue>
+        <Issue Type="Runtime" Number="1221" Quantity="1">Removed reference : 'Microsoft.Threading.Tasks' because no mappings were found for it</Issue>
+        <Issue Type="Runtime" Number="1221" Quantity="1">Removed reference : 'Microsoft.Threading.Tasks.Extensions' because no mappings were found for it</Issue>
+        <Issue Type="Runtime" Number="1221" Quantity="1">Removed reference : 'Microsoft.Threading.Tasks.Extensions.Phone' because no mappings were found for it</Issue>
+      </Section>
+    </File>
+  </UpgradeLog>
+</EwiData>
