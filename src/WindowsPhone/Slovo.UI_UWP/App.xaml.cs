@@ -122,8 +122,8 @@ namespace Slovo
                 case "_About.xaml":
                     rootFrame.Navigate(typeof(Slovo.UI.About), e.Arguments);
                     return true;
-                case "_DirectionArticle.xaml":
-                    rootFrame.Navigate(typeof(Slovo.DirectionArticle), e.Arguments);
+                case "_DirectionArticle2.xaml":
+                    rootFrame.Navigate(typeof(Slovo.DirectionArticle2), e.Arguments);
                     return true;
                 case "_Main.xaml":
                     rootFrame.Navigate(typeof(Slovo.UI.Main), e.Arguments);

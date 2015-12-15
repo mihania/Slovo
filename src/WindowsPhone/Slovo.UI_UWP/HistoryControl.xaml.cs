@@ -40,7 +40,7 @@ namespace Slovo
             {
                 var directionArticle = (Slovo.Core.Directions.DirectionArticle)list.SelectedItem;
                 ManagerInstance.History.CurrentIndex = ManagerInstance.History.Items.IndexOf(directionArticle);
-                (Window.Current.Content as Frame).Navigate(typeof(DirectionArticle), directionArticle);
+                (Window.Current.Content as Frame).Navigate(typeof(DirectionArticle2), directionArticle);
             }
         }
 

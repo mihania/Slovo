@@ -1,4 +1,4 @@
-namespace Slovo
+﻿namespace Slovo
 {
     using Slovo.Core;
     using Slovo.Core.Directions;
@@ -12,14 +12,14 @@ namespace Slovo
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Navigation;
 
-    public partial class DirectionArticle : Page
+    public partial class DirectionArticle2 : Page
     {
         private const int BackButtonIndex = 0;
         private const int ListenButtonIndex = 1;
         private const int NextButtonIndex = 2;
         private DirectionArticleNavigateParams navigateParams;
 
-        public DirectionArticle()
+        public DirectionArticle2()
         {
             this.InitializeComponent();
             ((AppBarButton)((CommandBar)BottomAppBar).PrimaryCommands[BackButtonIndex]).Label = CommonResources.Back;
@@ -117,7 +117,7 @@ namespace Slovo
         {
             tbWord.Text = sense;
             PivotArticle.Items.Clear();
-            
+
             //WINDOWS_PHONE_SL_TO_UWP: (1101) System.Windows.Navigation.NavigationContext.QueryString was not upgraded
             // ((Frame)Windows.UI.Xaml.Window.Current.Content).QueryString["directionId"] = ((int)direction.Id).ToString();
 
