@@ -5,9 +5,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       mc:Ignorable="d" 
       d:DesignWidth="480" 
-      d:DesignHeight="768" 
-      xmlns:controlsPrimitives="using:Microsoft.Phone.Controls.Primitives" 
-      xmlns:ctrl="using:NokiaFeedbackDemo.Controls">
+      d:DesignHeight="768">
   <Page.Resources>
     <Style x:Key="PivotStyle1" TargetType="Pivot">
       <Setter Property="Margin" Value="0" />
@@ -31,10 +29,6 @@
               </Grid.RowDefinitions>
               <Grid Background="{TemplateBinding Background}" CacheMode="BitmapCache" Grid.RowSpan="3" />
               <ContentPresenter ContentTemplate="{TemplateBinding TitleTemplate}" Content="{TemplateBinding Title}" Margin="24,57,0,-7" />
-               <!-- //WINDOWS_PHONE_SL_TO_UWP: Commneted this line because of compilation errors. -->
-                <!--
-              <PivotHeadersControl x:Name="HeadersListElement" Grid.Row="1" Margin="0" x:FieldModifier="internal" />
-                --> 
               <ItemsPresenter x:Name="PivotItemPresenter" Margin="0,0,0,0" Grid.Row="2" x:FieldModifier="internal" />
             </Grid>
           </ControlTemplate>
@@ -61,7 +55,6 @@
           </DataTemplate>
         </Pivot.HeaderTemplate>
       </Pivot>
-      <ctrl:FeedbackOverlay x:Name="FeedbackControl" x:FieldModifier="internal" />
     </Grid>
   </Grid>
   <Page.BottomAppBar>
@@ -81,7 +74,6 @@
           <BitmapIcon UriSource="/Images/Dark/appbar.next.rest.png" />
         </AppBarButton.Icon>
       </AppBarButton>
-      <!--IsMenuEnabled="True"-->
     </CommandBar>
   </Page.BottomAppBar>
 </Page>

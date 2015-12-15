@@ -25,8 +25,11 @@ namespace Slovo
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            // this.Suspending
-            //  this.
+            Application.Current.UnhandledException += Current_UnhandledException;
+        }
+
+        private void Current_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
         }
 
         /// <summary>
@@ -69,7 +72,7 @@ namespace Slovo
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(UI.Main2), e.Arguments);
+                rootFrame.Navigate(typeof(UI.Main), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
@@ -123,7 +126,7 @@ namespace Slovo
                     rootFrame.Navigate(typeof(Slovo.DirectionArticle), e.Arguments);
                     return true;
                 case "_Main.xaml":
-                    rootFrame.Navigate(typeof(Slovo.UI.Main2), e.Arguments);
+                    rootFrame.Navigate(typeof(Slovo.UI.Main), e.Arguments);
                     return true;
             }
             return false;

@@ -8,7 +8,6 @@ namespace Slovo
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Text;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Navigation;
@@ -28,29 +27,6 @@ namespace Slovo
             ((AppBarButton)((CommandBar)BottomAppBar).PrimaryCommands[NextButtonIndex]).Label = CommonResources.Next;
             PivotArticle.PivotItemLoading += PivotArticle_PivotItemLoading;
             this.Loaded += new Windows.UI.Xaml.RoutedEventHandler(DirectionArticle_Loaded);
-        }
-
-        public static string GetPageUrl(int directionId, int directionArticleId)
-        {
-            return String.Format("/DirectionArticle.xaml?directionId={0}&directionArticleId={1}", (int)directionId, directionArticleId);
-        }
-
-        public static string GetPageUrl(int directionId, string sense, Dictionary<int, int> definitionOffsets)
-        {
-            var result = new StringBuilder(String.Format("/DirectionArticle.xaml?directionId={0}&sense={1}&do=", (int)directionId, sense));
-
-            int current = 0;
-            foreach (var pair in definitionOffsets)
-            {
-                result.Append((int)pair.Key).Append("|").Append(pair.Value);
-                current++;
-                if (current < definitionOffsets.Count)
-                {
-                    result.Append("|");
-                }
-            }
-
-            return result.ToString();
         }
 
         /// <summary>
@@ -110,17 +86,6 @@ namespace Slovo
                 ((CommandBar)BottomAppBar).Visibility = true ? Visibility.Visible : Visibility.Collapsed;
                 ((AppBarButton)((CommandBar)BottomAppBar).PrimaryCommands[listenButtonIndex]).IsEnabled = Direction.SupportPronounciation;
             }
-        }
-
-        private Dictionary<int, int> ParseDefinitionOffsets(string definitionOffsets)
-        {
-            var result = new Dictionary<int, int>();
-            string[] array = definitionOffsets.Split('|');
-            for (int i = 0; i < array.Length; i = i + 2)
-            {
-                result[(int)int.Parse(array[i])] = int.Parse(array[i + 1]);
-            }
-            return result;
         }
 
         private void PivotArticle_PivotItemLoading(Pivot sender, PivotItemEventArgs e)
@@ -204,11 +169,6 @@ namespace Slovo
         }
 
         private void SpeakButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            this.SpeakOnline();
-        }
-
-        private void SpeakOnline()
         {
             OfflinePronounciation.SpeakAsync(tbWord.Text, this.Direction.SourceLanguageCode);
         }

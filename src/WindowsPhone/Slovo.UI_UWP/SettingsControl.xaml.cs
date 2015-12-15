@@ -1,21 +1,18 @@
 namespace Slovo
 {
-   using System;
-   using System.Collections.ObjectModel;
-   using Windows.UI.Xaml;
-   using Windows.UI.Xaml.Controls;
-   using Slovo.Core;
-   using Slovo.Core.Directions;
-   using Slovo.Core.Vocabularies;
-   using Slovo.Resources;
-   using Slovo.UI;
-   using Slovo.Core.Config;
+    using Slovo.Core;
+    using Slovo.Core.Config;
+    using Slovo.Core.Directions;
+    using Slovo.Core.Vocabularies;
+    using Slovo.UI;
+    using System;
+    using System.Collections.ObjectModel;
 
-   public partial class SettingsControl : Windows.UI.Xaml.Controls.UserControl
+    public partial class SettingsControl : Windows.UI.Xaml.Controls.UserControl
    {
       internal const string ControlName = "VocabulariesPivotItem";
 
-      public SettingsControl(Main2 mainPage)
+      public SettingsControl(Main mainPage)
       {
          this.InitializeComponent();
          this.MainPage = mainPage;
@@ -40,7 +37,7 @@ namespace Slovo
          }
       }
 
-      internal Main2 MainPage { get; private set; }
+      internal Main MainPage { get; private set; }
 
       internal void OnLoading()
       {
