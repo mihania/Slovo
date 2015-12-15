@@ -214,6 +214,9 @@ namespace Slovo.UI
             }
 
             this.ManageKeyboardVisibility();
+
+            // calling this to be able to get the actual height of listbox. investigate if it affects performance.
+            this.wordList.UpdateLayout();
         }
 
         private void ManageKeyboardVisibility()
@@ -239,8 +242,7 @@ namespace Slovo.UI
         private void SelectItem(string searchText)
         {
             // move selected item to the top
-            // ToDo: Get rid of magic 11 number. 11 - number of items shown on the screen in listbox
-            const int viewItemsCount = 0;
+            int viewItemsCount = (int)this.wordList.ActualHeight / 60; // 60 - is the height of the item. ToDo: Get the height of the item programmatically
             if (!previosTextValue.Equals(searchText) && wordList.Items.Count > 0)
             {
                 previosTextValue = searchText;
@@ -312,7 +314,6 @@ namespace Slovo.UI
         private void SetSelectedIndex(int index)
         {
             this.wordList.SelectedIndex = index;
-            this.wordList.UpdateLayout();
             wordList.ScrollIntoView(wordList.SelectedItem);
         }
 

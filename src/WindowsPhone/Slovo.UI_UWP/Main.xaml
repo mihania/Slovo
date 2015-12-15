@@ -23,7 +23,6 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -31,7 +30,7 @@
                 <StackPanel x:Name="SearhRow" Grid.Row="0" Margin="0,0,0,0" HorizontalAlignment="Stretch">
                     <TextBox x:Name="tbSearch" Text="" FontSize="30" KeyDown="tbSearch_KeyDown" KeyUp="tbSearch_KeyUp" />
                 </StackPanel>
-                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,10,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <ListBox Name="wordList" SelectionMode="Single" Grid.ColumnSpan="2" d:IsHidden="True" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
                              SelectionChanged="wordList_SelectionChanged">
                         <ListBox.ItemTemplate>
