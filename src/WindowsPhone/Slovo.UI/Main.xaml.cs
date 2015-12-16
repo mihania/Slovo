@@ -286,7 +286,7 @@
                 previosTextValue = searchText;
                 searchText = searchText.Trim();
 
-                int realPos = ManagerInstance.CurrentDirection.GetPosition(searchText);
+                int realPos = ManagerInstance.CurrentDirection.SetPosition(searchText);
                 int newIndex;
                 if (realPos < viewItemsCount)
                 {

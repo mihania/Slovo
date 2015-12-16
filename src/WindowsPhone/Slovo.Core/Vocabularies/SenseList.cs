@@ -91,7 +91,12 @@
         [XmlIgnore]
         public LoadingState LoadingState { get; set; }
 
-        public int GetPosition(string text)
+        /// <summary>
+        /// Sets the cursor to a position relevant to the text
+        /// </summary>
+        /// <param name="text">Search text</param>
+        /// <returns>Cursor position</returns>
+        public int SetPosition(string text)
         {
             // it was changed from StringComparer.InvariantCultureIngoreCase
             if (this.List == null)
