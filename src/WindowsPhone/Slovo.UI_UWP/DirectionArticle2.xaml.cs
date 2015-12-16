@@ -117,10 +117,6 @@
         {
             tbWord.Text = sense;
             PivotArticle.Items.Clear();
-
-            //WINDOWS_PHONE_SL_TO_UWP: (1101) System.Windows.Navigation.NavigationContext.QueryString was not upgraded
-            // ((Frame)Windows.UI.Xaml.Window.Current.Content).QueryString["directionId"] = ((int)direction.Id).ToString();
-
             this.ShowApplicationBar(historyWatch);
             foreach (var vocabulary in direction.Vocabularies)
             {
