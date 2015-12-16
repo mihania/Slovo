@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    NavigationCacheMode="Enabled">
+    NavigationCacheMode="Enabled"
+    Loaded="PhoneApplicationPage_Loaded">
     <Page.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="TextWrapping" Value="WrapWholeWords" />
@@ -31,15 +32,15 @@
                     <TextBox x:Name="tbSearch" Text="" FontSize="30" KeyDown="tbSearch_KeyDown" KeyUp="tbSearch_KeyUp" />
                 </StackPanel>
                 <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,10,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <ListBox Name="wordList" SelectionMode="Single" Grid.ColumnSpan="2" d:IsHidden="True" 
+                    <ListView Name="wordList" SelectionMode="Single" Grid.ColumnSpan="2" d:IsHidden="True" 
                              Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
                              SelectionChanged="wordList_SelectionChanged">
-                        <ListBox.ItemTemplate>
+                        <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Name}" FontSize="25" />
                             </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </Grid>
             </Grid>
         </PivotItem>

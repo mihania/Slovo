@@ -28,14 +28,6 @@ namespace Slovo.UI
 
         public event EventHandler ApplicationBarClick;
 
-        private VirtualWordList virtualWordList;
-
-        /// <summary>
-        /// This property is required to differentiate whether the selction on the ListBox was initiated by the user or programmatically in the code.
-        /// Property that is true only if the SelectionChanged event on ListBox was raised because the user changed the selection, otherwise it is false.
-        /// </summary>
-        private bool wordListSelectionChangeInitiatedByUser = true;
-
         public Main()
         {
             InitializeComponent();
@@ -75,6 +67,9 @@ namespace Slovo.UI
                     {
                         // selecting text, so it is easy to clear the text box
                         this.tbSearch.Select(0, this.tbSearch.Text.Length);
+
+                        // scrolling is not restored when page is reloaded, need to do that manually.
+                        this.ScrollIntoText(this.tbSearch.Text);
                     }
                 }
             }
@@ -150,27 +145,17 @@ namespace Slovo.UI
 
             if (ManagerInstance.CurrentLoadingState == LoadingState.Loaded)
             {
-                this.SelectItem(tbSearch.Text);
+                this.ScrollIntoText(tbSearch.Text);
             }
         }
 
         private void wordList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Even when ListBox.SelectionChanged callback is removed before setting ListBox.SelectedIndex, the ListBox.SelectionChanged callback still fires.
-            // Therefore we analyze flag wordListSelectionChangeInitiatedByUser to differentiate user initiated ListBox.SelectionChanged callback.
-            if (this.wordListSelectionChangeInitiatedByUser)
+            if (this.wordList.SelectedIndex != -1)
             {
-                if (this.wordList.SelectedIndex != -1)
-                {
-                    this.tbSearch.Text = ManagerInstance.CurrentDirection[this.wordList.SelectedIndex];
-                    this.OpenWord(wordList.SelectedIndex);
-                }
-            }
-            else
-            {
-                // When ListBox.SelectionChanged callback is fired because user initiated it, the callback is fired once and only it appears on the stack.
-                // We are defaulting the wordListSelectionChangeInitiatedByUser flag state to allow process user initiated ListBox.SelectionChanged callback.
-                this.wordListSelectionChangeInitiatedByUser = true;
+                this.tbSearch.Text = ManagerInstance.CurrentDirection[this.wordList.SelectedIndex];
+                ManagerInstance.CurrentDirection.Cursor = this.wordList.SelectedIndex;
+                this.OpenWord(wordList.SelectedIndex);
             }
         }
 
@@ -199,10 +184,9 @@ namespace Slovo.UI
                 if (direction.LoadingState == LoadingState.Loaded)
                 {
                     ManagerInstance.CurrentDirection = direction;
-                    this.virtualWordList = new VirtualWordList(ManagerInstance.CurrentDirection.List);
-                    wordList.ItemsSource = this.virtualWordList;
+                    wordList.ItemsSource = new VirtualWordList(ManagerInstance.CurrentDirection.List);
                     this.ManageKeyboardVisibility();
-                    this.SelectItem(tbSearch.Text);
+                    this.ScrollIntoText(tbSearch.Text);
                     result = true;
                 }
                 else
@@ -227,17 +211,8 @@ namespace Slovo.UI
 
         private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.virtualWordList = new VirtualWordList(ManagerInstance.CurrentDirection.List);
-            wordList.ItemsSource = this.virtualWordList;
-            if (this.MainPivot.SelectedIndex == 0)
-            {
-                this.SelectItem(tbSearch.Text);
-            }
-
+            wordList.ItemsSource = new VirtualWordList(ManagerInstance.CurrentDirection.List);
             this.ManageKeyboardVisibility();
-
-            // calling this to be able to get the actual height of listbox. investigate if it affects performance.
-            this.wordList.UpdateLayout();
         }
 
         private void ManageKeyboardVisibility()
@@ -260,42 +235,23 @@ namespace Slovo.UI
             ManagerInstance.CurrentDirection.SupportPronounciation = Slovo.UI.Core.Pronounciation.OfflinePronounciation.SupportPronounciation(ManagerInstance.CurrentDirection.SourceLanguageCode);
         }
 
-        private void SelectItem(string searchText)
+        private void ScrollIntoText(string text)
         {
-            // move selected item to the top
-            int viewItemsCount = (int)this.wordList.ActualHeight / 60; // 60 - is the height of the item. ToDo: Get the height of the item programmatically
-
-            if (this.virtualWordList != null)
+            if (wordList.Items.Count > 0)
             {
-                this.virtualWordList.OffSet = viewItemsCount;
-            }
-
-            if (!previosTextValue.Equals(searchText) && wordList.Items.Count > 0)
-            {
-                previosTextValue = searchText;
-                searchText = searchText.Trim();
-                int realPos = ManagerInstance.CurrentDirection.SetPosition(searchText);
-                int newIndex;
-
-                if (realPos < viewItemsCount)
+                previosTextValue = text;
+                text = text.Trim();
+                int pos = ManagerInstance.CurrentDirection.SetPosition(text);
+                if (pos < 0)
                 {
-                    newIndex = realPos;
+                    pos = 0;
                 }
-                else
+                else if (pos >= wordList.Items.Count)
                 {
-                    newIndex = realPos + viewItemsCount;
+                    pos = wordList.Items.Count - 1;
                 }
 
-                if (newIndex < 0)
-                {
-                    newIndex = 0;
-                }
-                else if (newIndex >= wordList.Items.Count)
-                {
-                    newIndex = wordList.Items.Count - 1;
-                }
-
-                this.SetSelectedIndex(newIndex);
+                wordList.ScrollIntoView(wordList.Items[pos], ScrollIntoViewAlignment.Leading);
             }
         }
 
@@ -308,7 +264,6 @@ namespace Slovo.UI
             {
                 if (ManagerInstance.CurrentDirection.IsWordFound)
                 {
-                    this.SetSelectedIndex(ManagerInstance.CurrentDirection.Cursor);
                     this.OpenWord(ManagerInstance.CurrentDirection.Cursor);
                 }
             }
@@ -316,28 +271,12 @@ namespace Slovo.UI
 
         private void OpenWord(int directionArticleId)
         {
-            var direction = ManagerInstance.CurrentDirection;
-            ManagerInstance.CurrentDirection.Cursor = this.wordList.SelectedIndex;
             this.Frame.Navigate(typeof(DirectionArticle2), new DirectionArticleNavigateParams() { DirectionId = ManagerInstance.CurrentDirection.Id, DirectionArticleId = directionArticleId });
         }
 
         private void ImageInfoClicked(object sender, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(About));
-        }
-
-        private void SetSelectedIndex(int index)
-        {
-            // remove SelectionChanged callback to prevent SelectionChanged callback to fire when item is selected programmatically.
-            wordList.SelectionChanged -= wordList_SelectionChanged;
-
-            this.wordListSelectionChangeInitiatedByUser = false;
-
-            this.wordList.SelectedIndex = index;
-            wordList.ScrollIntoView(wordList.SelectedItem);
-
-            // restoring the the SelectionChanged callback to allow intercept selection initiated by the user.
-            wordList.SelectionChanged += wordList_SelectionChanged;
         }
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)

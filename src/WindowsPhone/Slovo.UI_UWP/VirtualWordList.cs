@@ -68,11 +68,6 @@ namespace Slovo.UI
             }
         }
 
-        /// <summary>
-        /// Gets or sets the offset from the selected item in the ListBox to a top item shown in the ListBox.
-        /// </summary>
-        public int OffSet { get; set; }
-
         public int IndexOf(string item)
         {
             throw new NotImplementedException();
@@ -80,9 +75,8 @@ namespace Slovo.UI
 
         public int IndexOf(object item)
         {
-            var word = (Word)item;
-            int pos = Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance.CurrentDirection.Cursor + this.OffSet;
-            return pos;
+            // this method is invoked from ListView.ScrollIntoView.
+            return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance.CurrentDirection.Cursor;
         }
 
         public IEnumerator<string> GetEnumerator()
