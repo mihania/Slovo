@@ -4,8 +4,7 @@ namespace Slovo.Core
    using System.Collections.Generic;
    using System.IO.IsolatedStorage;
 
-   internal class History
-      : IListIterator<Directions.DirectionArticle>
+   internal class History : IListIterator<Directions.DirectionArticle>
    {
       private const int Limit = 150;
       private const int RemoveCount = 50;

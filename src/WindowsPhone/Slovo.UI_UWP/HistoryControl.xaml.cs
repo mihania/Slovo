@@ -1,17 +1,13 @@
 namespace Slovo
 {
-    using System;
-    using System.Collections.Generic;
+    using Slovo.Core;
+    using Slovo.Core.Vocabularies;
+    using System.Collections.ObjectModel;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
-    using Slovo.Core;
-    using System.Collections.ObjectModel;
-    using Slovo.Core.Vocabularies;
 
-    public partial class HistoryControl
-       : Windows.UI.Xaml.Controls.UserControl
+    public partial class HistoryControl : UserControl
     {
-
         public HistoryControl()
         {
             InitializeComponent();
@@ -54,7 +50,5 @@ namespace Slovo
                 list.Items.RemoveAt(index);
             }
         }
-
     }
-
 }

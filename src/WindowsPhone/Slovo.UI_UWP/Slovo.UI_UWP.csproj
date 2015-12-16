@@ -134,7 +134,7 @@
     </Compile>
     <Compile Include="Controls\ReorderListBoxItem.cs">
     </Compile>
-    <Compile Include="PhoneCore\Pronounciation\OfflinePronounciation.cs">
+    <Compile Include="PhoneCore\OfflinePronounciation.cs">
     </Compile>
     <Compile Include="Helpers\FeedbackHelper.cs">
     </Compile>

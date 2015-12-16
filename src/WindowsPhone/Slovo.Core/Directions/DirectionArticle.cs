@@ -13,7 +13,7 @@
 
         internal const int MaxVocabulariesInDirection = 100;
 
-        internal DirectionArticle(string sense)
+        public DirectionArticle(string sense)
         {
             this.DefinitionOffsets = new Dictionary<int, int>();
             this.Sense = sense;

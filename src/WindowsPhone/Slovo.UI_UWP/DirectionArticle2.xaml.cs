@@ -18,6 +18,7 @@
         private const int ListenButtonIndex = 1;
         private const int NextButtonIndex = 2;
         private DirectionArticleNavigateParams navigateParams;
+        private DirectionArticle currentDirectionArticle;
 
         public DirectionArticle2()
         {
@@ -56,7 +57,7 @@
         {
             get
             {
-                return ManagerInstance.GetDirection(this.navigateParams.DirectionId, LoadingState.Loaded);
+                return ManagerInstance.GetDirection(this.currentDirectionArticle.DirectionId, LoadingState.Loaded);
             }
         }
 
@@ -113,17 +114,19 @@
         /// Loads article
         /// </summary>
         /// <param name="historyWatch">True if article is loaded in history window, otherwise false</param>
-        private void LoadDirectionArticle(Direction<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> direction, string sense, Dictionary<int, int> offsets, bool historyWatch)
+        private void LoadDirectionArticle(DirectionArticle directionArticle, bool historyWatch)
         {
-            tbWord.Text = sense;
+            this.currentDirectionArticle = directionArticle;
+            PivotArticle.Title = this.currentDirectionArticle.Sense;
             PivotArticle.Items.Clear();
             this.ShowApplicationBar(historyWatch);
+            var direction = ManagerInstance.GetDirection(directionArticle.DirectionId, LoadingState.Loaded);
             foreach (var vocabulary in direction.Vocabularies)
             {
                 if (vocabulary.IsEnabled || historyWatch)
                 {
                     int offset;
-                    if (offsets.TryGetValue(vocabulary.VocabularyId, out offset))
+                    if (directionArticle.DefinitionOffsets.TryGetValue(vocabulary.VocabularyId, out offset))
                     {
                         var keyValuePair = new KeyValuePair<int, int>(vocabulary.VocabularyId, offset);
                         // setting name property because of system.argumentexception in MS.Internal.XcpImports.CheckHResult
@@ -141,40 +144,41 @@
             }
         }
 
-        private void DirectionArticle_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void DirectionArticle_Loaded(object sender, RoutedEventArgs e)
         {
-            var direction = this.Direction;
-            string sense = string.Empty;
-            Dictionary<int, int> definitionOffsets = null;
             bool historyWatch = false;
+            DirectionArticle directionArticle;
             if (this.navigateParams.DirectionArticleId.HasValue)
             {
-                var directionArticle = direction.GetArticle(this.navigateParams.DirectionArticleId.Value);
-                sense = directionArticle.Sense;
-                definitionOffsets = directionArticle.DefinitionOffsets;
+                // opened from search window
+                directionArticle = ManagerInstance.GetDirection(this.navigateParams.DirectionId, LoadingState.Loaded).GetArticle(this.navigateParams.DirectionArticleId.Value);
                 ManagerInstance.History.Add(directionArticle);
             }
             else
             {
-                sense = navigateParams.Sense;
-                definitionOffsets = navigateParams.DirectionOffsets;
+                // opened in history window
+                directionArticle = new DirectionArticle(navigateParams.Sense)
+                {
+                    DefinitionOffsets = navigateParams.DirectionOffsets,
+                    DirectionId = navigateParams.DirectionId
+                };
+                
                 historyWatch = true;
             }
 
-            this.LoadDirectionArticle(direction, sense, definitionOffsets, historyWatch);
+            this.LoadDirectionArticle(directionArticle, historyWatch);
         }
 
-        private void SpeakButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void SpeakButton_Click(object sender, RoutedEventArgs e)
         {
-            OfflinePronounciation.SpeakAsync(tbWord.Text, this.Direction.SourceLanguageCode);
+            OfflinePronounciation.SpeakAsync(currentDirectionArticle.Sense, this.Direction.SourceLanguageCode);
         }
 
-        private void BackButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if (this.ManagerInstance.History.HasPrevious)
             {
-                var article = this.ManagerInstance.History.Previous;
-                this.LoadDirectionArticle(ManagerInstance.GetDirection(article.DirectionId, LoadingState.Loaded), article.Sense, article.DefinitionOffsets, true);
+                this.LoadDirectionArticle(this.ManagerInstance.History.Previous, true);
             }
         }
 
@@ -182,8 +186,7 @@
         {
             if (this.ManagerInstance.History.HasNext)
             {
-                var article = this.ManagerInstance.History.Next;
-                this.LoadDirectionArticle(ManagerInstance.GetDirection(article.DirectionId, LoadingState.Loaded), article.Sense, article.DefinitionOffsets, true);
+                this.LoadDirectionArticle(this.ManagerInstance.History.Next, true);
             }
         }
     }

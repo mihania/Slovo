@@ -7,6 +7,6 @@
     mc:Ignorable="d" 
     xmlns:my="using:Slovo.Controls">
   <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,0,0">
-    <RichEditBox HorizontalAlignment="Left" x:Name="tbDefinition" Margin="0,0,0,0" Grid.ColumnSpan="2" FontSize="30" x:FieldModifier="internal" />
+    <RichEditBox HorizontalAlignment="Left" x:Name="tbDefinition" Margin="0,0,0,0" Grid.ColumnSpan="2" FontSize="30" x:FieldModifier="internal" BorderThickness="0" />
   </Grid>
 </UserControl>
