@@ -149,7 +149,7 @@
     </Compile>
     <Compile Include="LocalizedStrings.cs">
     </Compile>
-    <Compile Include="Article.xaml.cs">
+    <Compile Include="Controls\Article.xaml.cs">
       <DependentUpon>Article.xaml</DependentUpon>
     </Compile>
     <Compile Include="PhoneStreamGetter.cs">
@@ -161,6 +161,9 @@
     </Compile>
     <Compile Include="SettingsControl.xaml.cs">
       <DependentUpon>SettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="VirtualWordList.cs">
     </Compile>
@@ -207,7 +210,6 @@
     <Content Include="Images\Dark\appbar.questionmark.rest.png" />
     <Content Include="Images\Dark\feature.email.png" />
     <Content Include="Images\WideTile.png" />
-    <Content Include="ServiceReferences.ClientConfig" />
     <Content Include="Data\Mueller.def">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -247,7 +249,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Article.xaml">
+    <Page Include="Controls\Article.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -258,6 +260,10 @@
     <Page Include="SettingsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\generic.xaml">
       <Generator>MSBuild:Compile</Generator>

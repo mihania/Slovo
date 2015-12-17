@@ -93,7 +93,7 @@
         {
             if (e.Item.DataContext != null)
             {
-                UI.Article article = new UI.Article();
+                UI.Controls.Article article = new UI.Controls.Article();
                 var keyValuePair = (KeyValuePair<int, int>)e.Item.DataContext;
                 var vocabulary = ManagerInstance.GetVocabulary(keyValuePair.Key);
                 int offset = keyValuePair.Value;
@@ -134,7 +134,7 @@
                         PivotItem pivot = new PivotItem()
                         {
                             DataContext = keyValuePair,
-                            Header = vocabulary.PivotHeader,
+                            Header = vocabulary.PivotHeader, 
                             Name = Guid.NewGuid().ToString()
                         };
                         pivot.DataContext = keyValuePair;

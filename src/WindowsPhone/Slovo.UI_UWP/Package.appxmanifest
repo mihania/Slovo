@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:m1="http://schemas.microsoft.com/appx/2010/manifest" xmlns:phone="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:wincap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/windowscapabilities" xmlns:t="http://schemas.microsoft.com/appx/manifest/types" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
   <Identity Name="e782fb4917400e870ee18795e712f5" Publisher="CN=mihailsm" Version="1.0.0.0" />
   <phone:PhoneIdentity PhoneProductId="0e4bc866-18d0-4ab2-b6d8-96cd67254fb5" PhonePublisherId="4a924c55-b4b8-47b6-b7cc-f942482a7126" />
@@ -13,11 +13,11 @@
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10586.0" MaxVersionTested="10.0.10586.0" />
   </Dependencies>
-  <Capabilities />
   <Applications>
     <Application Id="x0e4bc866y18d0y4ab2yb6d8y96cd67254fb5x" Executable="$targetnametoken$.exe" EntryPoint="Main.xaml">
-      <uap:VisualElements DisplayName="Slovo.UI" Description="Slovo.UI" BackgroundColor="#464646" Square150x150Logo="Assets\SquareTile150x150_resized_150x150.png" Square44x44Logo="Assets\Logo_resized_44x44.png">
-        <uap:DefaultTile Square71x71Logo="Assets\SquareTile71x71_resized_71x71.png" />
+      <uap:VisualElements DisplayName="HockeyApp - TestApp" Description="Slovo.UI" BackgroundColor="#464646" Square150x150Logo="Assets\SquareTile150x150_resized_150x150.png" Square44x44Logo="Assets\Logo_resized_44x44.png">
+        <uap:DefaultTile Square71x71Logo="Assets\SquareTile71x71_resized_71x71.png">
+        </uap:DefaultTile>
         <uap:SplashScreen Image="SplashScreenImage.jpg" />
       </uap:VisualElements>
       <Extensions>

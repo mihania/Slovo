@@ -6,21 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Grid x:Name="LayoutRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid x:Name="Definitions" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Pivot Name="PivotArticle" x:FieldModifier="internal">
-                <Pivot.HeaderTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}" FontSize="40" />
-                    </DataTemplate>
-                </Pivot.HeaderTemplate>
-            </Pivot>
-        </Grid>
-    </Grid>
+    <Pivot Name="PivotArticle" x:FieldModifier="internal">
+        <Pivot.HeaderTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding}" FontSize="40" />
+            </DataTemplate>
+        </Pivot.HeaderTemplate>
+    </Pivot>
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton Label="Back" Click="BackButton_Click">
