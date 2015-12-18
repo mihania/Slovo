@@ -20,31 +20,52 @@ namespace Slovo.Generator
         static void Main(string[] args)
         {
             Console.WriteLine(DateTime.Now + ": Generator started successfully");
-            
-            WriteVocabularies();
-            WriteDirections();
+
+            Write81();
+            Write10();
 
 
             Console.WriteLine(DateTime.Now + ": Generator finished successfully. Press Enter to exit");
             Console.ReadLine();
         }
 
-        private static void WriteVocabularies()
+        private static void Write81()
         {
-            // new OjegovFormatter(pathToOjegov).WriteOutput();
-            // new MullerFormatter(pathToMuller).WriteOutput();
-            // new RuEngFormatter(pathToRuEn).WriteOutput();
-            new Formatters.WordNet30Formatter().WriteOutput();
+            new OjegovFormatter(pathToOjegov, new XamlFormatter()).WriteOutput();
+            new MullerFormatter(pathToMuller, new XamlFormatter()).WriteOutput();
+            new RuEngFormatter(pathToRuEn, new XamlFormatter()).WriteOutput();
+            new Formatters.WordNet30Formatter(new XamlFormatter()).WriteOutput();
+            WriteDirections81();
         }
 
-        private static void WriteDirections()
+        private static void Write10()
+        {
+            new OjegovFormatter(pathToOjegov, new RtfFormatter()).WriteOutput();
+            new MullerFormatter(pathToMuller, new RtfFormatter()).WriteOutput();
+            new RuEngFormatter(pathToRuEn, new RtfFormatter()).WriteOutput();
+            new Formatters.WordNet30Formatter(new RtfFormatter()).WriteOutput();
+            WriteDirections10();
+        }
+
+        private static void WriteDirections81()
         {
             // var configuration = new Configuration<FileStreamGetter, List<Vocabulary<FileStreamGetter>>();
-            var configuration = Configuration<FileStreamGetter, List<Vocabulary<FileStreamGetter>>>.LoadConfiguration();
+            var configuration = Configuration<FileStreamGetter81, List<Vocabulary<FileStreamGetter81>>>.LoadConfiguration();
             foreach (var direction in configuration.Directions)
             {
                 direction.Serialize();
             }
         }
+
+        private static void WriteDirections10()
+        {
+            // var configuration = new Configuration<FileStreamGetter, List<Vocabulary<FileStreamGetter>>();
+            var configuration = Configuration<FileStreamGetter10, List<Vocabulary<FileStreamGetter10>>>.LoadConfiguration();
+            foreach (var direction in configuration.Directions)
+            {
+                direction.Serialize();
+            }
+        }
+
     }
 }

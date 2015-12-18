@@ -10,14 +10,14 @@
     {
         internal const string RussianShortDefinitionRegex = @"[\p{IsCyrillic}]([\p{IsCyrillic}\s]){1,}[\p{IsCyrillic}]";
 
-        internal MullerFormatter(string fullFileName) : base(fullFileName)
+        internal MullerFormatter(string fullFileName, ITypeFormatter typeFormatter) : base(fullFileName, typeFormatter)
         {
         }
 
         protected override void Load()
         {
             int lineNumber = 0;
-            using (StreamReader sr = new StreamReader(fullFileName, Encoding.Default))
+            using (StreamReader sr = new StreamReader(fullFileName, Encoding.GetEncoding("Windows-1251")))
             {
                 string s;
                 while ((s = sr.ReadLine()) != null)

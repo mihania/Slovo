@@ -10,13 +10,16 @@ namespace Slovo.Generator.Direction
     /// <remarks>
     /// Public access modifier is required to allow Configuration class deserialization
     /// </remarks>
-    public class FileStreamGetter : IStreamGetter
+    public abstract class FileStreamGetter : IStreamGetter
     {
+
         public Stream GetStream(string fileName)
         {
             FileStream fs = new FileStream(MapFileName(fileName), FileMode.Open, FileAccess.Read);
             return fs;
         }
+
+        public abstract string ProjectFolderName { get; }
 
         public Stream CreateStream(string fileName)
         {
@@ -33,8 +36,20 @@ namespace Slovo.Generator.Direction
         protected virtual string MapFileName(string fileName)
         {
             string path = Directory.GetCurrentDirectory();
-            string fileSystemName = Path.Combine(path, @"..\..\..\..\WindowsPhone\Slovo.UI\", fileName);
+            string fileSystemName = Path.Combine(path, @"..\..\..\..\WindowsPhone\" + ProjectFolderName + @"\", fileName);
             return fileSystemName;
         }
     }
+
+    public class FileStreamGetter81 : FileStreamGetter
+    {
+        public override string ProjectFolderName { get { return "Slovo.UI"; } }
+    }
+
+    public class FileStreamGetter10 : FileStreamGetter
+    {
+        public override string ProjectFolderName { get { return "Slovo.UI_UWP"; } }
+    }
+
+
 }

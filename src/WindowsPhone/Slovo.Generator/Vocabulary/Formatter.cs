@@ -21,8 +21,6 @@ namespace Slovo.Generator
         private string listFileName;
         private string defFileName;
 
-        protected const string AlternateColorBegin = "<Span Foreground=\"Gray\">";
-        protected const string AlternateColorEnd = "</Span>";
         protected static string Deprecated7ThCharacter = char.ConvertFromUtf32(0x07);
 
         /// <summary>
@@ -32,9 +30,12 @@ namespace Slovo.Generator
 
         private Regex regex;
 
-        internal Formatter(string fullFileName)
+        protected readonly ITypeFormatter typeFormatter;
+
+        protected Formatter(string fullFileName, ITypeFormatter typeFormatter)
         {
             this.fullFileName = fullFileName;
+            this.typeFormatter = typeFormatter;
             string pattern = GetShortDefinitionRegex();
 
             this.regex = new Regex(
@@ -46,21 +47,12 @@ namespace Slovo.Generator
                 );
 
             string name = Path.GetFileNameWithoutExtension(fullFileName);
-            this.listFileName = Path.Combine(OutputPath, name + Vocabulary<FileStreamGetter>.IndexFileExtension);
-            this.defFileName = Path.Combine(OutputPath, name + Vocabulary<FileStreamGetter>.DataFileExtension);
+            this.listFileName = Path.Combine(this.typeFormatter.OutputPath, name + Vocabulary<FileStreamGetter10>.IndexFileExtension);
+            this.defFileName = Path.Combine(this.typeFormatter.OutputPath, name + Vocabulary<FileStreamGetter10>.DataFileExtension);
             this.Load();
             articles.Sort();
             this.JoinDuplicates();
         }
-
-        protected string OutputPath
-        {
-            get
-            {
-                return @"..\..\..\Slovo.UI\Data";
-            }
-        }
-
 
         internal List<Article> Articles
         {
@@ -84,7 +76,7 @@ namespace Slovo.Generator
                             foreach (Article article in articles)
                             {
                                 var formattedDefinition = this.GetFormattedDefinition(article.Word, article.Translation);
-                                if (IsValidXml(formattedDefinition, article))
+                                if (this.typeFormatter.IsValid(formattedDefinition, article.Word))
                                 {
                                     listBinaryWriter.Write(article.Word);
                                     if (defFileStream.Position > Int32.MaxValue)
@@ -232,7 +224,7 @@ namespace Slovo.Generator
                 if ((isCurEng || (buffer[i] == '(' && i < buffer.Length - 1 && this.IsCurrentLanguage(buffer[i + 1])))
                     && !isPrevEng && !isEngOpened)
                 {
-                    result.Append(AlternateColorBegin);
+                    result.Append(this.typeFormatter.AlternateColorBegin);
                     isEngOpened = true;
                     curly = 0;
                     if (cur == '(')
@@ -244,7 +236,7 @@ namespace Slovo.Generator
                     && (isPrevEng || IsAllowedInBetween(prev, prev, curly))
                     && isEngOpened)
                 {
-                    result.Append(AlternateColorEnd);
+                    result.Append(this.typeFormatter.AlternateColorEnd);
                     isEngOpened = false;
                 }
 
@@ -253,7 +245,7 @@ namespace Slovo.Generator
 
             if (isEngOpened)
             {
-                result.Append(AlternateColorEnd);
+                result.Append(this.typeFormatter.AlternateColorEnd);
                 isEngOpened = false;
             }
         }
@@ -304,27 +296,6 @@ namespace Slovo.Generator
                     }
                 }
             }
-        }
-
-        private bool IsValidXml(string innerXml, Article article)
-        {
-            bool result = false;
-            try
-            {
-                string xml = "<doc>" + innerXml + "</doc>";
-                XmlDocument doc = new XmlDocument();
-
-                // this call has to fail if xml is wrong
-                doc.LoadXml(xml);
-               
-                result = true;
-            }
-            catch (XmlException ex)
-            {
-                throw new ApplicationException(article.Word + ": inccorect translation xml: " + ex.Message, ex);
-            }
-
-            return result;
         }
     }
 }

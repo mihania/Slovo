@@ -86,7 +86,9 @@
     <Compile Include="Article.cs" />
     <Compile Include="Direction\FileStreamGetter.cs" />
     <Compile Include="Vocabulary\Formatter.cs" />
+    <Compile Include="Vocabulary\ITypeFormatter.cs" />
     <Compile Include="Vocabulary\OjegovFormatter.cs" />
+    <Compile Include="Vocabulary\RtfFormatter.cs" />
     <Compile Include="Vocabulary\WordNet3_0Formatter.cs" />
     <Compile Include="Vocabulary\MullerFormatter.cs" />
     <Compile Include="Program.cs" />
@@ -97,6 +99,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Vocabulary\XamlFormatter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

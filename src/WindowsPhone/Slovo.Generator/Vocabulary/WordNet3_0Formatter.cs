@@ -16,10 +16,9 @@
         private const string dataNounFileName = @"..\..\InputData\wn\data.noun";
         private const string dataVerbFileName = @"..\..\InputData\wn\data.verb";
         public const string QuoteReplacement = "&quot;";
-        public const string StartItalicQuote = "• <Span Foreground=\"Gray\">";
-        public const string EndItalicQuote =  "</Span>";
 
-        private Dictionary<string, SeekReadStream> fileStreamDict = new Dictionary<string, SeekReadStream>() {
+        private Dictionary<string, SeekReadStream> fileStreamDict = new Dictionary<string, SeekReadStream>()
+        {
             {"a", new SeekReadStream(dataAdjFileName)},
             {"r", new SeekReadStream(dataAdvFileName)},
             {"n", new SeekReadStream(dataNounFileName)},
@@ -27,7 +26,7 @@
         };
 
 
-        internal WordNet30Formatter() : base("wordnet3_0")
+        internal WordNet30Formatter(ITypeFormatter typeFormatter) : base("wordnet3_0", typeFormatter)
         {
         }
 
@@ -65,9 +64,8 @@
                         int p_cnt = int.Parse(spl[2]); // 2
                         int x = 2 + p_cnt + 1 + 1; // 2 - current, p_cnt skip, 1 - sense_cnt, 1 - tagsense_cnt
                         if (j > 0)
-                        {
                             sb.Append(Common.NewLineDelimiter);    
-                        }
+
                         this.AppendDecoratedPos(sb, pos);
                         sb.Append(Common.NewLineDelimiter);
                         for (var i = 1; i <= synset_cnt; i++)
@@ -75,7 +73,7 @@
 
                             fileStreamDict[pos].Sr.BaseStream.Seek(long.Parse(spl[x + i]), SeekOrigin.Begin);
                             fileStreamDict[pos].Sr.DiscardBufferedData();
-                            Synset synset = Synset.Parse(pair.Key, fileStreamDict[pos].Sr.ReadLine());
+                            Synset synset = Parse(pair.Key, fileStreamDict[pos].Sr.ReadLine());
                             shortDefinition = synset.Gloss;
 
                             if (i > 1)
@@ -86,7 +84,7 @@
                             sb.Append(i).Append(". ").Append(synset.Gloss);
                             if (synset.Synonims.Count > 0)
                             {
-                                sb.Append(Common.NewLineDelimiter + " <Span FontSize=\"24\">(");
+                                sb.Append(Common.NewLineDelimiter + this.typeFormatter.AlternateColorBegin + " (");
                                 for (int k = 0; k < synset.Synonims.Count; k++)
                                 {
                                     sb.Append(synset.Synonims[k]);
@@ -96,7 +94,7 @@
                                     }
                                 }
 
-                                sb.Append(")</Span>");    
+                                sb.Append(")" + this.typeFormatter.AlternateColorEnd);    
 
                             }
 
@@ -117,75 +115,44 @@
             }
         }
 
-        public class Synset
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dataFileLine">Data file line as described at https://wordnet.princeton.edu/man/wndb.5WN.html (section Data File Format)</param>
+        /// <returns></returns>
+        public Synset Parse(string def, string dataFileLine)
         {
-            public string Gloss { get; set; }
-
-            public string Sentences { get; set; }
-
-            public List<string> Synonims { get; private set; }
-
-            protected void Encode()
+            string[] lineArray = dataFileLine.Split(new char[] { '|' }, 2);
+            string s = lineArray[1];
+            var result = new Synset();
+            int posDef = s.IndexOf('"');
+            if (posDef < 0)
             {
-                this.Gloss = EncodeXml(Gloss);
-                this.Sentences = EncodeXml(this.Sentences);
+                // there are no sentences
+                result.Gloss = s;
+                result.Encode(this.typeFormatter);
             }
-
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="dataFileLine">Data file line as described at https://wordnet.princeton.edu/man/wndb.5WN.html (section Data File Format)</param>
-            /// <returns></returns>
-            public static Synset Parse(string def, string dataFileLine)
+            else
             {
-                string[] lineArray = dataFileLine.Split(new char[] {'|'}, 2);
-                string s = lineArray[1];
-                var result = new Synset();
-                int posDef = s.IndexOf('"');
-                if (posDef < 0)
-                {
-                    // there are no sentences
-                    result.Gloss = s;
-                    result.Encode();
-                }
-                else
-                {
-                    result.Gloss = s.Substring(0, posDef);
-                    result.Gloss = result.Gloss.TrimEnd(';', ' ');
-                    
-                    if (posDef < s.Length)
-                    {
-                        result.Sentences = s.Substring(posDef);
-                    }
+                result.Gloss = s.Substring(0, posDef);
+                result.Gloss = result.Gloss.TrimEnd(';', ' ');
 
-                    result.Encode();
-                    result.Sentences = ItalianQuotes(result.Sentences);
+                if (posDef < s.Length)
+                {
+                    result.Sentences = s.Substring(posDef);
                 }
 
-                result.FillSynonims(def, lineArray[0]);
-                return result;
+                result.Encode(this.typeFormatter);
+                result.Sentences = ItalianQuotes(result.Sentences);
             }
 
-            private void FillSynonims(string def, string m)
-            {
-                string[] a = m.Split(' ');
-                int synCount = Convert.ToInt32(a[3], 16) - 1;
-                this.Synonims = new List<string>();
-                int start = 6;
-                for (int i = 0; i < synCount; i++)
-                {
-                    var cand = a[start].Replace('_', ' ');
-                    if (cand != def)
-                    {
-                        Synonims.Add(cand);
-                    }
-
-                    start += 2;
-                }
-            }
+            result.FillSynonims(def, lineArray[0]);
+            return result;
         }
 
-        public static string ItalianQuotes(string s)
+      
+
+        public string ItalianQuotes(string s)
         {
             string original = s;
             int i = 0;
@@ -196,7 +163,7 @@
                 if (pos >= 0)
                 {
                     s = s.Remove(pos, QuoteReplacement.Length);
-                    string tag = count % 2 == 0 ? StartItalicQuote : EndItalicQuote;
+                    string tag = count % 2 == 0 ? "• " + this.typeFormatter.AlternateColorBegin : this.typeFormatter.AlternateColorEnd;
                     s = s.Insert(pos, tag);
                     i = pos + tag.Length;
                     count++;
@@ -223,11 +190,6 @@
             return count % 2 == 0 ?  s : original;
         }
 
-        protected static string EncodeXml(string xml)
-        {
-            return string.IsNullOrEmpty(xml) ? xml : xml.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", QuoteReplacement).Replace("'", "&apos;");
-        }
-
         public void Dispose()
         {
             foreach (SeekReadStream fs in fileStreamDict.Values)
@@ -243,10 +205,7 @@
 
         private void AppendDecoratedPos(StringBuilder result, string pos)
         {
-            // ToDo: Define accent color
-            const string engBegin = "<Span Foreground=\"Red\">";
-            const string engEnd = "</Span>";
-            result.Append(engBegin);
+            result.Append(this.typeFormatter.AccentColorBegin);
             if (pos == "a")
             {
                 result.Append("Adjective");
@@ -268,7 +227,7 @@
                 throw new ArgumentOutOfRangeException(pos);
             }
 
-            result.Append(engEnd);
+            result.Append(this.typeFormatter.AlternateColorEnd);
         }
 
         protected override string GetShortDefinitionRegex()
@@ -296,6 +255,39 @@
             {
                 Fs.Dispose();
                 Sr.Dispose();
+            }
+        }
+
+        public class Synset
+        {
+            public string Gloss { get; set; }
+
+            public string Sentences { get; set; }
+
+            public List<string> Synonims { get; private set; }
+
+            public void Encode(ITypeFormatter formatter)
+            {
+                this.Gloss = formatter.Escape(Gloss);
+                this.Sentences = formatter.Escape(this.Sentences);
+            }
+
+            public void FillSynonims(string def, string m)
+            {
+                string[] a = m.Split(' ');
+                int synCount = Convert.ToInt32(a[3], 16) - 1;
+                this.Synonims = new List<string>();
+                int start = 6;
+                for (int i = 0; i < synCount; i++)
+                {
+                    var cand = a[start].Replace('_', ' ');
+                    if (cand != def)
+                    {
+                        Synonims.Add(cand);
+                    }
+
+                    start += 2;
+                }
             }
         }
     }

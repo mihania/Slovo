@@ -10,7 +10,8 @@
     internal class RuEngFormatter : Formatter
     {
         internal const string EnglishSentencesRegexPattern = @"[a-zA-Z]([a-zA-Z\s]){1,}[a-zA-Z]";
-        internal RuEngFormatter(string fullFileName) : base(fullFileName)
+
+        internal RuEngFormatter(string fullFileName, ITypeFormatter typeFormatter) : base(fullFileName, typeFormatter)
         {
         }
 
@@ -18,7 +19,7 @@
         {
             Encoding encoding = Encoding.UTF8;
 
-            using (StreamReader sr = new StreamReader(fullFileName, Encoding.Default))
+            using (StreamReader sr = new StreamReader(fullFileName, Encoding.GetEncoding("Windows-1251")))
             {
                 string s;
                 while ((s = sr.ReadLine()) != null)

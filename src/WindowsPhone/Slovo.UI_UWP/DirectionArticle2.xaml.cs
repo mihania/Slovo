@@ -104,7 +104,14 @@
                     // and update its definition
                     coreArticle.Definition = vocabulary.GetArticle(coreArticle.Offset).Definition;
                 }
-                article.Definition = coreArticle.Definition;
+
+                coreArticle.Definition = coreArticle.Definition.Replace("\n", @"\line ");
+
+                article.Definition = @"{\rtf1 
+                {\colortbl;
+                \red255\green0\blue0;
+                }" + coreArticle.Definition + "}";
+
                 e.Item.Content = article;
                 e.Item.DataContext = null; // mark article as loaded
             }
@@ -129,6 +136,7 @@
                     if (directionArticle.DefinitionOffsets.TryGetValue(vocabulary.VocabularyId, out offset))
                     {
                         var keyValuePair = new KeyValuePair<int, int>(vocabulary.VocabularyId, offset);
+                        
                         // setting name property because of system.argumentexception in MS.Internal.XcpImports.CheckHResult
                         // based on suggestion in http://stackoverflow.com/questions/7413293/unhandledexception-in-wp7
                         PivotItem pivot = new PivotItem()

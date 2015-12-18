@@ -138,7 +138,7 @@
     </Compile>
     <Compile Include="Helpers\StorageHelper.cs">
     </Compile>
-    <Compile Include="HistoryControl.xaml.cs">
+    <Compile Include="Controls\HistoryControl.xaml.cs">
       <DependentUpon>HistoryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="PhoneCore\History.cs">
@@ -157,8 +157,11 @@
     </Compile>
     <Compile Include="Settings.cs">
     </Compile>
-    <Compile Include="SettingsControl.xaml.cs">
+    <Compile Include="Controls\SettingsControl.xaml.cs">
       <DependentUpon>SettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="VirtualWordList.cs">
     </Compile>
@@ -240,7 +243,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HistoryControl.xaml">
+    <Page Include="Controls\HistoryControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -252,9 +255,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SettingsControl.xaml">
+    <Page Include="Controls\SettingsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\generic.xaml">
       <Generator>MSBuild:Compile</Generator>

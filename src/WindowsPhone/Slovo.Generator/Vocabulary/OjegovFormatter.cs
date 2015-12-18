@@ -1,29 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using Slovo.Core;
-using System.Text.RegularExpressions;
-
-
-namespace Slovo.Generator.Vocabulary
+﻿namespace Slovo.Generator.Vocabulary
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.IO;
+    using Slovo.Core;
+    using System.Text.RegularExpressions;
+
     class OjegovFormatter : Formatter
     {
-        public readonly string RegexAlternameBReplace = AlternateColorBegin + "${text}." + AlternateColorEnd;
+        public readonly string RegexAlternameBReplace;
         public readonly string RegexAlternameIReplace;
         
 
-        internal OjegovFormatter(string fullFileName)
-            : base(fullFileName)
+        internal OjegovFormatter(string fullFileName, ITypeFormatter formatter)
+            : base(fullFileName, formatter)
         {
             RegexAlternameIReplace = Common.NewLineDelimiter.ToString() + Common.TabSpace + RegexAlternameBReplace;
+            RegexAlternameBReplace = this.typeFormatter.AlternateColorBegin + "${text}." + this.typeFormatter.AlternateColorEnd;
         }
 
         protected override void Load()
         {
-            using (StreamReader sr = new StreamReader(fullFileName, Encoding.Default))
+            using (StreamReader sr = new StreamReader(fullFileName, Encoding.GetEncoding("Windows-1251")))
             {
                 string s;
                 while ((s = sr.ReadLine()) != null)
