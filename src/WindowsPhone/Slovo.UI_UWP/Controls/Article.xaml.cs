@@ -19,5 +19,15 @@ namespace Slovo.UI.Controls
                 this.Viewer.IsReadOnly = true;
             }
         }
+
+        internal string SelectedText
+        {
+            get
+            {
+                string text;
+                this.Viewer.Document.Selection.GetText(Windows.UI.Text.TextGetOptions.None, out text);
+                return text;
+            }
+        }
     }
 }

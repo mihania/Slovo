@@ -106,10 +106,6 @@
     </Compile>
     <Compile Include="Helpers\PhoneApplicationServiceHelper.cs">
     </Compile>
-    <Compile Include="Helpers\WriteableBitmapHelperExtensions.cs">
-    </Compile>
-    <Compile Include="Helpers\SpeechSynthHelpers.cs">
-    </Compile>
     <Compile Include="Helpers\TilesHelper.cs">
     </Compile>
     <Compile Include="Helpers\TileHelper.cs">
@@ -202,9 +198,7 @@
     </Content>
     <Content Include="Data\wordnet3_0.def" />
     <Content Include="Data\wordnet3_0.lst" />
-    <Content Include="Images\Dark\appbar.back.rest.png" />
     <Content Include="Images\Dark\appbar.check.rest.png" />
-    <Content Include="Images\Dark\appbar.next.rest.png" />
     <Content Include="Images\Dark\appbar.questionmark.rest.png" />
     <Content Include="Images\Dark\feature.email.png" />
     <Content Include="Images\WideTile.png" />
@@ -220,11 +214,9 @@
     <Content Include="Data\RuEn.lst">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Dark\Speaker.png" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Images\ApplicationIcon.png" />
     <Content Include="Images\Background.png" />
-    <Content Include="Images\Light\Speaker.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

@@ -14,20 +14,18 @@
 
     public partial class DirectionArticle2 : Page
     {
-        private const int BackButtonIndex = 0;
-        private const int ListenButtonIndex = 1;
-        private const int NextButtonIndex = 2;
         private DirectionArticleNavigateParams navigateParams;
         private DirectionArticle currentDirectionArticle;
 
         public DirectionArticle2()
         {
             this.InitializeComponent();
-            ((AppBarButton)((CommandBar)BottomAppBar).PrimaryCommands[BackButtonIndex]).Label = CommonResources.Back;
-            ((AppBarButton)((CommandBar)BottomAppBar).PrimaryCommands[ListenButtonIndex]).Label = CommonResources.Listen;
-            ((AppBarButton)((CommandBar)BottomAppBar).PrimaryCommands[NextButtonIndex]).Label = CommonResources.Next;
+            BackButton.Label = CommonResources.Back;
+            SpeakButton.Label = CommonResources.Listen;
+            NextButton.Label = CommonResources.Next;
+            SearhButton.Label = CommonResources.Search;
             PivotArticle.PivotItemLoading += PivotArticle_PivotItemLoading;
-            this.Loaded += new Windows.UI.Xaml.RoutedEventHandler(DirectionArticle_Loaded);
+            this.Loaded += DirectionArticle_Loaded;
         }
 
         /// <summary>
@@ -63,30 +61,8 @@
 
         private void ShowApplicationBar(bool historyWatch)
         {
-            ((CommandBar)BottomAppBar).Visibility = true ? Visibility.Visible : Visibility.Collapsed;
-            int listenButtonIndex = 0;
-            if (!historyWatch)
-            {
-                if (((CommandBar)BottomAppBar).PrimaryCommands.Count > 1)
-                {
-                    ((CommandBar)BottomAppBar).PrimaryCommands.RemoveAt(0);
-                    ((CommandBar)BottomAppBar).PrimaryCommands.RemoveAt(1);
-                }
-            }
-            else
-            {
-                listenButtonIndex = ListenButtonIndex;
-            }
-            if (((CommandBar)BottomAppBar).PrimaryCommands.Count == 1 && !Direction.SupportPronounciation)
-            {
-                ((CommandBar)BottomAppBar).PrimaryCommands.RemoveAt(0);
-                ((CommandBar)BottomAppBar).Visibility = false ? Visibility.Visible : Visibility.Collapsed;
-            }
-            else
-            {
-                ((CommandBar)BottomAppBar).Visibility = true ? Visibility.Visible : Visibility.Collapsed;
-                ((AppBarButton)((CommandBar)BottomAppBar).PrimaryCommands[listenButtonIndex]).IsEnabled = Direction.SupportPronounciation;
-            }
+            BackButton.Visibility = historyWatch ? Visibility.Visible : Visibility.Collapsed;
+            NextButton.Visibility = historyWatch ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void PivotArticle_PivotItemLoading(Pivot sender, PivotItemEventArgs e)
@@ -100,15 +76,11 @@
                 var coreArticle = vocabulary.GetArticle(offset);
                 if (coreArticle.Definition == null)
                 {
-                    // DirectionArticle is retrived from History where Definition is not stored. We need to retrieve article again 
-                    // and update its definition
+                    // DirectionArticle is retrived from History where Definition is not stored. We need to retrieve article again and update its definition
                     coreArticle.Definition = vocabulary.GetArticle(coreArticle.Offset).Definition;
                 }
 
-                // coreArticle.Definition = coreArticle.Definition.Replace("\n", @"\line ");
-
                 article.Definition = @"{\rtf1 " +coreArticle.Definition + "}";
-
                 e.Item.Content = article;
                 e.Item.DataContext = null; // mark article as loaded
             }
@@ -142,6 +114,7 @@
                             Header = vocabulary.PivotHeader, 
                             Name = Guid.NewGuid().ToString()
                         };
+
                         pivot.DataContext = keyValuePair;
                         PivotArticle.Items.Add(pivot);
                     }
@@ -192,6 +165,18 @@
             if (this.ManagerInstance.History.HasNext)
             {
                 this.LoadDirectionArticle(this.ManagerInstance.History.Next, true);
+            }
+        }
+
+        private void SearchButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var pivotItem = ((PivotItem)PivotArticle.SelectedItem);
+            if (pivotItem != null)
+            {
+                var article = (UI.Controls.Article)pivotItem.Content;
+                if (!string.IsNullOrEmpty(article.SelectedText))
+                {
+                }
             }
         }
     }

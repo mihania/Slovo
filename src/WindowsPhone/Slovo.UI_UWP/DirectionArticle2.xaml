@@ -15,21 +15,10 @@
     </Pivot>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Label="Back" Click="BackButton_Click">
-                <AppBarButton.Icon>
-                    <BitmapIcon UriSource="/Images/Dark/appbar.back.rest.png" />
-                </AppBarButton.Icon>
-            </AppBarButton>
-            <AppBarButton Label="Listen" Click="SpeakButton_Click">
-                <AppBarButton.Icon>
-                    <BitmapIcon UriSource="/Images/Dark/Speaker.png" />
-                </AppBarButton.Icon>
-            </AppBarButton>
-            <AppBarButton Label="Next" Click="NextButton_Click">
-                <AppBarButton.Icon>
-                    <BitmapIcon UriSource="/Images/Dark/appbar.next.rest.png" />
-                </AppBarButton.Icon>
-            </AppBarButton>
+            <AppBarButton Label="Back" Click="BackButton_Click" Icon="Back" Name="BackButton" />
+            <AppBarButton Label="Next" Click="NextButton_Click" Icon="Forward" Name="NextButton"/>
+            <AppBarButton Label="Listen" Click="SpeakButton_Click" Name="SpeakButton" Icon="Volume" />
+            <AppBarButton Label="Search" Click="SearchButton_Click" Icon="Find" Name="SearhButton" />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
