@@ -105,12 +105,9 @@
                     coreArticle.Definition = vocabulary.GetArticle(coreArticle.Offset).Definition;
                 }
 
-                coreArticle.Definition = coreArticle.Definition.Replace("\n", @"\line ");
+                // coreArticle.Definition = coreArticle.Definition.Replace("\n", @"\line ");
 
-                article.Definition = @"{\rtf1 
-                {\colortbl;
-                \red255\green0\blue0;
-                }" + coreArticle.Definition + "}";
+                article.Definition = @"{\rtf1 " +coreArticle.Definition + "}";
 
                 e.Item.Content = article;
                 e.Item.DataContext = null; // mark article as loaded

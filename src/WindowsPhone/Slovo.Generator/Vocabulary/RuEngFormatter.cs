@@ -58,7 +58,7 @@
         protected override string GetFormattedDefinition(string word, string originalDef)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder(originalDef);
-            string tab = Common.NewLineDelimiter + "\t";
+            string tab = NewLineDelimiter + "\t";
             string syn = "_Syn:";
 
 
@@ -90,8 +90,8 @@
                         }
                         else if (isDot)
                         {
-                            sb.Insert(j, Common.NewLineDelimiter);
-                            i += Common.NewLineDelimiter.ToString().Length;
+                            sb.Insert(j, NewLineDelimiter);
+                            i += NewLineDelimiter.ToString().Length;
                         }
                     }
                 }
@@ -105,8 +105,8 @@
                         && sb[i - 3] == 'S'
                         && sb[i - 4] == '_')
                     {
-                        sb.Insert(i - syn.Length, Common.NewLineDelimiter);
-                        i += Common.NewLineDelimiter.ToString().Length;
+                        sb.Insert(i - syn.Length, NewLineDelimiter);
+                        i += NewLineDelimiter.ToString().Length;
                     }
                 }
             }
@@ -180,11 +180,11 @@
                     int startJoin = i + 1;
 
                     articles[startJoin].Word = articles[startJoin].Word.Substring(0, articles[startJoin].Word.Length - 2).TrimEnd();
-                    articles[startJoin].Translation = endings[0] + "." + Common.NewLineDelimiter + "  " + articles[startJoin].Translation;
+                    articles[startJoin].Translation = endings[0] + "." + NewLineDelimiter + "  " + articles[startJoin].Translation;
 
                     for (int k = startJoin + 1; k <= endJoin; k++)
                     {
-                        articles[startJoin].Translation += Common.NewLineDelimiter + endings[k - startJoin] + "." + Common.NewLineDelimiter + "  " + articles[k].Translation;
+                        articles[startJoin].Translation += NewLineDelimiter + endings[k - startJoin] + "." + NewLineDelimiter + "  " + articles[k].Translation;
                     }
 
 

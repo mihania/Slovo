@@ -17,7 +17,7 @@
         internal OjegovFormatter(string fullFileName, ITypeFormatter formatter)
             : base(fullFileName, formatter)
         {
-            RegexAlternameIReplace = Common.NewLineDelimiter.ToString() + Common.TabSpace + RegexAlternameBReplace;
+            RegexAlternameIReplace = NewLineDelimiter.ToString() + Common.TabSpace + RegexAlternameBReplace;
             RegexAlternameBReplace = this.typeFormatter.AlternateColorBegin + "${text}." + this.typeFormatter.AlternateColorEnd;
         }
 
@@ -92,8 +92,8 @@
             translation = translation.Replace(Deprecated7ThCharacter, "-");
 
             // new lines
-            translation = Regex.Replace(translation, "(?<num>[0-9]+)\\.", Common.NewLineDelimiter + "${num}.");
-            translation = translation.Replace("II", Common.NewLineDelimiter.ToString());
+            translation = Regex.Replace(translation, "(?<num>[0-9]+)\\.", NewLineDelimiter + "${num}.");
+            translation = translation.Replace("II", NewLineDelimiter.ToString());
             
 
             // alternate color + new lines for <i>..</i>

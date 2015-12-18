@@ -64,10 +64,10 @@
                         int p_cnt = int.Parse(spl[2]); // 2
                         int x = 2 + p_cnt + 1 + 1; // 2 - current, p_cnt skip, 1 - sense_cnt, 1 - tagsense_cnt
                         if (j > 0)
-                            sb.Append(Common.NewLineDelimiter);    
+                            sb.Append(NewLineDelimiter);    
 
                         this.AppendDecoratedPos(sb, pos);
-                        sb.Append(Common.NewLineDelimiter);
+                        sb.Append(NewLineDelimiter);
                         for (var i = 1; i <= synset_cnt; i++)
                         {
 
@@ -78,13 +78,13 @@
 
                             if (i > 1)
                             {
-                                sb.Append(Common.NewLineDelimiter);
+                                sb.Append(NewLineDelimiter);
                             }
 
                             sb.Append(i).Append(". ").Append(synset.Gloss);
                             if (synset.Synonims.Count > 0)
                             {
-                                sb.Append(Common.NewLineDelimiter + this.typeFormatter.AlternateColorBegin + " (");
+                                sb.Append(NewLineDelimiter + this.typeFormatter.AlternateColorBegin + " (");
                                 for (int k = 0; k < synset.Synonims.Count; k++)
                                 {
                                     sb.Append(synset.Synonims[k]);
@@ -100,11 +100,11 @@
 
                             if (!string.IsNullOrEmpty(synset.Sentences))
                             {
-                                sb.Append(Common.NewLineDelimiter + " ");
+                                sb.Append(NewLineDelimiter + " ");
                                 sb.Append(synset.Sentences);
                             }
 
-                            sb.Append(Common.NewLineDelimiter);
+                            sb.Append(NewLineDelimiter);
                         }
                     }
 
@@ -174,7 +174,7 @@
                         {
                             // end of example, let's make new line
                             s = s.Remove(i, 1);
-                            string newLine = Common.NewLineDelimiter.ToString(CultureInfo.InvariantCulture);
+                            string newLine = NewLineDelimiter.ToString(CultureInfo.InvariantCulture);
                             s = s.Insert(i, newLine);
                             i += newLine.Length;
                         }

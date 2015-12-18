@@ -91,7 +91,7 @@ namespace Slovo.Controls
                     }
                     else
                     {
-                        sb.Append(Common.NewLineDelimiter);
+                        sb.Append('\n');
                     }
                 }
                 

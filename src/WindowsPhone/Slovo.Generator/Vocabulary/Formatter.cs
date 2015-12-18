@@ -15,6 +15,7 @@ namespace Slovo.Generator
 
     abstract class Formatter
     {
+        protected const char NewLineDelimiter = '\n';
         protected List<Article> articles = new List<Article>();
         protected string fullFileName;
 
@@ -76,6 +77,11 @@ namespace Slovo.Generator
                             foreach (Article article in articles)
                             {
                                 var formattedDefinition = this.GetFormattedDefinition(article.Word, article.Translation);
+                                if (this.typeFormatter.GetType() == typeof(RtfFormatter))
+                                {
+                                    formattedDefinition = formattedDefinition.Replace(NewLineDelimiter.ToString(), this.typeFormatter.NewLine);
+                                }
+
                                 if (this.typeFormatter.IsValid(formattedDefinition, article.Word))
                                 {
                                     listBinaryWriter.Write(article.Word);
@@ -158,9 +164,9 @@ namespace Slovo.Generator
 
         protected static string ReplaceSemicolon(string originalDef)
         {
-            originalDef = originalDef.Replace("; " + Common.NewLineDelimiter, " " + Common.NewLineDelimiter);
-            originalDef = originalDef.Replace(";" + Common.NewLineDelimiter, Common.NewLineDelimiter.ToString());
-            originalDef = originalDef.Replace(";", Common.NewLineDelimiter + Common.TabSpace + Common.TabSpace);
+            originalDef = originalDef.Replace("; " + NewLineDelimiter, " " + NewLineDelimiter);
+            originalDef = originalDef.Replace(";" + NewLineDelimiter, NewLineDelimiter.ToString());
+            originalDef = originalDef.Replace(";", NewLineDelimiter + Common.TabSpace + Common.TabSpace);
             return originalDef;
         }
 
@@ -176,7 +182,7 @@ namespace Slovo.Generator
                 while ((line = reader.ReadLine()) != null)
                 {
                     buffer.Append(line);
-                    buffer.Append(Common.NewLineDelimiter);
+                    buffer.Append(NewLineDelimiter);
                     lineCount++;
 
                     if (lineCount == Common.MaxLinesPerTextBlock)
@@ -253,7 +259,7 @@ namespace Slovo.Generator
         private static bool IsAllowedInBetween(char ch, char prevCh, int curly)
         {
             return
-                (curly >= 0 || ch != ')') && (prevCh != ' ' || ch != '-') && ch != Common.NewLineDelimiter
+                (curly >= 0 || ch != ')') && (prevCh != ' ' || ch != '-') && ch != NewLineDelimiter
                 && (Char.IsPunctuation(ch) || Char.IsWhiteSpace(ch) || ch == '~' || Char.IsDigit(ch));
         }
 
@@ -283,7 +289,7 @@ namespace Slovo.Generator
                     {
                         if (k!= startDuplicate) 
                         {
-                            sb.Append(Common.NewLineDelimiter);
+                            sb.Append(NewLineDelimiter);
                         }
                         sb.Append(numbers[k - startDuplicate]).Append(".").Append(" ").Append(Articles[k].Translation);
                     }

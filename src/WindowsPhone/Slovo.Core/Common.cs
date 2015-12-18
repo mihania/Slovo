@@ -7,7 +7,6 @@ namespace Slovo.Core
 {
     public class Common
     {
-        public const char NewLineDelimiter = '\n';
         public const string TabSpace = "  ";
         public static Encoding VocabularyEncoding = Encoding.UTF8;
         public static int MaxLinesPerTextBlock = 3;

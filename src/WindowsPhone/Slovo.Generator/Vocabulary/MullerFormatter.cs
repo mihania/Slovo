@@ -48,23 +48,23 @@
             //  2.
             //II.
 
-            string str1 = Regex.Replace(originalDef, "(?<num>[0-9]+)>", Common.NewLineDelimiter + Common.TabSpace + "${num})");
-            string str2 = Regex.Replace(str1, "(?<num>[а-я]+)>", Common.NewLineDelimiter + Common.TabSpace + "${num})");
-            string str3 = Regex.Replace(str2, "(?<num>[0-9]+)\\.", Common.NewLineDelimiter + "${num}.");
+            string str1 = Regex.Replace(originalDef, "(?<num>[0-9]+)>", NewLineDelimiter + Common.TabSpace + "${num})");
+            string str2 = Regex.Replace(str1, "(?<num>[а-я]+)>", NewLineDelimiter + Common.TabSpace + "${num})");
+            string str3 = Regex.Replace(str2, "(?<num>[0-9]+)\\.", NewLineDelimiter + "${num}.");
 
             // roman numerals
-            originalDef = Regex.Replace(str3, "_(?<num>[I, V, X]+)", Common.NewLineDelimiter + "${num}.");
+            originalDef = Regex.Replace(str3, "_(?<num>[I, V, X]+)", NewLineDelimiter + "${num}.");
             originalDef = originalDef.Replace("_v.", "гл.");
             originalDef = originalDef.Replace("_n.", "сущ.");
             originalDef = originalDef.Replace("_a.", "прил.");
-            originalDef = originalDef.Replace("_Syn:", Common.NewLineDelimiter + "Syn:");
-            originalDef = originalDef.Replace("_Ant:", Common.NewLineDelimiter + "Ant:");
+            originalDef = originalDef.Replace("_Syn:", NewLineDelimiter + "Syn:");
+            originalDef = originalDef.Replace("_Ant:", NewLineDelimiter + "Ant:");
             originalDef = originalDef.Replace("_", "");
             originalDef = ReplaceSemicolon(originalDef);
 
-            if (originalDef.StartsWith(Common.NewLineDelimiter.ToString()))
+            if (originalDef.StartsWith(NewLineDelimiter.ToString()))
             {
-                originalDef = originalDef.Substring(Common.NewLineDelimiter.ToString().Length);
+                originalDef = originalDef.Substring(NewLineDelimiter.ToString().Length);
             }
 
             originalDef = Decorate(originalDef);
