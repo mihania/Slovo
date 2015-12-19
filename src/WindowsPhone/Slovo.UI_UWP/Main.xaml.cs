@@ -59,6 +59,7 @@ namespace Slovo.UI
             if (current != null)
             {
                 int topItemNumber = current.Cursor;
+                
                 // This check is required because of ArgumentOutOfRangeException on current[topItemNumber]
                 if (topItemNumber >= 0 && current.List != null && topItemNumber < current.List.Count)
                 {
@@ -73,6 +74,7 @@ namespace Slovo.UI
                     }
                 }
             }
+
             this.ManageKeyboardVisibility();
             this.InitDirectionAsync();
         }

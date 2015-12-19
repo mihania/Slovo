@@ -106,10 +106,13 @@
     </Compile>
     <Compile Include="Helpers\PhoneApplicationServiceHelper.cs">
     </Compile>
+    <Compile Include="Helpers\SpeechSynthesizer.cs" />
     <Compile Include="Helpers\TilesHelper.cs">
     </Compile>
     <Compile Include="Helpers\TileHelper.cs">
     </Compile>
+    <Compile Include="Helpers\WriteableBitmapHelper.cs" />
+    <Compile Include="PhoneCore\XmlIO.cs" />
     <Compile Include="Resources\AppResources.cs">
     </Compile>
     <Compile Include="Resources\CommonResources.cs">
@@ -146,7 +149,7 @@
     <Compile Include="Controls\Article.xaml.cs">
       <DependentUpon>Article.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PhoneStreamGetter.cs">
+    <Compile Include="PhoneCore\PhoneStreamGetter.cs">
     </Compile>
     <Compile Include="Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>

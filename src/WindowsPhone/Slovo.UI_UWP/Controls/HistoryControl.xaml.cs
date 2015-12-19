@@ -5,6 +5,7 @@ namespace Slovo
     using System.Collections.ObjectModel;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
+    using System.Threading.Tasks;
 
     public partial class HistoryControl : UserControl
     {
@@ -21,9 +22,10 @@ namespace Slovo
             }
         }
 
-        private void PhoneApplicationPage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private async void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
             list.Items.Clear();
+            await ManagerInstance.History.EnsurePersistenceHistoryLoaded();
             foreach (var item in ManagerInstance.History.Items)
             {
                 list.Items.Add(item);
@@ -36,11 +38,19 @@ namespace Slovo
             {
                 var directionArticle = (Slovo.Core.Directions.DirectionArticle)list.SelectedItem;
                 ManagerInstance.History.CurrentIndex = ManagerInstance.History.Items.IndexOf(directionArticle);
-                (Window.Current.Content as Frame).Navigate(typeof(DirectionArticle2), directionArticle);
+
+                var parameters = new DirectionArticleNavigateParams()
+                {
+                    DirectionId = directionArticle.DirectionId,
+                    Sense = directionArticle.Sense,
+                    DirectionOffsets = directionArticle.DefinitionOffsets
+                };
+
+                (Window.Current.Content as Frame).Navigate(typeof(DirectionArticle2), parameters);
             }
         }
 
-        private void MenuItemRemoveClick(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void MenuItemRemoveClick(object sender, RoutedEventArgs e)
         {
             var directionArticle = (Slovo.Core.Directions.DirectionArticle)(sender as Windows.UI.Xaml.Controls.MenuFlyoutItem).DataContext;
             if (directionArticle != null)

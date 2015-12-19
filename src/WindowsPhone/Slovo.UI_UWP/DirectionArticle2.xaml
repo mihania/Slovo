@@ -18,7 +18,7 @@
             <AppBarButton Label="Back" Click="BackButton_Click" Icon="Back" Name="BackButton" />
             <AppBarButton Label="Next" Click="NextButton_Click" Icon="Forward" Name="NextButton"/>
             <AppBarButton Label="Listen" Click="SpeakButton_Click" Name="SpeakButton" Icon="Volume" />
-            <AppBarButton Label="Search" Click="SearchButton_Click" Icon="Find" Name="SearhButton" />
+            <AppBarButton Label="Search" Click="SearchButton_Click" Icon="Find" Name="SearhButton" Visibility="Collapsed" />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

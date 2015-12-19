@@ -10,6 +10,7 @@ namespace Slovo
     using Slovo.Core;
     using Slovo.Core.Vocabularies;
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
 
 
     /// <summary>
@@ -155,7 +156,7 @@ namespace Slovo
             //TODO: Save application state and stop any background activity
             deferral.Complete();
             Application_Deactivated(sender, e);
-            Application_Closing(sender, e);
+            // Application_Closing(sender, e);
         }
 
         private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance
@@ -166,11 +167,16 @@ namespace Slovo
             }
         }
 
-        private void OnClosing()
+        private void SavePersistenceState()
         {
             if (ManagerInstance.History.IsChanged)
             {
-                ManagerInstance.History.Save();
+                // https://blogs.windows.com/buildingapps/2013/06/25/file-handling-with-windows-storage-apis/
+                // If you call an async method directly to persist state in the Application_Deactivated event handler, the method never finishes its work. The trick is to run the task on a separate thread and wait for its completion. The following routine calls two helper methods that save the lists of folders and files created by the sample app when it’s deactivated.
+                Task.Run(async () =>
+                {
+                    await ManagerInstance.History.Save();
+                }).Wait();
             }
         }
 
@@ -190,14 +196,9 @@ namespace Slovo
 
         // Code to execute when the application is deactivated (sent to background)
         // This code will not execute when the application is closing
-        private async void Application_Deactivated(object sender, System.Object e)
+        private void Application_Deactivated(object sender, System.Object e)
         {
-            this.OnClosing();
-        }
-
-        async void Application_Closing(object obj, Windows.ApplicationModel.SuspendingEventArgs args)
-        {
-            this.OnClosing();
+            this.SavePersistenceState();
         }
     }
 }

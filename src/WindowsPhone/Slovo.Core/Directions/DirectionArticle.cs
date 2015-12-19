@@ -1,10 +1,8 @@
 ﻿namespace Slovo.Core.Directions
 {
     using System.Collections.Generic;
-    using Slovo.Core.Vocabularies;
     using System.Runtime.Serialization;
     using System.Xml.Serialization;
-    using System.Runtime.Serialization;
 
     [DataContract]
     public class DirectionArticle
@@ -12,6 +10,10 @@
         private const long Mulitplier = 10000000000;
 
         internal const int MaxVocabulariesInDirection = 100;
+
+        public DirectionArticle()
+        {
+        }
 
         public DirectionArticle(string sense)
         {
@@ -57,6 +59,35 @@
         [DataMember(Name="DefinitionOffsets_2_1_0_0")]
         public Dictionary<int, int> DefinitionOffsets { get; set;}
 
+        public override bool Equals(object obj)
+        {
+            //obj is null 
+            if (obj == null)
+            {
+                return false;
+            }
+
+            DirectionArticle other = obj as DirectionArticle;
+            if (other != null)
+            {
+                return this.Sense == other.Sense;
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            int result = -1;
+            if (!string.IsNullOrEmpty(this.Sense))
+            {
+                result = this.Sense.GetHashCode();
+            }
+
+            return result;
+        }
+
+
         internal long OffsetForTwoNumbers { private get; set; }
 
         internal int GetDefinitionOffsetByVocabularyId(int vocabularyId)
@@ -89,34 +120,6 @@
 
                 this.OffsetForTwoNumbers = -1;
             }
-        }
-
-        public override bool Equals(object obj)
-        {
-            //obj is null 
-            if (obj == null)
-            {
-                return false;
-            }
-
-            DirectionArticle other = obj as DirectionArticle;
-            if (other != null) 
-            {
-                return this.Sense == other.Sense;
-            }
-
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            int result = -1;
-            if (!string.IsNullOrEmpty(this.Sense))
-            {
-                result = this.Sense.GetHashCode();
-            }
-
-            return result;
         }
 
         internal static long SerializeNumbers(int firstNumber, int secondNumber)

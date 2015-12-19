@@ -176,6 +176,8 @@
                 var article = (UI.Controls.Article)pivotItem.Content;
                 if (!string.IsNullOrEmpty(article.SelectedText))
                 {
+                    var selectedText = article.SelectedText.Trim();
+
                 }
             }
         }

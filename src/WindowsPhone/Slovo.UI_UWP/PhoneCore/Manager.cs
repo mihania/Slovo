@@ -1,147 +1,158 @@
 namespace Slovo.Core
 {
-   using Slovo.Core.Config;
-   using Slovo.Core.Directions;
-   using Slovo.Core.Vocabularies;
-   using System;
-   using System.Collections.Generic;
+    using Slovo.Core.Config;
+    using Slovo.Core.Directions;
+    using Slovo.Core.Vocabularies;
+    using System;
+    using System.Collections.Generic;
 
-   internal class Manager<T, E>
-      where T : IStreamGetter, new()
-      where E : ICollection<Vocabulary<T>>, IList<Vocabulary<T>>, new()
-   {
-      private static Manager<T, E> _instance;
-      private readonly T streamGetter = new T();
-      private History history = new History();
+    internal class Manager<T, E>
+       where T : IStreamGetter, new()
+       where E : ICollection<Vocabulary<T>>, IList<Vocabulary<T>>, new()
+    {
+        private static Manager<T, E> _instance;
+        private readonly T streamGetter = new T();
+        private History<T> history = new History<T>();
 
-      private Manager()
-      {
-         this.Configuration = Configuration<T, E>.LoadConfiguration();
-      }
+        private Manager()
+        {
+            this.Configuration = Configuration<T, E>.LoadConfiguration();
+        }
 
-      internal static Manager<T, E> Instance
-      {
-         get
-         {
-            if ( _instance == null )
+        internal static Manager<T, E> Instance
+        {
+            get
             {
-               _instance = new Manager<T, E>();
+                if (_instance == null)
+                {
+                    _instance = new Manager<T, E>();
+                }
+                return _instance;
             }
-            return _instance;
-         }
-      }
+        }
 
-      public Configuration<T, E> Configuration { get; set; }
+        public Configuration<T, E> Configuration { get; set; }
 
-      internal Direction<T, E> CurrentDirection { get; set; }
+        internal Direction<T, E> CurrentDirection { get; set; }
 
-      internal History History
-      {
-         get
-         {
-            return this.history;
-         }
-      }
-
-      internal LoadingState CurrentLoadingState
-      {
-         get
-         {
-            LoadingState result = LoadingState.NotLoaded;
-            if ( this.CurrentDirection != null )
+        internal History<T> History
+        {
+            get
             {
-               result = this.CurrentDirection.LoadingState;
+                return this.history;
+            }
+        }
+
+        internal string LastSearchedWord
+        {
+            get
+            {
+                return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["LastSearchedWord"];
+            }
+
+            set
+            {
+                Windows.Storage.ApplicationData.Current.LocalSettings.Values["LastSearchedWord"] = value;
+            }
+        }
+
+        internal LoadingState CurrentLoadingState
+        {
+            get
+            {
+                LoadingState result = LoadingState.NotLoaded;
+                if (this.CurrentDirection != null)
+                {
+                    result = this.CurrentDirection.LoadingState;
+                }
+                return result;
+            }
+        }
+
+        internal Vocabulary<T> GetVocabulary(int voc)
+        {
+            Vocabulary<T> result = null;
+            foreach (var direction in this.Configuration.Directions)
+            {
+                foreach (var vocabulary in direction.Vocabularies)
+                {
+                    if (vocabulary.VocabularyId == voc)
+                    {
+                        result = vocabulary;
+                        break;
+                    }
+                }
+            }
+            if (result == null)
+            {
+                throw new ArgumentOutOfRangeException(voc.ToString());
             }
             return result;
-         }
-      }
+        }
 
-      internal Vocabulary<T> GetVocabulary(int voc)
-      {
-         Vocabulary<T> result = null;
-         foreach ( var direction in this.Configuration.Directions )
-         {
-            foreach ( var vocabulary in direction.Vocabularies )
+        internal Direction<T, E> GetDirection(int directionId, LoadingState loadingState)
+        {
+            var result = this.Configuration.Directions.GetDirectionById(directionId);
+            if (result.LoadingState != LoadingState.Loaded)
             {
-               if ( vocabulary.VocabularyId == voc )
-               {
-                  result = vocabulary;
-                  break;
-               }
+                this.Configuration.Directions.GetDirectionById(directionId).Deserialize(loadingState);
             }
-         }
-         if ( result == null )
-         {
-            throw new ArgumentOutOfRangeException(voc.ToString());
-         }
-         return result;
-      }
+            return result;
+        }
 
-      internal Direction<T, E> GetDirection(int directionId, LoadingState loadingState)
-      {
-         var result = this.Configuration.Directions.GetDirectionById(directionId);
-         if ( result.LoadingState != LoadingState.Loaded )
-         {
-            this.Configuration.Directions.GetDirectionById(directionId).Deserialize(loadingState);
-         }
-         return result;
-      }
-
-      /// <summary>
-      /// Update directions
-      /// </summary>
-      /// <param name="newDirections">New direction</param>
-      /// <returns>True if update was required, otherwise false</returns>
-      internal EqualStatus UpdateDirections(DirectionList<T, E> newDirections)
-      {
-         var result = EqualStatus.Equal;
-         // looping through keys because inside loop dictionary is modified
-         var directionIdList = new List<int>();
-         foreach ( var direction in this.Configuration.Directions )
-         {
-            directionIdList.Add(direction.Id);
-         }
-         foreach ( var directionId in directionIdList )
-         {
-            var oldDirection = this.Configuration.Directions.GetDirectionById(directionId);
-            var newDirection = newDirections[directionId];
-            if ( newDirection != null )
+        /// <summary>
+        /// Update directions
+        /// </summary>
+        /// <param name="newDirections">New direction</param>
+        /// <returns>True if update was required, otherwise false</returns>
+        internal EqualStatus UpdateDirections(DirectionList<T, E> newDirections)
+        {
+            var result = EqualStatus.Equal;
+            // looping through keys because inside loop dictionary is modified
+            var directionIdList = new List<int>();
+            foreach (var direction in this.Configuration.Directions)
             {
-               var equalStatus = newDirection.Equals(oldDirection);
-               if ( equalStatus != EqualStatus.Equal )
-               {
-                  if ( equalStatus == EqualStatus.NotEqual )
-                  {
-                     result = equalStatus;
-                     newDirection.Serialize();
-                  }
-                  else if ( equalStatus == EqualStatus.SameEnabledVocabularies )
-                  {
-                     // check that all previous vocabularies are equal
-                     if ( result == EqualStatus.Equal )
-                     {
-                        result = equalStatus;
-                     }
-                     // initialy IndexInDirectionFile is set manually in Configuration.xml
-                     // if user only changes the vocabularies order in direction, we need to update it in Confiration.xml
-                     foreach ( var newVocabulary in newDirection.Vocabularies )
-                     {
-                        var vocabularyInOldDirection = oldDirection.GetVocabularyByVocabularyId(newVocabulary.VocabularyId);
-                        if ( vocabularyInOldDirection == null )
+                directionIdList.Add(direction.Id);
+            }
+            foreach (var directionId in directionIdList)
+            {
+                var oldDirection = this.Configuration.Directions.GetDirectionById(directionId);
+                var newDirection = newDirections[directionId];
+                if (newDirection != null)
+                {
+                    var equalStatus = newDirection.Equals(oldDirection);
+                    if (equalStatus != EqualStatus.Equal)
+                    {
+                        if (equalStatus == EqualStatus.NotEqual)
                         {
-                           throw new VocabularyNotFoundException("Vocabulary must exist in old direction as only order of vocabularies changed.");
+                            result = equalStatus;
+                            newDirection.Serialize();
                         }
-                        var oldIndexInDirection = vocabularyInOldDirection.IndexInDirectionFile;
-                        newVocabulary.IndexInDirectionFile = oldIndexInDirection;
-                     }
-                  }
-                  this.Configuration.Directions[directionId] = newDirection;
-               }
+                        else if (equalStatus == EqualStatus.SameEnabledVocabularies)
+                        {
+                            // check that all previous vocabularies are equal
+                            if (result == EqualStatus.Equal)
+                            {
+                                result = equalStatus;
+                            }
+                            // initialy IndexInDirectionFile is set manually in Configuration.xml
+                            // if user only changes the vocabularies order in direction, we need to update it in Confiration.xml
+                            foreach (var newVocabulary in newDirection.Vocabularies)
+                            {
+                                var vocabularyInOldDirection = oldDirection.GetVocabularyByVocabularyId(newVocabulary.VocabularyId);
+                                if (vocabularyInOldDirection == null)
+                                {
+                                    throw new VocabularyNotFoundException("Vocabulary must exist in old direction as only order of vocabularies changed.");
+                                }
+                                var oldIndexInDirection = vocabularyInOldDirection.IndexInDirectionFile;
+                                newVocabulary.IndexInDirectionFile = oldIndexInDirection;
+                            }
+                        }
+                        this.Configuration.Directions[directionId] = newDirection;
+                    }
+                }
             }
-         }
-         return result;
-      }
-
-   }
-
+            return result;
+        }
+    }
 }
