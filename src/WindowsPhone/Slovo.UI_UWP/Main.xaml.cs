@@ -37,7 +37,7 @@ namespace Slovo.UI
             // localization resources
             HistoryLabel.Text = CommonResources.History;
             SearchLabel.Text = CommonResources.Search;
-            VocabulariesLabel.Text = CommonResources.Vocabularies;
+            // VocabulariesLabel.Text = CommonResources.Vocabularies;
             this.DataContext = this;
         }
 

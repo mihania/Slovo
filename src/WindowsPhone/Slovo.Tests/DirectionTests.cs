@@ -16,6 +16,14 @@
     public class DirectionTests
     {
         private class TestFileStreamGetter : FileStreamGetter {
+            public override string ProjectFolderName
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
             protected override string MapFileName(string fileName)
             {
                 string path = Directory.GetCurrentDirectory();

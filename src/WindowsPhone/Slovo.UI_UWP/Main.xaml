@@ -51,13 +51,15 @@
                 </StackPanel>
             </PivotItem.Header>
         </PivotItem>
-        <PivotItem Name="VocabulariesPivotItem" x:FieldModifier="internal">
+        <!--
+        <PivotItem Name="VocabulariesPivotItem" x:FieldModifier="internal" IsHitTestVisible="False">
             <PivotItem.Header>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Vocabularies" FontSize="40" VerticalAlignment="Center" Name="VocabulariesLabel" />
                 </StackPanel>
             </PivotItem.Header>
         </PivotItem>
+        -->
     </Pivot>
     <Page.BottomAppBar>
         <CommandBar>
