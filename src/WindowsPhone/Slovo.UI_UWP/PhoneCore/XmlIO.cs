@@ -5,6 +5,9 @@
     using System.Xml.Serialization;
     using System;
     using Windows.Storage;
+    using System.Runtime.Serialization;
+    using System.Xml;
+    using System.Text;
 
     internal class XmlIO
     {
@@ -12,7 +15,7 @@
         {
             // this reads XML content from a file ("filename") and returns an object  from the XML
             T objectFromXml = default(T);
-            var serializer = new XmlSerializer(typeof(T));
+            var serializer = new DataContractSerializer(typeof(T));
             StorageFolder folder = ApplicationData.Current.LocalFolder;
             StorageFile file = null;
             try
@@ -28,14 +31,14 @@
             {
                 Stream stream = await file.OpenStreamForReadAsync();
 
-#if DEBUG
-                //var sr = new StreamReader(stream);
-                //var content = sr.ReadToEnd();
-#endif
+//#if DEBUG
+//                var sr = new StreamReader(stream);
+//                var content = sr.ReadToEnd();
+//                stream = await file.OpenStreamForReadAsync();
+//#endif
                 try
                 {
-                    objectFromXml = (T)serializer.Deserialize(stream);
-                    stream.Dispose();
+                    objectFromXml = (T)serializer.ReadObject(stream);
                 }
                 catch(Exception)
                 {
@@ -61,15 +64,15 @@
         {
             // https://blogs.windows.com/buildingapps/2013/06/25/file-handling-with-windows-storage-apis/
 
-            // stores an object in XML format in file called 'filename'
-            var serializer = new XmlSerializer(typeof(T));
+            // we are using DataContractSerialize instead of XmlSerializer because we need to serialize Dictionary<int, int> type, which is not supported 
+            // by XmlSerializer.
+            var serializer = new DataContractSerializer(typeof(T));
             StorageFolder folder = ApplicationData.Current.LocalFolder;
             StorageFile file = await folder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
-            Stream stream = await file.OpenStreamForWriteAsync();
-
-            using (stream)
+            using (Stream stream = await file.OpenStreamForWriteAsync())
             {
-                serializer.Serialize(stream, objectToSave);
+                XmlDictionaryWriter xdw = XmlDictionaryWriter.CreateTextWriter(stream, Encoding.UTF8);
+                serializer.WriteObject(stream, objectToSave);
             }
         }
     }

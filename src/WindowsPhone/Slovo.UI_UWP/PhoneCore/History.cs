@@ -2,9 +2,10 @@ namespace Slovo.Core
 {
     using Slovo.Core.Directions;
     using System.Collections.Generic;
-    using System.IO.IsolatedStorage;
     using Slovo.UI.PhoneCore;
     using System.Threading.Tasks;
+    using System.Collections.Generic;
+    using System;
 
     internal class History<T> : IListIterator<Directions.DirectionArticle> where T : IStreamGetter, new()
     {
@@ -13,7 +14,7 @@ namespace Slovo.Core
         private const string HistoryFileName = "History.json";
         private bool isChanged = false;
         private int currentIndex;
-        private bool loadedFromStorage = false;
+        private bool persistenceHistoryLoaded = false;
 
         internal History()
         {
@@ -25,11 +26,31 @@ namespace Slovo.Core
 
         internal async Task EnsurePersistenceHistoryLoaded()
         {
-            if (!loadedFromStorage)
+            if (!persistenceHistoryLoaded)
             {
-                var persistenceHistory = await XmlIO.ReadObjectFromXmlFileAsync<List<Slovo.Core.Directions.DirectionArticle>>(HistoryFileName);
+                List<Slovo.Core.Directions.DirectionArticle> persistenceHistory = await XmlIO.ReadObjectFromXmlFileAsync<List<Slovo.Core.Directions.DirectionArticle>>(HistoryFileName);
+
+                // if we failed to load persistence history persistenceHistory reference will be null.
+                // ignore persistence history in this case, it could be because of backward compatibility issue.
+                if (persistenceHistory == null)
+                    persistenceHistory = new List<DirectionArticle>();
+
+                // Remove duplicates from persistence history.
+                ISet<string> set = new HashSet<string>();
+                foreach (var item in Items)
+                    set.Add(item.Sense);
+
+                
+                for (int i = persistenceHistory.Count - 1; i >= 0; i--)
+                {
+                    var item = persistenceHistory[i];
+                    if (set.Contains(item.Sense)) {
+                        persistenceHistory.RemoveAt(i);
+                    }
+                }
+
                 this.Items.AddRange(persistenceHistory);
-                loadedFromStorage = true;
+                persistenceHistoryLoaded = true;
             }
         }
 

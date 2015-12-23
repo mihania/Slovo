@@ -55,8 +55,7 @@
         /// <summary>
         /// Mapping list between vocabulary id and definition offset in the vocabulary
         /// </summary>
-        [XmlIgnore]
-        [DataMember(Name="DefinitionOffsets_2_1_0_0")]
+        [DataMember(Name = "DefinitionOffsets_3_0_0_0")]
         public Dictionary<int, int> DefinitionOffsets { get; set;}
 
         public override bool Equals(object obj)
