@@ -217,9 +217,13 @@
     <Content Include="Data\RuEn.lst">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="SplashScreenImage.jpg" />
     <Content Include="Images\ApplicationIcon.png" />
     <Content Include="Images\Background.png" />
+    <Content Include="SplashScreenImage.scale-100.jpg" />
+    <Content Include="SplashScreenImage.scale-125.jpg" />
+    <Content Include="SplashScreenImage.scale-150.jpg" />
+    <Content Include="SplashScreenImage.scale-200.jpg" />
+    <Content Include="SplashScreenImage.scale-400.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
