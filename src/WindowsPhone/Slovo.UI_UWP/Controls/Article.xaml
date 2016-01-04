@@ -7,7 +7,7 @@
     mc:Ignorable="d" 
     xmlns:my="using:Slovo.UI.Controls">
     <RichEditBox 
-        HorizontalAlignment="Left" 
+        HorizontalAlignment="Stretch" 
         x:Name="Viewer" 
         Grid.ColumnSpan="2" 
         FontSize="30" 
