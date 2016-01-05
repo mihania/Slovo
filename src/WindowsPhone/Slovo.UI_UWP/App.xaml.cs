@@ -1,5 +1,4 @@
-// The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
-namespace Slovo
+namespace Slovo.UI
 {
     using System;
     using Windows.ApplicationModel;
@@ -11,26 +10,29 @@ namespace Slovo
     using Slovo.Core.Vocabularies;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
-
-
+    using Windows.UI.Core;
+    
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
     {
         /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
+        /// Initializes the singleton Application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            Application.Current.UnhandledException += Current_UnhandledException;
         }
 
-        private void Current_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance
         {
+            get
+            {
+                return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance;
+            }
         }
 
         /// <summary>
@@ -47,90 +49,67 @@ namespace Slovo
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-            Application_Launching(e);
+
             Frame rootFrame = Window.Current.Content as Frame;
-            if (!TryToNavigateToTileReference(rootFrame, e))
+
+            // Do not repeat app initialization when the Window already has content,
+            // just ensure that the window is active
+            if (rootFrame == null)
             {
-                // Do not repeat app initialization when the Window already has content,
-                // just ensure that the window is active
-                if (rootFrame == null)
+                // Create a Frame to act as the navigation context and navigate to the first page
+                rootFrame = new Frame();
+
+                rootFrame.NavigationFailed += OnNavigationFailed;
+                rootFrame.Navigated += OnNavigated;
+
+
+                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
-                    // Create a Frame to act as the navigation context and navigate to the first page
-                    rootFrame = new Frame();
-                    // Set the default language
-                    rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
-                    rootFrame.NavigationFailed += OnNavigationFailed;
-                    if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                    {
-                        //TODO: Load state from previously suspended application
-                    }
-                    // Place the frame in the current Window
-                    Window.Current.Content = rootFrame;
+                    //TODO: Load state from previously suspended application
                 }
+
+                // Place the frame in the current Window
+                Window.Current.Content = rootFrame;
+
+                // Register a handler for BackRequested events and set the visibility of the Back button
+                // http://www.wintellect.com/devcenter/jprosise/handling-the-back-button-in-windows-10-uwp-apps
+                SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                    rootFrame.CanGoBack ?
+                    AppViewBackButtonVisibility.Visible :
+                    AppViewBackButtonVisibility.Collapsed;
             }
+
             if (rootFrame.Content == null)
             {
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(UI.Main), e.Arguments);
+                rootFrame.Navigate(typeof(Main), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
-            //[WP8SL_TO_UWP] The following code was added to emulate the default behavior of
-            // the back button on WP8SL
-            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.Visible;
-            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += (object sender, Windows.UI.Core.BackRequestedEventArgs backEventArgs) =>
-               {
-                   if (!backEventArgs.Handled && rootFrame.CanGoBack)
-                   {
-                       rootFrame.GoBack();
-                       backEventArgs.Handled = true;
-                   }
-               };
-            bool firstVisibilityEvent = true;
-            Window.Current.CoreWindow.VisibilityChanged += (windowObj, firstVisibilityEventArgs) =>
-               {
-                   if (firstVisibilityEvent)
-                   {
-                       firstVisibilityEvent = false;
-                   }
-                   else
-                   {
-                       if (firstVisibilityEventArgs.Visible)
-                       {
-                           Application_Activated(null, null);
-                        // Refresh the current page
-                        Frame currentFrame = Window.Current.Content as Frame;
-                           if (currentFrame != null)
-                           {
-                               var navstate = currentFrame.GetNavigationState();
-                               currentFrame.SetNavigationState(navstate);
-                           }
-                       }
-                       else
-                       {
-                           Application_Deactivated(null, null);
-                       }
-                   }
-               };
         }
 
-        bool TryToNavigateToTileReference(Frame rootFrame, LaunchActivatedEventArgs e)
+        private void OnNavigated(object sender, NavigationEventArgs e)
         {
-            switch (e.TileId)
+            // Each time a navigation event occurs, update the Back button's visibility
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                ((Frame)sender).CanGoBack ?
+                AppViewBackButtonVisibility.Visible :
+                AppViewBackButtonVisibility.Collapsed;
+        }
+
+        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame.CanGoBack)
             {
-                case "_About.xaml":
-                    rootFrame.Navigate(typeof(Slovo.UI.About), e.Arguments);
-                    return true;
-                case "_DirectionArticle2.xaml":
-                    rootFrame.Navigate(typeof(Slovo.DirectionArticle2), e.Arguments);
-                    return true;
-                case "_Main.xaml":
-                    rootFrame.Navigate(typeof(Slovo.UI.Main), e.Arguments);
-                    return true;
+                e.Handled = true;
+                rootFrame.GoBack();
             }
-            return false;
         }
 
         /// <summary>
@@ -153,52 +132,18 @@ namespace Slovo
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
+            SavePersistenceState();
             deferral.Complete();
-            Application_Deactivated(sender, e);
-            // Application_Closing(sender, e);
-        }
-
-        private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance
-        {
-            get
-            {
-                return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance;
-            }
         }
 
         private void SavePersistenceState()
         {
-            if (ManagerInstance.History.IsChanged)
+            // https://blogs.windows.com/buildingapps/2013/06/25/file-handling-with-windows-storage-apis/
+            // If you call an async method directly to persist state in the Application_Deactivated event handler, the method never finishes its work. The trick is to run the task on a separate thread and wait for its completion. The following routine calls two helper methods that save the lists of folders and files created by the sample app when it’s deactivated.
+            Task.Run(async () =>
             {
-                // https://blogs.windows.com/buildingapps/2013/06/25/file-handling-with-windows-storage-apis/
-                // If you call an async method directly to persist state in the Application_Deactivated event handler, the method never finishes its work. The trick is to run the task on a separate thread and wait for its completion. The following routine calls two helper methods that save the lists of folders and files created by the sample app when it’s deactivated.
-                Task.Run(async () =>
-                {
-                    await ManagerInstance.History.Save();
-                }).Wait();
-            }
-        }
-
-        void Application_Launching(Windows.ApplicationModel.Activation.LaunchActivatedEventArgs args)
-        {
-            //WINDOWS_PHONE_SL_TO_UWP: (1101) Microsoft.Phone.Shell.LaunchingEventArgs was not upgraded
-            Settings.Init();
-            // Call this on launch to initialise the feedback helper
-            NokiaFeedbackDemo.Helpers.FeedbackHelper.Default.Launching();
-        }
-
-        // Code to execute when the application is activated (brought to foreground)
-        // This code will not execute when the application is first launched
-        private void Application_Activated(object sender, System.Object e)
-        {
-        }
-
-        // Code to execute when the application is deactivated (sent to background)
-        // This code will not execute when the application is closing
-        private void Application_Deactivated(object sender, System.Object e)
-        {
-            this.SavePersistenceState();
+                await ManagerInstance.History.Save();
+            }).Wait();
         }
     }
 }

@@ -158,8 +158,11 @@ namespace Slovo.Core
 
         internal async Task Save()
         {
-            await EnsurePersistenceHistoryLoaded();
-            await XmlIO.SaveObjectToXml(this.Items, HistoryFileName);
+            if (IsChanged)
+            {
+                await EnsurePersistenceHistoryLoaded();
+                await XmlIO.SaveObjectToXml(this.Items, HistoryFileName);
+            }
         }
     }
 }
