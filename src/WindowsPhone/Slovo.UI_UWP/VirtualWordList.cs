@@ -56,7 +56,6 @@ namespace Slovo.UI
             {
                 // here is where the magic happens, create/load your data on the fly.
                 //http://shawnoster.com/blog/post/Improving-ListBox-Performance-in-Silverlight-for-Windows-Phone-7-Data-Virtualization.aspx
-                Debug.WriteLine("Requsted item " + index.ToString());
                 return new Word()
                 {
                     Name = _originalList[index]

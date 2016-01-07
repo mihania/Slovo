@@ -7,6 +7,7 @@
     using Slovo.Core.Vocabularies;
     using System.IO;
     using System.Collections.ObjectModel;
+    using System.Runtime.Serialization;
 
     [XmlRoot("Configuration")]
     public class Configuration<T, E>
@@ -24,10 +25,12 @@
         {
             using (var stream = new T().GetStream(ConfigurationFilePath))
             {
+
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
+
                     stream.CopyTo(memoryStream);
-                    XmlSerializer serializer = new XmlSerializer(typeof(Configuration<T, E>));
+                    var serializer = new XmlSerializer(typeof(Configuration<T, E>));
                     memoryStream.Position = 0;
                     var result = (Configuration<T, E>) serializer.Deserialize(memoryStream);
                     return result;

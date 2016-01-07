@@ -23,6 +23,7 @@ namespace Slovo.UI
         /// </summary>
         public App()
         {
+            Microsoft.HockeyApp.HockeyClient.Current.Configure("f20d5683e5ea481ca4ce280f802c89f4", endpointAddress: "https://eus-breeze-in.cloudapp.net/v2/track");
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
