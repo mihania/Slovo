@@ -33,11 +33,11 @@
             }
         }
 
-        internal Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance
+        internal Manager<PhoneStreamGetter> ManagerInstance
         {
             get
             {
-                return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance;
+                return Manager<PhoneStreamGetter>.Instance;
             }
         }
 
@@ -51,7 +51,7 @@
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
             Dispatcher.BeginInvoke(() => this.PerformanceProgressBar.IsIndeterminate = true);
-            var newDirections = (DirectionList<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>)this.DirectionList.ItemsSource;
+            var newDirections = (DirectionList<PhoneStreamGetter>)this.DirectionList.ItemsSource;
             var equalStatus = ManagerInstance.UpdateDirections(newDirections);
 
             switch (equalStatus)

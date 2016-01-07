@@ -13,11 +13,11 @@ namespace Slovo.UI
        : Windows.UI.Xaml.Controls.Page
     {
 
-        private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance
+        private Manager<PhoneStreamGetter> ManagerInstance
         {
             get
             {
-                return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance;
+                return Manager<PhoneStreamGetter>.Instance;
             }
         }
 

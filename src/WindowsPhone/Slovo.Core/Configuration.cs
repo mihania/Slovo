@@ -10,18 +10,16 @@
     using System.Runtime.Serialization;
 
     [XmlRoot("Configuration")]
-    public class Configuration<T, E>
-        where T : IStreamGetter, new()
-        where E : ICollection<Vocabulary<T>>, IList<Vocabulary<T>>, new()
+    public class Configuration<T> where T : IStreamGetter, new()
     {
         private const string ConfigurationFilePath = @"Data/Configuration.xml";
         private T streamGetter = new T();
 
         [XmlArray("Directions")]
         [XmlArrayItem("Direction")]
-        public DirectionList<T, E> Directions { get; set; }
+        public DirectionList<T> Directions { get; set; }
 
-        public static Configuration<T, E> LoadConfiguration()
+        public static Configuration<T> LoadConfiguration()
         {
             using (var stream = new T().GetStream(ConfigurationFilePath))
             {
@@ -30,9 +28,9 @@
                 {
 
                     stream.CopyTo(memoryStream);
-                    var serializer = new XmlSerializer(typeof(Configuration<T, E>));
+                    var serializer = new XmlSerializer(typeof(Configuration<T>));
                     memoryStream.Position = 0;
-                    var result = (Configuration<T, E>) serializer.Deserialize(memoryStream);
+                    var result = (Configuration<T>) serializer.Deserialize(memoryStream);
                     return result;
                 }
             }
@@ -40,7 +38,7 @@
 
         public void Save()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(Configuration<T, E>));
+            XmlSerializer serializer = new XmlSerializer(typeof(Configuration<T>));
             using (Stream s = streamGetter.CreateStream(ConfigurationFilePath))
             {
                 serializer.Serialize(s, this);
@@ -48,13 +46,11 @@
         }
     }
 
-    public class DirectionList<T, E> : List<Direction<T, E>>
-       where T : IStreamGetter, new()
-       where E : ICollection<Vocabulary<T>>, IList<Vocabulary<T>>, new()
+    public class DirectionList<T> : List<Direction<T>> where T : IStreamGetter, new()
     {
-        public Direction<T, E> GetDirectionById(int directionId)
+        public Direction<T> GetDirectionById(int directionId)
         {
-            Direction<T, E> result = null;
+            Direction<T> result = null;
             foreach (var direction in this)
             {
                 if (direction.Id == directionId)
@@ -67,9 +63,9 @@
             return result;
         }
 
-        public DirectionList<T, E> Clone()
+        public DirectionList<T> Clone()
         {
-            var result = new DirectionList<T, E>();
+            var result = new DirectionList<T>();
             foreach (var element in this)
             {
                 result.Add(element.Clone());
@@ -78,7 +74,7 @@
             return result;
         }
 
-        public bool Equals(DirectionList<T, E> other)
+        public bool Equals(DirectionList<T> other)
         {
             var result = true;
             foreach (var otherElem in other)

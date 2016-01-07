@@ -12,7 +12,7 @@
 
     public partial class About : PhoneApplicationPage
     {
-        private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance { get { return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance; } }
+        private Manager<PhoneStreamGetter> ManagerInstance { get { return Manager<PhoneStreamGetter>.Instance; } }
 
         public About()
         {

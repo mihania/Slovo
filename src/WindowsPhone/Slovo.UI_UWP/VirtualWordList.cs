@@ -75,7 +75,7 @@ namespace Slovo.UI
         public int IndexOf(object item)
         {
             // this method is invoked from ListView.ScrollIntoView.
-            return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance.CurrentDirection.Cursor;
+            return Manager<PhoneStreamGetter>.Instance.CurrentDirection.Cursor;
         }
 
         public IEnumerator<string> GetEnumerator()

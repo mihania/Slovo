@@ -41,7 +41,7 @@ namespace Slovo.UI
             this.DataContext = this;
         }
 
-        private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance { get { return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance; } }
+        private Manager<PhoneStreamGetter> ManagerInstance { get { return Manager<PhoneStreamGetter>.Instance; } }
 
         #region #PhoneApplicationPage events
 
@@ -55,7 +55,7 @@ namespace Slovo.UI
         /// </remarks>
         public void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
-            var current = Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance.CurrentDirection;
+            var current = Manager<PhoneStreamGetter>.Instance.CurrentDirection;
             if (current != null)
             {
                 int topItemNumber = current.Cursor;

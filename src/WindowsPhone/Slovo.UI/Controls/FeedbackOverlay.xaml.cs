@@ -83,7 +83,7 @@ namespace NokiaFeedbackDemo.Controls
 
         private PhoneApplicationFrame _rootFrame = null;
 
-        private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance { get { return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance; } }
+        private Manager<PhoneStreamGetter> ManagerInstance { get { return Manager<PhoneStreamGetter>.Instance; } }
 
         public string Title
         {

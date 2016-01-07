@@ -7,6 +7,7 @@ namespace Slovo.Generator
     using Slovo.Generator.Vocabulary;
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
 
     class Program
     {
@@ -50,7 +51,7 @@ namespace Slovo.Generator
         private static void WriteDirections81()
         {
             // var configuration = new Configuration<FileStreamGetter, List<Vocabulary<FileStreamGetter>>();
-            var configuration = Configuration<FileStreamGetter81, List<Vocabulary<FileStreamGetter81>>>.LoadConfiguration();
+            var configuration = Configuration<FileStreamGetter81>.LoadConfiguration();
             foreach (var direction in configuration.Directions)
             {
                 direction.Serialize();
@@ -60,7 +61,7 @@ namespace Slovo.Generator
         private static void WriteDirections10()
         {
             // var configuration = new Configuration<FileStreamGetter, List<Vocabulary<FileStreamGetter>>();
-            var configuration = Configuration<FileStreamGetter10, List<Vocabulary<FileStreamGetter10>>>.LoadConfiguration();
+            var configuration = Configuration<FileStreamGetter10>.LoadConfiguration();
             foreach (var direction in configuration.Directions)
             {
                 direction.Serialize();

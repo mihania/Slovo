@@ -6,34 +6,32 @@ namespace Slovo.Core
     using System;
     using System.Collections.Generic;
 
-    internal class Manager<T, E>
-       where T : IStreamGetter, new()
-       where E : ICollection<Vocabulary<T>>, IList<Vocabulary<T>>, new()
+    internal class Manager<T> where T : IStreamGetter, new()
     {
-        private static Manager<T, E> _instance;
+        private static Manager<T> _instance;
         private readonly T streamGetter = new T();
         private History<T> history = new History<T>();
 
         private Manager()
         {
-            this.Configuration = Configuration<T, E>.LoadConfiguration();
+            this.Configuration = Configuration<T>.LoadConfiguration();
         }
 
-        internal static Manager<T, E> Instance
+        internal static Manager<T> Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Manager<T, E>();
+                    _instance = new Manager<T>();
                 }
                 return _instance;
             }
         }
 
-        public Configuration<T, E> Configuration { get; set; }
+        public Configuration<T> Configuration { get; set; }
 
-        internal Direction<T, E> CurrentDirection { get; set; }
+        internal Direction<T> CurrentDirection { get; set; }
 
         internal History<T> History
         {
@@ -90,7 +88,7 @@ namespace Slovo.Core
             return result;
         }
 
-        internal Direction<T, E> GetDirection(int directionId, LoadingState loadingState)
+        internal Direction<T> GetDirection(int directionId, LoadingState loadingState)
         {
             var result = this.Configuration.Directions.GetDirectionById(directionId);
             if (result.LoadingState != LoadingState.Loaded)
@@ -105,7 +103,7 @@ namespace Slovo.Core
         /// </summary>
         /// <param name="newDirections">New direction</param>
         /// <returns>True if update was required, otherwise false</returns>
-        internal EqualStatus UpdateDirections(DirectionList<T, E> newDirections)
+        internal EqualStatus UpdateDirections(DirectionList<T> newDirections)
         {
             var result = EqualStatus.Equal;
             // looping through keys because inside loop dictionary is modified

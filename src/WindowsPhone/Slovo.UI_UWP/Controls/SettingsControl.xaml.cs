@@ -29,11 +29,11 @@ namespace Slovo
          //}
       }
 
-      internal Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance
+      internal Manager<PhoneStreamGetter> ManagerInstance
       {
          get
          {
-            return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance;
+            return Manager<PhoneStreamGetter>.Instance;
          }
       }
 
@@ -47,7 +47,7 @@ namespace Slovo
       private void ApplyButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
       {
          Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.PerformanceProgressBar.IsIndeterminate = true);
-         var newDirections = (DirectionList<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>)this.DirectionList.ItemsSource;
+         var newDirections = (DirectionList<PhoneStreamGetter>)this.DirectionList.ItemsSource;
          var equalStatus = ManagerInstance.UpdateDirections(newDirections);
          switch ( equalStatus )
          {

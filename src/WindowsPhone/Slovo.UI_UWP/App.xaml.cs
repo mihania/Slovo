@@ -28,11 +28,11 @@ namespace Slovo.UI
             this.Suspending += OnSuspending;
         }
 
-        private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance
+        private Manager<PhoneStreamGetter> ManagerInstance
         {
             get
             {
-                return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance;
+                return Manager<PhoneStreamGetter>.Instance;
             }
         }
 

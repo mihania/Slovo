@@ -43,15 +43,15 @@
             base.OnNavigatedTo(e);
         }
 
-        private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance
+        private Manager<PhoneStreamGetter> ManagerInstance
         {
             get
             {
-                return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance;
+                return Manager<PhoneStreamGetter>.Instance;
             }
         }
 
-        private Direction<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> Direction
+        private Direction<PhoneStreamGetter> Direction
         {
             get
             {

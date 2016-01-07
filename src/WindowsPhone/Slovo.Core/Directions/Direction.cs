@@ -8,14 +8,11 @@
     using System.Collections.ObjectModel;
     using System.Xml.Serialization;
     using Slovo.Core.Config;
-    using System.Globalization;
 
     /// <summary>
     /// The set of vocabularies with the same source language
     /// </summary>
-    public class Direction<T, E> : SenseList<DirectionArticle>
-        where E : ICollection<Vocabulary<T>>, IList<Vocabulary<T>>, new()
-        where T : IStreamGetter, new() 
+    public class Direction<T> : SenseList<DirectionArticle> where T : IStreamGetter, new() 
     {
         
         private readonly T streamGetter = new T();
@@ -34,7 +31,7 @@
 
         public Direction(IEnumerable<Vocabulary<T>> vocabularies)
         {
-            this.Vocabularies = new E();
+            this.Vocabularies = new ObservableCollection<Vocabulary<T>>();
             foreach (var voc in vocabularies)
             {
                 this.Vocabularies.Add(voc);
@@ -46,7 +43,7 @@
         /// </summary>
         [XmlArray("Vocabularies")]
         [XmlArrayItem("Vocabulary")]
-        public E Vocabularies { get; set; }
+        public ObservableCollection<Vocabulary<T>> Vocabularies { get; set; }
 
         /// <summary>
         /// Gets or sets direction id
@@ -87,11 +84,11 @@
         }
 
         [XmlIgnore]
-        internal E EnabledVocabularies
+        internal ObservableCollection<Vocabulary<T>> EnabledVocabularies
         {
             get
             {
-                E result = new E();
+                var result = new ObservableCollection<Vocabulary<T>>();
                 foreach (var voc in this.Vocabularies)
                 {
                     if (voc.IsEnabled)
@@ -281,12 +278,12 @@
             return directionArticleList;
         }
 
-        internal Direction<T, E> Clone()
+        internal Direction<T> Clone()
         {
-            var result = new Direction<T, E>();
+            var result = new Direction<T>();
             if (this.Vocabularies != null)
             {
-                result.Vocabularies = new E();
+                result.Vocabularies = new ObservableCollection<Vocabulary<T>>();
                 foreach (var voc in this.Vocabularies)
                 {
                     result.Vocabularies.Add(voc.Clone());
@@ -305,7 +302,7 @@
             return result;
         }
 
-        public EqualStatus Equals(Direction<T, E> other)
+        public EqualStatus Equals(Direction<T> other)
         {
             var result = EqualStatus.Equal;
             if (other == null)

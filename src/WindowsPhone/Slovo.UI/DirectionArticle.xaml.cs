@@ -20,8 +20,6 @@
         private const int ListenButtonIndex = 1;
         private const int NextButtonIndex = 2;
 
-        private bool speakStarted = false;
-
         public DirectionArticle()
         {
             this.InitializeComponent();
@@ -34,9 +32,9 @@
             this.Loaded += new RoutedEventHandler(DirectionArticle_Loaded);
         }
 
-        private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance { get { return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance; } }
+        private Manager<PhoneStreamGetter> ManagerInstance { get { return Manager<PhoneStreamGetter>.Instance; } }
 
-        private Direction<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> Direction
+        private Direction<PhoneStreamGetter> Direction
         {
             get
             {
@@ -140,7 +138,7 @@
         /// Loads article
         /// </summary>
         /// <param name="historyWatch">True if article is loaded in history window, otherwise false</param>
-        private void LoadDirectionArticle(Direction<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> direction, string sense, Dictionary<int, int> offsets, bool historyWatch)
+        private void LoadDirectionArticle(Direction<PhoneStreamGetter> direction, string sense, Dictionary<int, int> offsets, bool historyWatch)
         {
             tbWord.Text = sense;
             PivotArticle.Items.Clear();

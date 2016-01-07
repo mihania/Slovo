@@ -61,11 +61,11 @@ namespace NokiaFeedbackDemo.Controls
       public event EventHandler VisibilityChanged = null;
       private Windows.UI.Xaml.Controls.Frame _rootFrame = null;
 
-      private Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>> ManagerInstance
+      private Manager<PhoneStreamGetter> ManagerInstance
       {
          get
          {
-            return Manager<PhoneStreamGetter, ObservableCollection<Vocabulary<PhoneStreamGetter>>>.Instance;
+            return Manager<PhoneStreamGetter>.Instance;
          }
       }
 

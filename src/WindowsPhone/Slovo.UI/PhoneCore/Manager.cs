@@ -7,37 +7,35 @@
     using System.Collections.Generic;
     using Microsoft.ApplicationInsights;
 
-    internal class Manager<T, E> 
-        where T : IStreamGetter, new()
-        where E : ICollection<Vocabulary<T>>, IList<Vocabulary<T>>, new()
+    internal class Manager<T>  where T : IStreamGetter, new()
     {
-        private static Manager<T, E> _instance;
+        private static Manager<T> _instance;
         private readonly T streamGetter = new T();
         
         private History history = new History();
 
         private Manager()
         {
-            this.Configuration = Configuration<T, E>.LoadConfiguration();
+            this.Configuration = Configuration<T>.LoadConfiguration();
             this.TelemetryClient = new TelemetryClient();
         }
 
-        internal static Manager<T, E> Instance
+        internal static Manager<T> Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new Manager<T, E>();
+                    _instance = new Manager<T>();
                 }
 
                 return _instance; 
             }
         }
 
-        public Configuration<T, E> Configuration { get; set; }
+        public Configuration<T> Configuration { get; set; }
 
-        internal Direction<T, E> CurrentDirection { get; set; }
+        internal Direction<T> CurrentDirection { get; set; }
 
         internal History History
         {
@@ -86,7 +84,7 @@
             return result;
         }
 
-        internal Direction<T, E> GetDirection(int directionId, LoadingState loadingState)
+        internal Direction<T> GetDirection(int directionId, LoadingState loadingState)
         {
             var result = this.Configuration.Directions.GetDirectionById(directionId);
             if (result.LoadingState != LoadingState.Loaded)
@@ -102,7 +100,7 @@
         /// </summary>
         /// <param name="newDirections">New direction</param>
         /// <returns>True if update was required, otherwise false</returns>
-        internal EqualStatus UpdateDirections(DirectionList<T, E> newDirections)
+        internal EqualStatus UpdateDirections(DirectionList<T> newDirections)
         {
             var result = EqualStatus.Equal;
 
