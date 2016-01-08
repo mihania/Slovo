@@ -150,7 +150,6 @@
         private void SpeakButton_Click(object sender, RoutedEventArgs e)
         {
             OfflinePronounciation.SpeakAsync(currentDirectionArticle.Sense, this.Direction.SourceLanguageCode);
-
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
