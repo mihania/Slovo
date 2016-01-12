@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:m1="http://schemas.microsoft.com/appx/2010/manifest" xmlns:phone="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:wincap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/windowscapabilities" xmlns:t="http://schemas.microsoft.com/appx/manifest/types" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
-  <Identity Name="e782fb4917400e870ee18795e712f5" Publisher="CN=mihailsm" Version="3.0.0.0" />
+  <Identity Name="47006MihailSmacinih.Vocabulum" Publisher="CN=CB83FEAD-FDEE-4F8D-A3CB-008F70885AE1" Version="3.0.1.0" />
   <phone:PhoneIdentity PhoneProductId="0e4bc866-18d0-4ab2-b6d8-96cd67254fb5" PhonePublisherId="4a924c55-b4b8-47b6-b7cc-f942482a7126" />
   <Properties>
-    <DisplayName>Slovo.UI</DisplayName>
-    <PublisherDisplayName>mihailsm</PublisherDisplayName>
+    <DisplayName>Slovo Dictionary</DisplayName>
+    <PublisherDisplayName>Mihail Smacinih</PublisherDisplayName>
     <Logo>Assets\StoreLogo_resized_50x50.png</Logo>
   </Properties>
   <Resources>

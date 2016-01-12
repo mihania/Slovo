@@ -62,6 +62,11 @@ namespace Slovo
                     DirectionOffsets = directionArticle.DefinitionOffsets
                 };
 
+                if (directionArticle.Sense == "bug")
+                {
+                    throw new System.InvalidProgramException("This is what bug means in software development in history view.");
+                }
+
                 (Window.Current.Content as Frame).Navigate(typeof(DirectionArticle2), parameters);
             }
         }
