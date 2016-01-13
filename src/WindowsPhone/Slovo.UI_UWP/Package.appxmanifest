@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:m1="http://schemas.microsoft.com/appx/2010/manifest" xmlns:phone="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:wincap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/windowscapabilities" xmlns:t="http://schemas.microsoft.com/appx/manifest/types" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
-  <Identity Name="47006MihailSmacinih.Vocabulum" Publisher="CN=CB83FEAD-FDEE-4F8D-A3CB-008F70885AE1" Version="3.0.1.0" />
+<Package xmlns:m1="http://schemas.microsoft.com/appx/2010/manifest" xmlns:phone="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:t="http://schemas.microsoft.com/appx/manifest/types" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
+  <Identity Name="47006MihailSmacinih.Vocabulum" Publisher="CN=CB83FEAD-FDEE-4F8D-A3CB-008F70885AE1" Version="3.0.7.0" />
   <phone:PhoneIdentity PhoneProductId="0e4bc866-18d0-4ab2-b6d8-96cd67254fb5" PhonePublisherId="4a924c55-b4b8-47b6-b7cc-f942482a7126" />
   <Properties>
     <DisplayName>Slovo Dictionary</DisplayName>
@@ -15,9 +15,12 @@
   </Dependencies>
   <Applications>
     <Application Id="x0e4bc866y18d0y4ab2yb6d8y96cd67254fb5x" Executable="$targetnametoken$.exe" EntryPoint="Main.xaml">
-      <uap:VisualElements DisplayName="Slovo Dictionary" Description="Slovo Dictionary is a comprehensive English-Russian Dictionary app that comes with more than 200,000 entries. It supports detailed translation of each word and does not require Internet connection. You can find multiple dictionaries in the app, amongh which are WordNet, Mueller and Ojegov dictionaries." BackgroundColor="#292929" Square150x150Logo="Assets\SquareTile150x150_resized_150x150.png" Square44x44Logo="Assets\Logo_resized_44x44.png">
-        <uap:LockScreen Notification="badge" BadgeLogo="Assets\BadgeLogo.jpg" />
+      <uap:VisualElements DisplayName="Slovo Dictionary" Description="Slovo Dictionary is a comprehensive English-Russian Dictionary app that comes with more than 200,000 entries. It supports detailed translation of each word and does not require Internet connection. You can find multiple dictionaries in the app, amongh which are WordNet, Mueller and Ojegov dictionaries." BackgroundColor="transparent" Square150x150Logo="Assets\SquareTile150x150_resized_150x150.png" Square44x44Logo="Assets\Logo_resized_44x44.png">
+        <uap:LockScreen Notification="badge" BadgeLogo="Assets\BadgeLogo.png" />
         <uap:DefaultTile Square71x71Logo="Assets\SquareTile71x71_resized_71x71.png" ShortName="Slovo Dictionary">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+          </uap:ShowNameOnTiles>
         </uap:DefaultTile>
         <uap:SplashScreen Image="SplashScreenImage.jpg" BackgroundColor="#292929" />
         <uap:InitialRotationPreference>
@@ -27,13 +30,6 @@
           <uap:Rotation Preference="landscapeFlipped" />
         </uap:InitialRotationPreference>
       </uap:VisualElements>
-      <Extensions>
-        <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">
-          <BackgroundTasks>
-            <Task Type="systemEvent" />
-          </BackgroundTasks>
-        </Extension>
-      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
