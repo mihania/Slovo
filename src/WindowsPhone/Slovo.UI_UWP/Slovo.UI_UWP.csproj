@@ -189,12 +189,16 @@
     <Content Include="Assets\BadgeLogo.scale-200.png" />
     <Content Include="Assets\BadgeLogo.scale-400.png" />
     <Content Include="Assets\Logo_resized_44x44.scale-100.png" />
+    <Content Include="Assets\Logo_resized_44x44.scale-200.png" />
     <Content Include="Assets\SplashScreen.png" />
-    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\SplashScreenImage.scale-100.png" />
+    <Content Include="Assets\SplashScreenImage.scale-125.png" />
+    <Content Include="Assets\SplashScreenImage.scale-150.png" />
+    <Content Include="Assets\SplashScreenImage.scale-200.png" />
+    <Content Include="Assets\SplashScreenImage.scale-400.png" />
     <Content Include="Assets\SquareTile150x150_resized_150x150.scale-100.png" />
+    <Content Include="Assets\SquareTile150x150_resized_150x150.scale-200.png" />
     <Content Include="Assets\SquareTile71x71_resized_71x71.scale-100.png" />
-    <Content Include="Assets\SquareTile71x71_resized_71x71.scale-125.png" />
-    <Content Include="Assets\SquareTile71x71_resized_71x71.scale-150.png" />
     <Content Include="Assets\SquareTile71x71_resized_71x71.scale-200.png" />
     <Content Include="Assets\StoreLogo_resized_50x50.scale-100.png" />
     <Content Include="Assets\StoreLogo_resized_50x50.scale-125.png" />
@@ -203,10 +207,7 @@
     <Content Include="Assets\StoreLogo_resized_50x50.scale-400.png" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\Logo.png" />
     <Content Include="Assets\SplashScreen.png" />
-    <Content Include="Assets\SquareTile71x71.png" />
-    <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\WideLogo.png" />
     <Content Include="Data\Configuration.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -239,11 +240,6 @@
     </Content>
     <Content Include="Images\ApplicationIcon.png" />
     <Content Include="Images\Background.png" />
-    <Content Include="SplashScreenImage.scale-100.jpg" />
-    <Content Include="SplashScreenImage.scale-125.jpg" />
-    <Content Include="SplashScreenImage.scale-150.jpg" />
-    <Content Include="SplashScreenImage.scale-200.jpg" />
-    <Content Include="SplashScreenImage.scale-400.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
