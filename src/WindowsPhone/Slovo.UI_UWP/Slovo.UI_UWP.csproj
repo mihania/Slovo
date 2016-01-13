@@ -207,7 +207,6 @@
     <Content Include="Assets\StoreLogo_resized_50x50.scale-400.png" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\WideLogo.png" />
     <Content Include="Data\Configuration.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
