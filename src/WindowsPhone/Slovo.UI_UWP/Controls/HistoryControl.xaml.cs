@@ -35,21 +35,7 @@ namespace Slovo
         private void list_SelectionChanged(object sender, Windows.UI.Xaml.Controls.SelectionChangedEventArgs e)
         {
             // ToDo: use this event handler to determine when to show / hide app bar with delete button.
-        }
 
-        private void MenuItemRemoveClick(object sender, RoutedEventArgs e)
-        {
-            var directionArticle = (Slovo.Core.Directions.DirectionArticle)(sender as Windows.UI.Xaml.Controls.MenuFlyoutItem).DataContext;
-            if (directionArticle != null)
-            {
-                int index = ManagerInstance.History.Items.IndexOf(directionArticle);
-                ManagerInstance.History.Remove(directionArticle);
-                list.Items.RemoveAt(index);
-            }
-        }
-
-        private void list_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
-        {
             if (list.SelectedIndex != -1)
             {
                 var directionArticle = (Slovo.Core.Directions.DirectionArticle)list.SelectedItem;
@@ -69,6 +55,22 @@ namespace Slovo
 
                 (Window.Current.Content as Frame).Navigate(typeof(DirectionArticle2), parameters);
             }
+        }
+
+        private void MenuItemRemoveClick(object sender, RoutedEventArgs e)
+        {
+            var directionArticle = (Slovo.Core.Directions.DirectionArticle)(sender as Windows.UI.Xaml.Controls.MenuFlyoutItem).DataContext;
+            if (directionArticle != null)
+            {
+                int index = ManagerInstance.History.Items.IndexOf(directionArticle);
+                ManagerInstance.History.Remove(directionArticle);
+                list.Items.RemoveAt(index);
+            }
+        }
+
+        private void list_DoubleTapped(object sender, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
+        {
+            
         }
     }
 }

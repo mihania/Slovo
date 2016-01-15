@@ -8,15 +8,14 @@
     <ListView VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
                Name="list"  
                SelectionChanged="list_SelectionChanged"
-               FontSize="40" 
+               FontSize="25" 
                SelectionMode="Single" 
-               DoubleTapped="list_DoubleTapped"
                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <StackPanel Margin="0,10,0,0">
-                    <TextBlock Text="{Binding Sense}" TextWrapping="Wrap" FontSize="40" />
-                    <TextBlock Text="{Binding ShortDefinition}" Opacity="0.7" FontSize="30" TextWrapping="Wrap" />
+                    <TextBlock Text="{Binding Sense}" TextWrapping="Wrap" FontSize="25" />
+                    <TextBlock Text="{Binding ShortDefinition}" Opacity="0.7" FontSize="25" TextWrapping="Wrap" />
                 </StackPanel>
             </DataTemplate>
         </ListView.ItemTemplate>
