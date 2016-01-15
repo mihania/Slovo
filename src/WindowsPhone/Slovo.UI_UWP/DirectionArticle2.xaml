@@ -7,9 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Pivot Name="PivotArticle" x:FieldModifier="internal" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot.TitleTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding}" FontSize="25" />
+            </DataTemplate>
+        </Pivot.TitleTemplate>
         <Pivot.HeaderTemplate>
             <DataTemplate>
-                <TextBlock Text="{Binding}" FontSize="40" />
+                <TextBlock Text="{Binding}"/>
             </DataTemplate>
         </Pivot.HeaderTemplate>
     </Pivot>

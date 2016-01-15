@@ -10,6 +10,6 @@
         HorizontalAlignment="Stretch" 
         x:Name="Viewer" 
         Grid.ColumnSpan="2" 
-        FontSize="30" 
+        FontSize="25" 
         BorderThickness="0" />
 </UserControl>
