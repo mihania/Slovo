@@ -41,12 +41,12 @@ namespace Slovo.Generator.Direction
         }
     }
 
-    public class FileStreamGetter81 : FileStreamGetter
+    public class FileStreamGetter81 : Slovo.Generator.Direction.FileStreamGetter
     {
         public override string ProjectFolderName { get { return "Slovo.UI"; } }
     }
 
-    public class FileStreamGetter10 : FileStreamGetter
+    public class FileStreamGetter10 : Slovo.Generator.Direction.FileStreamGetter
     {
         public override string ProjectFolderName { get { return "Slovo.UI_UWP"; } }
     }

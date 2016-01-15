@@ -213,11 +213,6 @@
             return da;
         }
 
-        public bool IsSupportedInTrial(int index)
-        {
-            return this.List[index].Length == 0 || TrialLimitLetter[0] == this.List[index][0];
-        }
-
         /// <summary>
         /// Merges vocabularies in direction
         /// </summary>
@@ -295,7 +290,6 @@
             result.headerStart = this.headerStart;
             result.Id = this.Id;
             result.SourceLanguageCode = this.SourceLanguageCode;
-            result.TrialLimitLetter = this.TrialLimitLetter;
             result.DataFileName = this.DataFileName;
             result.Names = this.Names.Clone();
 

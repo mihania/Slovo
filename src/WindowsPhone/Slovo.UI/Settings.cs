@@ -7,28 +7,6 @@
 
     internal class Settings
     {
-        private static bool? isTrial;
-
-        internal static bool IsTrial
-        {
-            get
-            {
-//                if (!isTrial.HasValue)
-//                {
-//                    LicenseInformation li = new LicenseInformation();
-//                    isTrial = li.IsTrial();
-//#if DEBUG
-//                    // isTrial = true;
-//#endif
-//                }
-
-//                return isTrial.Value;
-
-                // since 2.0 Slovo is free of charge
-                return false;
-            }
-        }
-
         internal static Version AssemblyVersion
         {
             get

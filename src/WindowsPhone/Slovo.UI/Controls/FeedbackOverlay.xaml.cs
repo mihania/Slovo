@@ -4,20 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using NokiaFeedbackDemo.Helpers;
 using System.ComponentModel;
 using Slovo.Resources;
 using Microsoft.Phone.Tasks;
 using Microsoft.Phone.Info;
 using Slovo;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using Slovo.Core;
-using Slovo.Core.Vocabularies;
 using Microsoft.ApplicationInsights.DataContracts;
 
 namespace NokiaFeedbackDemo.Controls

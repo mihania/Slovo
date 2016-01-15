@@ -4,7 +4,6 @@ namespace Slovo.Core
     using System.Collections.Generic;
     using Slovo.UI.PhoneCore;
     using System.Threading.Tasks;
-    using System.Collections.Generic;
     using System;
 
     internal class History<T> : IListIterator<Directions.DirectionArticle> where T : IStreamGetter, new()

@@ -26,8 +26,6 @@ namespace Slovo.UI
 
         private Dictionary<string, bool> loadedPivots = new Dictionary<string, bool>();
 
-        public event EventHandler ApplicationBarClick;
-
         public Main()
         {
             InitializeComponent();

@@ -262,7 +262,7 @@ namespace Slovo.Controls
                 this.dragScrollDelta = y - autoScrollMargin;
                 if (!scrolling)
                 {
-                    this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.DragScroll());
+                    await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.DragScroll());
                     return;
                 }
             }
@@ -271,7 +271,7 @@ namespace Slovo.Controls
                 this.dragScrollDelta = (y + dragItemHeight - (this.dragInterceptorRect.Height - autoScrollMargin));
                 if (!scrolling)
                 {
-                    this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.DragScroll());
+                    await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.DragScroll());
                     return;
                 }
             }
@@ -314,7 +314,7 @@ namespace Slovo.Controls
         /// Automatically scrolls for as long as the drag is held within the margin.
         /// The speed of the scroll is adjusted based on the depth into the margin.
         /// </summary>
-        private void DragScroll()
+        private async void DragScroll()
         {
             if (this.dragScrollDelta != 0)
             {
@@ -325,7 +325,7 @@ namespace Slovo.Controls
                 this.scrollViewer.UpdateLayout();
                 if (this.scrollViewer.VerticalOffset == newOffset)
                 {
-                    this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.DragScroll());
+                    await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.DragScroll());
                 }
                 double dragItemOffset = Windows.UI.Xaml.Controls.Canvas.GetTop(this.dragIndicator) + ((Windows.UI.Xaml.Media.TranslateTransform)this.dragIndicator.RenderTransform).Y + this.dragIndicator.Height / 2;
                 this.UpdateDropTarget(dragItemOffset, true);

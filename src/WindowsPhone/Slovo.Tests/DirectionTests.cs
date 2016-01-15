@@ -15,7 +15,7 @@
     [TestClass]
     public class DirectionTests
     {
-        private class TestFileStreamGetter : FileStreamGetter {
+        private class TestFileStreamGetter : Slovo.Generator.Direction.FileStreamGetter {
             public override string ProjectFolderName
             {
                 get

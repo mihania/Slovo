@@ -348,14 +348,7 @@
         {
             var direction = ManagerInstance.CurrentDirection;
             ManagerInstance.CurrentDirection.Cursor = this.wordList.SelectedIndex;
-            if (Settings.IsTrial && ! direction.IsSupportedInTrial(wordIndex))
-            {
-                NavigationService.Navigate(new Uri(Buy.GetPageUrl(direction[wordIndex]), UriKind.Relative));
-            }
-            else
-            {
-                NavigationService.Navigate(new Uri(Slovo.DirectionArticle.GetPageUrl(ManagerInstance.CurrentDirection.Id, wordIndex), UriKind.Relative));
-            }
+            NavigationService.Navigate(new Uri(Slovo.DirectionArticle.GetPageUrl(ManagerInstance.CurrentDirection.Id, wordIndex), UriKind.Relative));
         }
 
         private void ImageInfoClicked(object sender, ManipulationStartedEventArgs e)

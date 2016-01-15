@@ -17,7 +17,6 @@ namespace Slovo
          this.InitializeComponent();
          this.MainPage = mainPage;
          this.OnLoading();
-         mainPage.ApplicationBarClick += mainPage_ApplicationBarClick;
       }
 
       void mainPage_ApplicationBarClick(object sender, EventArgs e)
@@ -44,9 +43,9 @@ namespace Slovo
          this.DirectionList.ItemsSource = ManagerInstance.Configuration.Directions.Clone();
       }
 
-      private void ApplyButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+      private async void ApplyButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
       {
-         Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.PerformanceProgressBar.IsIndeterminate = true);
+         await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.PerformanceProgressBar.IsIndeterminate = true);
          var newDirections = (DirectionList<PhoneStreamGetter>)this.DirectionList.ItemsSource;
          var equalStatus = ManagerInstance.UpdateDirections(newDirections);
          switch ( equalStatus )
@@ -60,9 +59,7 @@ namespace Slovo
             default:
                break;
          }
-         Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.PerformanceProgressBar.IsIndeterminate = false);
+         await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.PerformanceProgressBar.IsIndeterminate = false);
       }
-
    }
-
 }

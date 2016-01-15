@@ -127,9 +127,6 @@
     <AssemblyOriginatorKeyFile>..\ms.snk</AssemblyOriginatorKeyFile>
 -->
   </PropertyGroup>
-  <ItemGroup Condition=" '$(EnableWp7)' == 'true' ">
-    <Reference Include="Telerik.Windows.Controls.Primitives, Version=2013.1.219.2040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ApplicationInsights">
       <HintPath>..\packages\Microsoft.ApplicationInsights.1.1.0\lib\wp8\Microsoft.ApplicationInsights.dll</HintPath>

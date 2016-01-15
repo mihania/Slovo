@@ -180,6 +180,8 @@
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
     <None Include="project.json" />
+    <PRIResource Include="Resources\en-US\AppResources.resw" />
+    <PRIResource Include="Resources\en-US\CommonResources.resw" />
     <None Include="Slovo.UI_UWP_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
