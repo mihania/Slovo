@@ -39,6 +39,13 @@
                                 <TextBlock Text="{Binding Name}" FontSize="25" />
                             </DataTemplate>
                         </ListView.ItemTemplate>
+                        <ListView.ItemsPanel>
+                            <!-- this is required to prevent flickering problem 
+                            http://stackoverflow.com/questions/29845771/windows-store-app-listview-flickering-content-dispappearing -->
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
                     </ListView>
                 </Grid>
             </Grid>
