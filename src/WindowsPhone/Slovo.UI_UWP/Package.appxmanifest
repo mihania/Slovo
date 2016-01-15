@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns:m1="http://schemas.microsoft.com/appx/2010/manifest" xmlns:phone="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:t="http://schemas.microsoft.com/appx/manifest/types" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
-  <Identity Name="47006MihailSmacinih.Vocabulum" Publisher="CN=CB83FEAD-FDEE-4F8D-A3CB-008F70885AE1" Version="3.1.0.0" />
+  <Identity Name="47006MihailSmacinih.Vocabulum" Publisher="CN=CB83FEAD-FDEE-4F8D-A3CB-008F70885AE1" Version="3.2.1.0" />
   <phone:PhoneIdentity PhoneProductId="0e4bc866-18d0-4ab2-b6d8-96cd67254fb5" PhonePublisherId="4a924c55-b4b8-47b6-b7cc-f942482a7126" />
   <Properties>
     <DisplayName>Slovo Dictionary</DisplayName>

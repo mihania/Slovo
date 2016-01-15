@@ -1,2 +1,2 @@
-MainPackage=D:\github\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\x86\Release\Upload\Slovo.UI_UWP_3.1.0.0_x86.appx
-SymbolPackage=D:\github\Slovo\src\WindowsPhone\Slovo.UI_UWP\AppPackages\Slovo.UI_UWP_3.1.0.0\Slovo.UI_UWP_3.1.0.0_x86.appxsym
+MainPackage=D:\github\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\x86\Release\Upload\Slovo.UI_UWP_3.2.1.0_x86.appx
+SymbolPackage=D:\github\Slovo\src\WindowsPhone\Slovo.UI_UWP\AppPackages\Slovo.UI_UWP_3.2.1.0\Slovo.UI_UWP_3.2.1.0_x86.appxsym

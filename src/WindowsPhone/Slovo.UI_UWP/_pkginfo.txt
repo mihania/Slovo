@@ -1,1 +1,1 @@
-D:\github\Slovo\src\WindowsPhone\Slovo.UI_UWP\AppPackages\Slovo.UI_UWP_3.1.0.0\Slovo.UI_UWP_3.1.0.0_x86_x64_arm.appxbundle
+D:\github\Slovo\src\WindowsPhone\Slovo.UI_UWP\AppPackages\Slovo.UI_UWP_3.2.1.0\Slovo.UI_UWP_3.2.1.0_x86_x64_arm.appxbundle
