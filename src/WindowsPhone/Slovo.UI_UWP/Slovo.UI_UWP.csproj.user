@@ -3,7 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <UseSimulator>false</UseSimulator>
     <DeviceId>602A95E3-B42A-4AE5-BA1C-9C4E38854668</DeviceId>
-    <UseEmulator>false</UseEmulator>
+    <UseEmulator>true</UseEmulator>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">

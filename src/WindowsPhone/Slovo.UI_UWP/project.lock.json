@@ -3,7 +3,7 @@
   "version": 1,
   "targets": {
     "UAP,Version=v10.0": {
-      "HockeySDK.UWP/3.0.0-build42489": {
+      "HockeySDK.UWP/3.0.0-build42470": {
         "compile": {
           "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
         },
@@ -1546,7 +1546,7 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
-      "HockeySDK.UWP/3.0.0-build42489": {
+      "HockeySDK.UWP/3.0.0-build42470": {
         "compile": {
           "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
         },
@@ -3179,7 +3179,7 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
-      "HockeySDK.UWP/3.0.0-build42489": {
+      "HockeySDK.UWP/3.0.0-build42470": {
         "compile": {
           "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
         },
@@ -4784,7 +4784,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
-      "HockeySDK.UWP/3.0.0-build42489": {
+      "HockeySDK.UWP/3.0.0-build42470": {
         "compile": {
           "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
         },
@@ -6422,7 +6422,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
-      "HockeySDK.UWP/3.0.0-build42489": {
+      "HockeySDK.UWP/3.0.0-build42470": {
         "compile": {
           "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
         },
@@ -8027,7 +8027,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
-      "HockeySDK.UWP/3.0.0-build42489": {
+      "HockeySDK.UWP/3.0.0-build42470": {
         "compile": {
           "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
         },
@@ -9665,7 +9665,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
-      "HockeySDK.UWP/3.0.0-build42489": {
+      "HockeySDK.UWP/3.0.0-build42470": {
         "compile": {
           "lib/uap10.0/Microsoft.HockeyApp.Kit.dll": {}
         },
@@ -11271,8 +11271,8 @@
     }
   },
   "libraries": {
-    "HockeySDK.UWP/3.0.0-build42489": {
-      "sha512": "FgGqzl0t2nWzd3MRQ5z9Yw2GC2++KIwR2eQ2RbrupuoQRa/Epdy1g30GzJg5bQ/Uuta8dnAcrhwa0aqoLicEqw==",
+    "HockeySDK.UWP/3.0.0-build42470": {
+      "sha512": "OY4fp2RipeXeQZ1k1YuntOmAwDEWo86kZ5Ha88Hm6E9JJCVgoJ4MaVDP7xB/tpKacOOdYWdi9+aWClPtstMkXQ==",
       "type": "Package",
       "files": [
         "_rels/.rels",
@@ -11282,7 +11282,7 @@
         "lib/uap10.0/Microsoft.HockeyApp.Kit.dll.lastcodeanalysissucceeded",
         "lib/uap10.0/Microsoft.HockeyApp.Kit.pri",
         "lib/uap10.0/Microsoft.HockeyApp.Kit/Properties/Microsoft.HockeyApp.Kit.rd.xml",
-        "package/services/metadata/core-properties/b7d0d80516d440288379056103cdace8.psmdcp",
+        "package/services/metadata/core-properties/606686328b4545539d0e3219f8a11ac9.psmdcp",
         "[Content_Types].xml"
       ]
     },
@@ -14637,7 +14637,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "HockeySDK.UWP >= 3.0.0-build42489",
+      "HockeySDK.UWP >= 3.0.0-build42470",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0"
     ],
     "UAP,Version=v10.0": []
