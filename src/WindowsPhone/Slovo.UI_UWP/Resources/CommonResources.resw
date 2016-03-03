@@ -127,7 +127,7 @@
     <value>You are using trial application version, in which available translations of words beginning with the letter 'A' only. To translate all words, please buy the application.</value>
   </data>
   <data name="Copyright" xml:space="preserve">
-    <value>© Copyright 2014. Version {0}.{1}</value>
+    <value>© Copyright 2016. Version {0}.{1}</value>
   </data>
   <data name="History" xml:space="preserve">
     <value>History</value>
@@ -170,5 +170,11 @@ Ojegov dictionary - 38000 entries.</value>
   </data>
   <data name="PrivateFeedback" xml:space="preserve">
     <value>Feedback</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact us at: mihania@gmail.com</value>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>Contribute: http://github.com/mihania/slovo</value>
   </data>
 </root>

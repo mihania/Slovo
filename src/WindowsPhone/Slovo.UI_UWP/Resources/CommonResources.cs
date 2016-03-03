@@ -215,7 +215,25 @@ namespace Slovo.Resources
          }
       }
 
-      private static string GetString(string key)
+        public static string Contact
+        {
+            get
+            {
+                return GetString("Contact");
+            }
+        }
+
+        public static string SourceCode
+        {
+            get
+            {
+                return GetString("SourceCode");
+            }
+        }
+
+
+
+        private static string GetString(string key)
       {
          Windows.ApplicationModel.Resources.ResourceLoader loader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("CommonResources");
          return loader.GetString(key);

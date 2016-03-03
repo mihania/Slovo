@@ -35,7 +35,14 @@ namespace Slovo.UI
             // localization resources
             HistoryLabel.Text = CommonResources.History;
             SearchLabel.Text = CommonResources.Search;
+            AboutLabel.Text = CommonResources.About;
             // VocabulariesLabel.Text = CommonResources.Vocabularies;
+            this.tbCopyright.Text = String.Format(CommonResources.Copyright, Settings.AssemblyVersion.Major, Settings.AssemblyVersion.Minor);
+            this.tbDescription.Text = CommonResources.VocabularyDescription;
+            this.tbVocabulariesCapacity.Text = CommonResources.VocabulariesCapacity;
+            this.tbLicense.Text = string.Format(CommonResources.License, Environment.NewLine);
+            this.tbContact.Text = CommonResources.Contact;
+            this.tbSourceCode.Text = CommonResources.SourceCode;
             this.DataContext = this;
         }
 

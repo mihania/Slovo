@@ -57,15 +57,21 @@
                 </StackPanel>
             </PivotItem.Header>
         </PivotItem>
-        <!--
-        <PivotItem Name="VocabulariesPivotItem" x:FieldModifier="internal" IsHitTestVisible="False">
+        <PivotItem Name="AboutPivotItem" x:FieldModifier="internal">
             <PivotItem.Header>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Vocabularies" FontSize="40" VerticalAlignment="Center" Name="VocabulariesLabel" />
+                <StackPanel>
+                    <TextBlock Text="About" Name="AboutLabel" VerticalAlignment="Center" />
                 </StackPanel>
             </PivotItem.Header>
+            <StackPanel>
+                <TextBlock Name="tbDescription" />
+                <TextBlock Name="tbVocabulariesCapacity" Margin="0,20,0,0" />
+                <TextBlock Name="tbLicense" Margin="0,20,0,0" />
+                <TextBlock Name="tbSourceCode" Margin="0,20,0,0" />
+                <TextBlock Name="tbContact" Margin="0,20,0,0" />
+                <TextBlock Name="tbCopyright" Margin="0,20,0,0" />
+            </StackPanel>
         </PivotItem>
-        -->
     </Pivot>
     <Page.BottomAppBar>
         <CommandBar>

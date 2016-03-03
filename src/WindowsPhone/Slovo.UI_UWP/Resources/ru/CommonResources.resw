@@ -127,7 +127,7 @@
     <value>Вы используете пробную версию продукта, в которой доступны только переводы слов, начинающихся на букву 'A'.  Для возможности перевода всех слов, пожалуйста, купите приложение.</value>
   </data>
   <data name="Copyright" xml:space="preserve">
-    <value>© Copyright 2014. Версия {0}.{1}</value>
+    <value>© Copyright 2016. Версия {0}.{1}</value>
   </data>
   <data name="History" xml:space="preserve">
     <value>История</value>
@@ -170,5 +170,11 @@ Cловарь Ожегова - 38 тыс. слов.
   </data>
   <data name="PrivateFeedback" xml:space="preserve">
     <value>Отзыв</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Контактная информация: mihania@gmail.com</value>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>Разрабатывайте с нами: http://github.com/mihania/slovo</value>
   </data>
 </root>
