@@ -171,4 +171,10 @@ Ojegov dictionary - 38000 entries.</value>
   <data name="PrivateFeedback" xml:space="preserve">
     <value>Feedback</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact us at: mihania@gmail.com</value>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>Contribute: http://github.com/mihania/slovo</value>
+  </data>
 </root>

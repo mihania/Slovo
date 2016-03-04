@@ -26,7 +26,8 @@ namespace Slovo.UI
             Microsoft.HockeyApp.HockeyClient.Current.Configure("e9d9cb8883af4c92b3c62efe113ae79f", 
                 new Microsoft.HockeyApp.TelemetryConfiguration()
                 {
-                    EndpointAddress = "https://eus-breeze-in.cloudapp.net/v2/track"
+                    EndpointAddress = "https://eus-breeze-in.cloudapp.net/v2/track",
+                    EnableWatson = true
                 });
 
             this.InitializeComponent();
