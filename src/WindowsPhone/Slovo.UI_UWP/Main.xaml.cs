@@ -11,6 +11,7 @@ namespace Slovo.UI
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Input;
+    using Microsoft.HockeyApp;
 
     public sealed partial class Main : Page
     {
@@ -98,7 +99,9 @@ namespace Slovo.UI
                     ((AppBarButton)((CommandBar)BottomAppBar).PrimaryCommands[0]).Label = CommonResources.Apply;
                     ((AppBarButton)((CommandBar)BottomAppBar).PrimaryCommands[1]).Label = CommonResources.About;
                 }
+
                 this.loadedPivots[e.Item.Name] = true;
+                HockeyClient.Current.TrackEvent(e.Item.Name);
             }
             else
             {

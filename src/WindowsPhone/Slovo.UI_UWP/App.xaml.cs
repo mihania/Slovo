@@ -11,6 +11,7 @@ namespace Slovo.UI
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
     using Windows.UI.Core;
+    using Microsoft.HockeyApp;
     
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -23,12 +24,13 @@ namespace Slovo.UI
         /// </summary>
         public App()
         {
-            Microsoft.HockeyApp.HockeyClient.Current.Configure("e9d9cb8883af4c92b3c62efe113ae79f", 
-                new Microsoft.HockeyApp.TelemetryConfiguration()
-                {
-                    EndpointAddress = "https://eus-breeze-in.cloudapp.net/v2/track",
-                    EnableWatson = true
-                });
+            Microsoft.HockeyApp.HockeyClient.Current.Configure("e9d9cb8883af4c92b3c62efe113ae79f",
+            new Microsoft.HockeyApp.TelemetryConfiguration()
+            {
+                EndpointAddress = "https://eus-breeze-in.cloudapp.net/v2/track",
+                Collectors = WindowsCollectors.Metadata | WindowsCollectors.Session | WindowsCollectors.UnhandledException | WindowsCollectors.WatsonData
+            });
+
 
             this.InitializeComponent();
             this.Suspending += OnSuspending;

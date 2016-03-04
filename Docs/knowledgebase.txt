@@ -1,0 +1,2 @@
+1. How to deploy UWP to Phone?
+	https://social.msdn.microsoft.com/Forums/sqlserver/en-US/475462e2-6f24-4ccf-b60a-c4ec520098ae/uwperror-dep6100-the-following-unexpected-error-occurred-during-bootstrapping-stage?forum=wpdevelop

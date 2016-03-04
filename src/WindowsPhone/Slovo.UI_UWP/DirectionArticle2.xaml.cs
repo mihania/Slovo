@@ -149,6 +149,7 @@
 
         private void SpeakButton_Click(object sender, RoutedEventArgs e)
         {
+            Microsoft.HockeyApp.HockeyClient.Current.TrackEvent("SpeakButton_Click");
             OfflinePronounciation.SpeakAsync(currentDirectionArticle.Sense, this.Direction.SourceLanguageCode);
             if (currentDirectionArticle.Sense == "bug")
             {
