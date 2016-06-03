@@ -1,0 +1,37 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETPortable,Version=v4.5,Profile=Profile78": {
+      "HockeySDK.Core/4.1.0-build55507": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81+win81/Microsoft.HockeyApp.Core45.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81+win81/Microsoft.HockeyApp.Core45.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HockeySDK.Core/4.1.0-build55507": {
+      "sha512": "xv/WtGAp72CezhdUee551K+Gl4L1t6vYlsW0MQmjCJ6pG11r/7YvLcbLd1ChKQCa3O0km+6C8RSXmxei0v/APA==",
+      "type": "package",
+      "files": [
+        "HockeySDK.Core.4.1.0-build55507.nupkg.sha512",
+        "HockeySDK.Core.nuspec",
+        "lib/portable-net45+win8+wp8+wpa81+win81/Microsoft.HockeyApp.Core45.dll",
+        "lib/portable-net45+win8+wp8+wpa81+win81/Microsoft.HockeyApp.Core45.dll.CodeAnalysisLog.xml",
+        "lib/portable-net45+win8+wp8+wpa81+win81/Microsoft.HockeyApp.Core45.dll.lastcodeanalysissucceeded",
+        "lib/portable-net45+win8+wp8+wpa81+win81/Microsoft.HockeyApp.XML"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "HockeySDK.Core >= 4.1.0-build55507"
+    ],
+    ".NETPortable,Version=v4.5,Profile=Profile78": []
+  }
+}

@@ -12,7 +12,7 @@ using Microsoft.Phone.Tasks;
 using Microsoft.Phone.Info;
 using Slovo;
 using Slovo.Core;
-using Microsoft.ApplicationInsights.DataContracts;
+
 
 namespace NokiaFeedbackDemo.Controls
 {
@@ -151,7 +151,7 @@ namespace NokiaFeedbackDemo.Controls
                 if (FeedbackOverlay.GetEnableAnimation(this))
                     this.showContent.Begin();
 
-                this.ManagerInstance.TelemetryClient.TrackEvent(new EventTelemetry("FeedbackOverlay.Show.FirstReview"));
+                this.ManagerInstance.TelemetryClient.TrackEvent("FeedbackOverlay.Show.FirstReview");
             }
             else if (FeedbackHelper.Default.State == FeedbackState.SecondReview)
             {
@@ -161,7 +161,7 @@ namespace NokiaFeedbackDemo.Controls
                 if (FeedbackOverlay.GetEnableAnimation(this))
                     this.showContent.Begin();
 
-                this.ManagerInstance.TelemetryClient.TrackEvent(new EventTelemetry("FeedbackOverlay.Show.SecondReview"));
+                this.ManagerInstance.TelemetryClient.TrackEvent("FeedbackOverlay.Show.SecondReview");
             }
             else
             {
@@ -225,7 +225,7 @@ namespace NokiaFeedbackDemo.Controls
             else
                 this.ShowFeedback();
 
-            this.ManagerInstance.TelemetryClient.TrackEvent(new EventTelemetry("FeedbackOverlay.NoClicked"));
+            this.ManagerInstance.TelemetryClient.TrackEvent("FeedbackOverlay.NoClicked");
         }
 
         private void hideContent_Completed(object sender, EventArgs e)
@@ -256,17 +256,17 @@ namespace NokiaFeedbackDemo.Controls
             if (FeedbackHelper.Default.State == FeedbackState.FirstReview)
             {
                 this.Review();
-                this.ManagerInstance.TelemetryClient.TrackEvent(new EventTelemetry("FeedbackOverlay.YesClicked.FirstReview"));
+                this.ManagerInstance.TelemetryClient.TrackEvent("FeedbackOverlay.YesClicked.FirstReview");
             }
             else if (FeedbackHelper.Default.State == FeedbackState.SecondReview)
             {
                 this.Review();
-                this.ManagerInstance.TelemetryClient.TrackEvent(new EventTelemetry("FeedbackOverlay.YesClicked.SecondReview"));
+                this.ManagerInstance.TelemetryClient.TrackEvent("FeedbackOverlay.YesClicked.SecondReview");
             }
             else if (FeedbackHelper.Default.State == FeedbackState.Feedback)
             {
                 this.Feedback();
-                this.ManagerInstance.TelemetryClient.TrackEvent(new EventTelemetry("FeedbackOverlay.YesClicked.Feedback"));
+                this.ManagerInstance.TelemetryClient.TrackEvent("FeedbackOverlay.YesClicked.Feedback");
             }
         }
 

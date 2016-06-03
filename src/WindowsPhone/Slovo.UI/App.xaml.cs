@@ -1,32 +1,20 @@
-﻿using Microsoft.ApplicationInsights;
-
-namespace Slovo
+﻿namespace Slovo
 {
     using System.Windows;
     using System.Windows.Navigation;
     using Microsoft.Phone.Controls;
     using Microsoft.Phone.Shell;
     using Slovo.Core;
-    using System.Collections.ObjectModel;
-    using Slovo.Core.Vocabularies;
+    using Microsoft.HockeyApp;
 
     public partial class App : Application
     {
-        /// <summary>
-        /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
-        /// </summary>
-        public static TelemetryClient TelemetryClient;
-
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
         public App()
         {
-            // CrashHandler.Instance.Configure(this, "093403c29cbe4b87b647d6a2f3651285", RootFrame);
-            WindowsAppInitializer.InitializeAsync("093403c29cbe4b87b647d6a2f3651285", WindowsCollectors.Metadata | WindowsCollectors.PageView | WindowsCollectors.Session | WindowsCollectors.UnhandledException);
-
-            // add telemetry client.
-            TelemetryClient = new TelemetryClient();
+            HockeyClient.Current.Configure("093403c29cbe4b87b647d6a2f3651285");
 
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
@@ -69,11 +57,12 @@ namespace Slovo
         
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
-        private void Application_Launching(object sender, LaunchingEventArgs e)
+        private async void Application_Launching(object sender, LaunchingEventArgs e)
         {
             Settings.Init();
             // Call this on launch to initialise the feedback helper
             NokiaFeedbackDemo.Helpers.FeedbackHelper.Default.Launching();
+            await HockeyClient.Current.SendCrashesAsync(sendWithoutAsking: true);
         }
 
         // Code to execute when the application is activated (brought to foreground)

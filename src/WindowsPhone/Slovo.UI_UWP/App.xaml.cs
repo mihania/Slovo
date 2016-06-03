@@ -24,11 +24,13 @@ namespace Slovo.UI
         /// </summary>
         public App()
         {
-            Microsoft.HockeyApp.HockeyClient.Current.Configure("e9d9cb8883af4c92b3c62efe113ae79f",
+            Microsoft.HockeyApp.HockeyClient.Current.Configure("ab9a7f5fe2b34d958856f2f424544e34",
+            // Microsoft.HockeyApp.HockeyClient.Current.Configure("e9d9cb8883af4c92b3c62efe113ae79f",
             new Microsoft.HockeyApp.TelemetryConfiguration()
             {
-                EndpointAddress = "https://eus-breeze-in.cloudapp.net/v2/track",
-                Collectors = WindowsCollectors.Metadata | WindowsCollectors.Session | WindowsCollectors.UnhandledException | WindowsCollectors.WatsonData
+                // EndpointAddress = "https://eus-breeze-in.cloudapp.net/v2/track",
+                DescriptionLoader = (ex) => { return  "HResult = " + ex.HResult.ToString(); },
+                Collectors = WindowsCollectors.Metadata | WindowsCollectors.Session | WindowsCollectors.UnhandledException 
             });
 
 

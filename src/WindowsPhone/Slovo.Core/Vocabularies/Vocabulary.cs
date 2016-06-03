@@ -7,6 +7,7 @@
     using System.Collections.ObjectModel;
     using System.Xml.Serialization;
     using Slovo.Core.Config;
+    using Microsoft.HockeyApp;
 
     public class Vocabulary<T> : SenseList<Article> where T : IStreamGetter, new()
     {
@@ -52,6 +53,7 @@
 
         public override Article GetArticle(int offset)
         {
+            HockeyClient.Current.TrackEvent("Vocabulary.GetArticle");
             // ToDo: Think on opening file only once
             using (Stream stream = this.streamGetter.GetStream(this.DefFile)) 
             {

@@ -6,7 +6,7 @@
     <Language code="ru" />
   </Languages>
   <App xmlns="" ProductID="{0e4bc866-18d0-4ab2-b6d8-96cd67254fb5}" Title="Slovo Dictionary" RuntimeType="Silverlight" Version="2.7.0.0" Genre="apps.normal" Author="Mihail Smacinih" Description="English-Russian and Russian-English Dictionary that does not require internet connection" Publisher="Slovo" PublisherID="{4a924c55-b4b8-47b6-b7cc-f942482a7126}">
-    <IconPath IsRelative="true" IsResource="false">Images/ApplicationIcon.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">Images\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
       <Capability Name="ID_CAP_MICROPHONE" />
@@ -18,17 +18,23 @@
     <Tokens>
       <PrimaryToken TokenID="SlovoToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsResource="false" IsRelative="true">Images\Background.png</SmallImageURI>
+          <SmallImageURI IsResource="false" IsRelative="true">Images\ApplicationIcon.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsResource="false" IsRelative="true">Images\Background.png</BackgroundImageURI>
-          <Title></Title>
-          <BackContent></BackContent>
-          <BackBackgroundImageURI></BackBackgroundImageURI>
-          <BackTitle></BackTitle>
-          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Images\WideTile.png</LargeBackgroundImageURI>
+          <BackgroundImageURI IsResource="false" IsRelative="true">Images\ApplicationIcon.png</BackgroundImageURI>
+          <Title>
+          </Title>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI>
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Images\ApplicationIcon.png</LargeBackgroundImageURI>
           <LargeBackContent />
-          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false"></LargeBackBackgroundImageURI>
-          <DeviceLockImageURI></DeviceLockImageURI>
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
+          <DeviceLockImageURI>
+          </DeviceLockImageURI>
           <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>

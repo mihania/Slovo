@@ -1,6 +1,7 @@
-MainPackage=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Release\Slovo.UI_UWP_3.10.3.0_ARM.appx
-ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Release\Slovo.UI_UWP_3.10.3.0_language-ru.appx
-ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Release\Slovo.UI_UWP_3.10.3.0_scale-100.appx
-ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Release\Slovo.UI_UWP_3.10.3.0_scale-125.appx
-ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Release\Slovo.UI_UWP_3.10.3.0_scale-150.appx
-ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Release\Slovo.UI_UWP_3.10.3.0_scale-400.appx
+MainPackage=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Debug\Slovo.UI_UWP_3.30.17.0_ARM_Debug.appx
+SymbolPackage=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\AppPackages\Slovo.UI_UWP_3.30.17.0_Debug_Test\Slovo.UI_UWP_3.30.17.0_ARM_Debug.appxsym
+ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Debug\Slovo.UI_UWP_3.30.17.0_language-ru.appx
+ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Debug\Slovo.UI_UWP_3.30.17.0_scale-100.appx
+ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Debug\Slovo.UI_UWP_3.30.17.0_scale-125.appx
+ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Debug\Slovo.UI_UWP_3.30.17.0_scale-150.appx
+ResourcePack=D:\src\GitHub\Slovo\src\WindowsPhone\Slovo.UI_UWP\bin\ARM\Debug\Slovo.UI_UWP_3.30.17.0_scale-400.appx

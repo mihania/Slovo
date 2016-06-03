@@ -5,7 +5,7 @@
     using Slovo.Core.Vocabularies;
     using System;
     using System.Collections.Generic;
-    using Microsoft.ApplicationInsights;
+    using Microsoft.HockeyApp;
 
     internal class Manager<T>  where T : IStreamGetter, new()
     {
@@ -17,7 +17,7 @@
         private Manager()
         {
             this.Configuration = Configuration<T>.LoadConfiguration();
-            this.TelemetryClient = new TelemetryClient();
+            this.TelemetryClient = HockeyClient.Current;
         }
 
         internal static Manager<T> Instance
@@ -59,7 +59,7 @@
             }
         }
 
-        internal TelemetryClient TelemetryClient { get; private set; }
+        internal IHockeyClient TelemetryClient { get; private set; }
 
         internal Vocabulary<T> GetVocabulary(int voc)
         {

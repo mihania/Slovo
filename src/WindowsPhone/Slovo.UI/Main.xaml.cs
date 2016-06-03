@@ -14,8 +14,8 @@
     using System.Windows.Controls;
     using System.Windows.Input;
     using System.Windows.Navigation;
-    using Microsoft.ApplicationInsights.DataContracts;
-    using Microsoft.ApplicationInsights;
+    using Microsoft.HockeyApp;
+
 
     public partial class Main : PhoneApplicationPage
     {
@@ -40,7 +40,6 @@
         public Main()
         {
             InitializeComponent();
-            Microsoft.ApplicationInsights.WindowsAppInitializer.InitializeAsync("093403c29cbe4b87b647d6a2f3651285", WindowsCollectors.Metadata | WindowsCollectors.Session | WindowsCollectors.PageView | WindowsCollectors.UnhandledException);
             
             // ToDo: Remove: verify RU culture
             // System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
@@ -337,9 +336,7 @@
                 }
                 else
                 {
-                    EventTelemetry telemetry = new EventTelemetry("Main.WordNotFound");
-                    telemetry.Properties["word"] = this.tbSearch.Text;
-                    ManagerInstance.TelemetryClient.TrackEvent(telemetry);
+                    HockeyClient.Current.TrackEvent("Main.WordNotFound");
                 }
             }
         }

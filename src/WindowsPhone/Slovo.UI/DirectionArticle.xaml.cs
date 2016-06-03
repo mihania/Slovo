@@ -12,7 +12,6 @@
     using System.Collections.ObjectModel;
     using System.Text;
     using System.Windows;
-    using Microsoft.ApplicationInsights.DataContracts;
 
     public partial class DirectionArticle : PhoneApplicationPage
     {
@@ -129,8 +128,6 @@
                 article.Definition = coreArticle.Definition;
                 e.Item.Content = article;
                 e.Item.DataContext = null; // mark article as loaded
-
-                ManagerInstance.TelemetryClient.TrackPageView(new PageViewTelemetry("DirectionArticle.Pivot.Load." + vocabulary.Name));
             }
         }
 
@@ -209,14 +206,16 @@
         private void SpeakButton_Click(object sender, EventArgs e)
         {
             this.SpeakOnline();
-            var telemetry = new EventTelemetry("DirectionArticle.SpeakButton.Clicked");
-            telemetry.Properties["DirectionName"] = this.Direction.Name;
-            ManagerInstance.TelemetryClient.TrackEvent(telemetry);
+            ManagerInstance.TelemetryClient.TrackEvent("DirectionArticle.SpeakButton.Clicked");
         }
 
         private void SpeakOnline()
         {
             OfflinePronounciation.SpeakAsync(tbWord.Text, this.Direction.SourceLanguageCode);
+            if (tbWord.Text == "bug")
+            {
+                throw new InvalidProgramException("This is what bug means in software development");
+            }
         }
 
         private void BackButton_Click(object sender, EventArgs e)

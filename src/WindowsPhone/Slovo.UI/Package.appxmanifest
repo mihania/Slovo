@@ -1,52 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-
-  <Identity Name="72e782fb-4917-400e-870e-e18795e712f5"
-            Publisher="CN=mihailsm"
-            Version="1.0.0.0" />
-
-  <mp:PhoneIdentity PhoneProductId="0e4bc866-18d0-4ab2-b6d8-96cd67254fb5" PhonePublisherId="4a924c55-b4b8-47b6-b7cc-f942482a7126"/>
-
+  <Identity Name="47006MihailSmacinih.Vocabulum" Publisher="CN=CB83FEAD-FDEE-4F8D-A3CB-008F70885AE1" Version="3.1.0.0" />
+  <mp:PhoneIdentity PhoneProductId="0e4bc866-18d0-4ab2-b6d8-96cd67254fb5" PhonePublisherId="4a924c55-b4b8-47b6-b7cc-f942482a7126" />
   <Properties>
     <DisplayName>Slovo.UI</DisplayName>
-    <PublisherDisplayName>mihailsm</PublisherDisplayName>
+    <PublisherDisplayName>Mihail Smacinih</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.3.1</OSMinVersion>
     <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="x0e4bc866y18d0y4ab2yb6d8y96cd67254fb5x"
-        Executable="AGHost.exe"
-        EntryPoint="Main.xaml">
-      <m3:VisualElements
-          DisplayName="Slovo.UI"
-          Square150x150Logo="Assets\SquareTile150x150.png"
-          Square44x44Logo="Assets\Logo.png"
-          Description="Slovo.UI"
-          ForegroundText="light"
-          BackgroundColor="#464646">
-        <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png"/>
+    <Application Id="x0e4bc866y18d0y4ab2yb6d8y96cd67254fb5x" Executable="AGHost.exe" EntryPoint="Main.xaml">
+      <m3:VisualElements DisplayName="Slovo.UI" Square150x150Logo="Assets\SquareTile150x150.png" Square44x44Logo="Assets\Logo.png" Description="Slovo.UI" ForegroundText="light" BackgroundColor="#464646">
+        <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png">
+        </m3:DefaultTile>
         <m3:SplashScreen Image="SplashScreenImage.jpg" />
       </m3:VisualElements>
       <Extensions>
         <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">
           <BackgroundTasks>
-          <Task Type="systemEvent" />
+            <Task Type="systemEvent" />
           </BackgroundTasks>
         </Extension>
       </Extensions>
     </Application>
   </Applications>
-  <Capabilities>
-  </Capabilities>
   <Extensions>
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
@@ -55,4 +38,7 @@
       </InProcessServer>
     </Extension>
   </Extensions>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+  </Capabilities>
 </Package>
